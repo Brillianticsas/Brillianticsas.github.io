@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Box, Container, Grid, Typography, IconButton } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -78,7 +79,10 @@ const Footer = () => {
 
                     <Grid item>
                         <Typography variant="body2" color="gray" align="center">
-                            {`${new Date().getFullYear()} | React | Material UI | React Router`}
+                            {`${new Date().getFullYear()} © BRILLIANTIC S.A.S. Todos los derechos reservados.`}
+                            <Link to="/DataPolitics" style={{ color: "#fff", textDecoration: "underline" }}>
+                                <br />Politica de Tratamiento de Datos
+                            </Link>
                         </Typography>
                     </Grid>
                 </Grid>

@@ -15,7 +15,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const HeroSection = styled(Box)(() => ({
-    marginTop: '90px',
+    margin: '90px',
     minHeight: '80vh',
     display: 'flex',
     alignItems: 'center',
@@ -72,6 +72,7 @@ const Hero = () => {
         <HeroSection>
             <Container maxWidth="lg">
                 <Box
+                    id="hero"
                     display="flex"
                     flexDirection={{ xs: 'column', md: 'row' }}
                     justifyContent="space-between"
