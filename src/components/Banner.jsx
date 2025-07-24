@@ -15,6 +15,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const HeroSection = styled(Box)(() => ({
+    marginTop: '90px',
     minHeight: '80vh',
     display: 'flex',
     alignItems: 'center',
@@ -55,7 +56,7 @@ const SubmitButton = styled(Button)(() => ({
 
 
 const HeroImage = styled('img')(() => ({
-    width: '700px',
+    width: '600px',
     height: '400px',
     maxHeight: '550px',
     borderRadius: '12px',
