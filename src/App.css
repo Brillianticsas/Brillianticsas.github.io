@@ -1,0 +1,13 @@
+/* App.css */
+/* Sólo resets o casos globales muy específicos */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
