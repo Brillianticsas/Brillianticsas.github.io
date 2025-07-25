@@ -21,6 +21,7 @@ const HeroSection = styled(Box)(() => ({
     minHeight: '80vh',
     display: 'flex',
     alignItems: 'center',
+    padding: '20px',
 }));
 
 const GradientText = styled('span')(() => ({
