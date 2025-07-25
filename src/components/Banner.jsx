@@ -13,6 +13,8 @@ import {
 import { styled } from '@mui/material/styles';
 import { Link as ScrollLink } from 'react-scroll';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import previewImage from '../images/preview-video.jpeg';
+
 
 const HeroSection = styled(Box)(() => ({
     margin: '90px',
@@ -94,7 +96,7 @@ const Hero = () => {
                                 >
                                     SOMOS <br />
                                     AGENTES DE{' '}
-                                    <GradientText>TRANSFORMACIÓN</GradientText>
+                                    <GradientText>TRANSFORMACIÓN SOCIAL</GradientText>
                                 </Typography>
                             </Slide>
 
@@ -136,7 +138,7 @@ const Hero = () => {
                         >
                             <Box >
                                 <HeroImage
-                                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                                    src={previewImage}
                                     alt="Team meeting"
                                 />
                             </Box>

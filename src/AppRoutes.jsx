@@ -6,7 +6,8 @@ import Team from "./components/Team";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import DataPolitics from "./components/DataPolitics";
-
+import OrganicEvolution from "./components/OrganicEvolution";
+import ClientSlider from "./components/ClientSlider";
 const AppRoutes = () => {
   return (
     <Routes>
@@ -15,9 +16,11 @@ const AppRoutes = () => {
         path="/"
         element={
           <>
-            <Hero />
-            <Team />
+            <Hero id="hero" />
+            <ClientSlider />
+            <OrganicEvolution />
             <Services id="services" />
+            <Team />
             <Contact id="contacto" />
           </>
         }

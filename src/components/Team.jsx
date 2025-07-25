@@ -13,31 +13,31 @@ import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 
 const teamMembers = [
     {
-        name: 'Juan Pérez',
-        role: 'CEO',
+        name: 'Jorge Antonio Valencia',
+        role: 'Gerente General',
         description: 'Fundador con más de 10 años de experiencia en tecnología.',
         image: 'https://randomuser.me/api/portraits/men/1.jpg',
     },
     {
-        name: 'Laura Gómez',
-        role: 'CTO',
+        name: 'John Alexander Mora',
+        role: 'Asesor Comercial',
         description: 'Apasionada por la innovación y el desarrollo de software.',
-        image: 'https://randomuser.me/api/portraits/women/2.jpg',
-    },
-    {
-        name: 'Carlos Rodríguez',
-        role: 'Diseñador UX/UI',
-        description: 'Diseñador centrado en mejorar la experiencia del usuario.',
         image: 'https://randomuser.me/api/portraits/men/3.jpg',
     },
     {
-        name: 'Ana Martínez',
-        role: 'Desarrolladora Full Stack',
-        description: 'Encargada del desarrollo del frontend y backend.',
+        name: 'Luisa Fernanda Piamba',
+        role: 'Lider Administrativa',
+        description: 'Diseñador centrado en mejorar la experiencia del usuario.',
         image: 'https://randomuser.me/api/portraits/women/4.jpg',
     },
     {
-        name: 'Pedro Sánchez',
+        name: 'Frand Lebaza',
+        role: 'Desarrollador Full Stack',
+        description: 'Encargado del desarrollo del frontend y backend.',
+        image: 'https://randomuser.me/api/portraits/men/4.jpg',
+    },
+    {
+        name: 'Jose Dario Vargas',
         role: 'Tester QA',
         description: 'Responsable de asegurar la calidad del producto final.',
         image: 'https://randomuser.me/api/portraits/men/5.jpg',
@@ -76,7 +76,7 @@ const TeamSection = () => {
     const styles = {
         section: {
             backgroundColor: theme.palette.background.default,
-            padding: theme.spacing(1, 4),
+            padding: theme.spacing(4, 4),
         },
         header: {
             marginBottom: theme.spacing(6),

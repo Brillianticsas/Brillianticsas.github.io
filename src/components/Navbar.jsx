@@ -19,7 +19,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { HashLink } from 'react-router-hash-link';
 
 const navItems = [
-    { label: 'Inicio', href: '#inicio' },
+    { label: 'Inicio', href: '#hero' },
     { label: 'Servicios', href: '#services' },
     { label: 'Contacto', href: '#contacto' }
 ];
@@ -141,7 +141,7 @@ const Navbar = () => {
                         <Box
                             component={HashLink}
                             smooth
-                            to="/#inicio"
+                            to="/#hero"
                             sx={{
                                 display: 'flex',
                                 alignItems: 'center',

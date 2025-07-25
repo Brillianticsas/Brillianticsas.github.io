@@ -9,7 +9,7 @@ const DataPolitics = () => {
             </Typography>
             <Box>
                 <Typography paragraph>
-                    Aquí irá el contenido de tu política de datos...
+                    Aquí irá el contenido de nuestras políticas de datos...
                 </Typography>
             </Box>
         </Container>
