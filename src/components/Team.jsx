@@ -21,7 +21,7 @@ const teamMembers = [
     {
         name: 'John Alexander Mora',
         role: 'Asesor Comercial',
-        description: 'Apasionada por la innovación y el desarrollo de software.',
+        description: 'Apasionado por la innovación y el desarrollo de software.',
         image: 'https://randomuser.me/api/portraits/men/3.jpg',
     },
     {
@@ -82,7 +82,6 @@ const TeamSection = () => {
             marginBottom: theme.spacing(6),
             textAlign: 'center',
             fontWeight: 700,
-            left: '30%',
             textTransform: 'uppercase',
             color: '#412359',
             position: 'relative',
