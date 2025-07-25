@@ -16,12 +16,18 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import previewImage from '../images/preview-video.jpeg';
 
 
-const HeroSection = styled(Box)(() => ({
-    margin: '90px',
+const HeroSection = styled(Box)(({ theme }) => ({
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
+    [theme.breakpoints.up('md')]: {
+        paddingTop: theme.spacing(12),
+        paddingBottom: theme.spacing(12),
+    },
     minHeight: '80vh',
     display: 'flex',
     alignItems: 'center',
 }));
+
 
 const GradientText = styled('span')(() => ({
     color: '#602391ff',
