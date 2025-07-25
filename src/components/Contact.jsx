@@ -168,7 +168,8 @@ ${formData.message}
                                     <Typography variant="body1" sx={{ fontSize: { xs: "0.9rem", sm: "1rem" } }}>
                                         Carrera 2W #25G-10<br />
                                         Local 26<br />
-                                        Neiva, Huila, Colombia
+                                        Neiva, Huila,
+                                        Colombia
                                     </Typography>
                                 </Stack>
                             </Stack>
