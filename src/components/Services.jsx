@@ -20,16 +20,7 @@ import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import WorkIcon from "@mui/icons-material/Work";
 
 const services = [
-    {
-        title: "Infraestructura y Conectividad",
-        description: "Diseñamos y operamos infraestructuras de red robustas que aseguran una conectividad fluida y segura para tu operación empresarial.",
-        icon: <LanguageIcon sx={{ fontSize: 24 }} />,
-        color: "#1976d2",
-        gradient: "linear-gradient(135deg, #1976d2 0%, #1565c0 100%)",
-        popularity: 95,
-        features: ["Redes eléctricas", "Wifi empresarial", "Seguridad electrónica"],
-        rating: 4.9,
-    },
+
     {
         title: "Infraestructura y Conectividad",
         description: "Diseñamos y operamos infraestructuras de red robustas que aseguran una conectividad fluida y segura para tu operación empresarial.",
