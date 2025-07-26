@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import DataPolitics from "./components/DataPolitics";
 import OrganicEvolution from "./components/OrganicEvolution";
 import ClientSlider from "./components/ClientSlider";
+import Cluster from "./components/Cluster";
 const AppRoutes = () => {
   return (
     <Routes>
