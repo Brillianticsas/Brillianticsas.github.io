@@ -13,17 +13,14 @@ import {
 import { styled } from '@mui/material/styles';
 import { Link as ScrollLink } from 'react-scroll';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import previewImage from '../images/preview-video.jpeg';
+import preview from '../images/banner.jpg';
 
 
 const HeroSection = styled(Box)(({ theme }) => ({
     paddingTop: theme.spacing(10),
-    paddingBottom: theme.spacing(10),
-    [theme.breakpoints.up('md')]: {
-        paddingTop: theme.spacing(12),
-        paddingBottom: theme.spacing(12),
-    },
-    minHeight: '80vh',
+    paddingBottom: theme.spacing(2),
+
+    minHeight: '60vh',
     display: 'flex',
     alignItems: 'center',
 }));
@@ -144,7 +141,7 @@ const Hero = () => {
                         >
                             <Box >
                                 <HeroImage
-                                    src={previewImage}
+                                    src={preview}
                                     alt="Team meeting"
                                 />
                             </Box>

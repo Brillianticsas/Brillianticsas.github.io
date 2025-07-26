@@ -31,6 +31,16 @@ const services = [
         rating: 4.9,
     },
     {
+        title: "Infraestructura y Conectividad",
+        description: "Diseñamos y operamos infraestructuras de red robustas que aseguran una conectividad fluida y segura para tu operación empresarial.",
+        icon: <LanguageIcon sx={{ fontSize: 24 }} />,
+        color: "#1976d2",
+        gradient: "linear-gradient(135deg, #1976d2 0%, #1565c0 100%)",
+        popularity: 95,
+        features: ["Redes eléctricas", "Wifi empresarial", "Seguridad electrónica"],
+        rating: 4.9,
+    },
+    {
         title: "Conectividad Empresarial",
         description: "Servicios dedicados de Internet y transporte de datos en fibra óptica simétrica, garantizando alta disponibilidad y velocidad.",
         icon: <CloudIcon sx={{ fontSize: 24 }} />,

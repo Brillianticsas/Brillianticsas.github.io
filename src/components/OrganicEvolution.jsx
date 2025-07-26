@@ -1,119 +1,93 @@
 import React from 'react';
 import {
     Box,
-    Grid,
-    Typography,
-    Button,
     Container,
-    useTheme,
-    useMediaQuery
+    Typography,
+    Slide,
+    Fade,
 } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import evolution from '../images/evolution.jpg';
 
-import thumbnail from '../images/preview.jpeg'; // Usa aquí la imagen que subiste
+// eslint-disable-next-line no-empty-pattern
+const SectionWrapper = styled(Box)(({ }) => ({
+    minHeight: '50vh',
+    display: 'flex',
+    alignItems: 'center',
+}));
+
+const GradientText = styled('span')(() => ({
+    color: '#602391ff',
+    position: 'relative',
+
+}));
+
+const StyledImage = styled('img')(() => ({
+    width: '600px',
+    height: '400px',
+    maxHeight: '550px',
+    borderRadius: '12px',
+    transition: 'transform 0.3s ease-in-out',
+    objectFit: 'cover',
+    boxShadow: '0px 6px 30px rgba(0, 0, 0, 0.15)',
+    '&:hover': {
+        transform: 'scale(1.02)',
+    },
+}));
 
 const OrganicEvolution = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
     return (
-        <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
-            <Grid container spacing={4} alignItems="center">
-                {/* Imagen con botón play */}
+        <SectionWrapper>
+            <Container maxWidth="lg">
+                <Box
+                    display="flex"
+                    flexDirection={{ xs: 'column', md: 'row' }}
+                    justifyContent="space-between"
+                    alignItems="center"
+                    gap={8}
+                >
+                    {/* Right Column - Image */}
+                    <Slide direction="left" in timeout={1000}>
+                        <Box flex={1} mt={{ xs: 8, md: 0 }} pl={{ md: 6 }}>
+                            <StyledImage src={evolution} alt="Equipo de trabajo" />
+                        </Box>
+                    </Slide>
+                    {/* Left Column - Text */}
+                    <Box flex={1} maxWidth={{ md: '50%' }}>
+                        <Box display="flex" flexDirection="column" gap={4}>
+                            <Slide direction="right" in timeout={800}>
+                                <Typography
+                                    variant="h3"
+                                    sx={{
+                                        fontWeight: 'bold',
+                                        lineHeight: 1.2,
+                                        color: 'text.primary',
+                                    }}
+                                >
+                                    EVOLUCIÓN ORGÁNICA
+                                </Typography>
+                            </Slide>
 
-
-                {/* Texto + Botones */}
-                <Grid item xs={12} md={6}>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            fontWeight: 700,
-                            color: '#1e1e1e',
-                            mb: 2,
-                            textAlign: isMobile ? 'center' : 'left',
-                        }}
-                    >
-                        EVOLUCIÓN ORGÁNICA
-                    </Typography>
-
-                    <Typography
-                        variant="body1"
-                        sx={{
-                            color: '#4b4b4b',
-                            mb: 3,
-                            fontSize: 18,
-                            lineHeight: 1.7,
-                            textAlign: isMobile ? 'center' : 'left',
-                        }}
-                    >
-                        Nuestro equipo, compuesto por talentosos
-                        y experimentados profesionales, se dedica
-                        proporcionar a las organizaciones las
-                        capacidades, herramientas y métodos
-                        necesarios para armonizar y potenciar su
-                        competitividad y desarrollo económico. Con
-                        nuestra visión de transformación, tu
-                        organización no solo crecerá, sino que tambien se convertirá en un referente de innovación y éxito en su sector.
-                    </Typography>
-
-
-
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <Box
-                        sx={{
-                            position: 'relative',
-                            width: '100%',
-                            borderRadius: 4,
-                            overflow: 'hidden',
-                            boxShadow: 3,
-                        }}
-                    >
-                        <img
-                            src={thumbnail}
-                            alt="Video presentación"
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                                display: 'block',
-                            }}
-                        />
-                        <Box
-                            sx={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                transform: 'translate(-50%, -50%)',
-                                backgroundColor: 'rgba(255,255,255,0.9)',
-                                borderRadius: '50%',
-                                width: 64,
-                                height: 64,
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                cursor: 'pointer',
-                                transition: '0.3s',
-                                '&:hover': {
-                                    backgroundColor: 'rgba(255,255,255,1)',
-                                    transform: 'translate(-50%, -50%) scale(1.05)',
-                                }
-                            }}
-                        >
-                            <Box
-                                component="span"
-                                sx={{
-                                    width: 0,
-                                    height: 0,
-                                    borderTop: '12px solid transparent',
-                                    borderBottom: '12px solid transparent',
-                                    borderLeft: '18px solid #f25c05',
-                                }}
-                            />
+                            <Fade in timeout={1000}>
+                                <Typography
+                                    variant="body1"
+                                    sx={{
+                                        color: 'text.secondary',
+                                        maxWidth: '600px',
+                                        lineHeight: 1.7,
+                                        fontSize: 18,
+                                    }}
+                                >
+                                    Nuestro equipo, compuesto por talentosos y experimentados profesionales, se dedica a proporcionar a las organizaciones las capacidades, herramientas y métodos necesarios para armonizar y potenciar su competitividad y desarrollo económico. Con nuestra visión de transformación, tu organización no solo crecerá, sino que también se convertirá en un referente de innovación y éxito en su sector.
+                                </Typography>
+                            </Fade>
                         </Box>
                     </Box>
-                </Grid>
-            </Grid>
-        </Container>
+
+
+                </Box>
+            </Container>
+        </SectionWrapper>
     );
 };
 
