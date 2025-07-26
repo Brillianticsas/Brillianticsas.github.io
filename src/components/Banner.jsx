@@ -98,7 +98,7 @@ const Hero = () => {
                                     }}
                                 >
                                     SOMOS <br />
-                                    AGENTES DE{' '}
+                                    AGENTES DE {' '}
                                     <GradientText>TRANSFORMACIÓN SOCIAL</GradientText>
                                 </Typography>
                             </Slide>
