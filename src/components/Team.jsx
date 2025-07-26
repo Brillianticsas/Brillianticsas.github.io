@@ -108,13 +108,14 @@ const TeamSection = () => {
             display: 'flex',
             transition: 'transform 0.5s ease-in-out',
             transform: `translateX(-${currentSlide * (100 / slidesPerView)}%)`,
-            gap: theme.spacing(3),
+            gap: theme.spacing(0),
         },
         slide: {
-            flex: '0 0 25%',
+            flex: `0 0 ${100 / slidesPerView}%`,
             boxSizing: 'border-box',
-            padding: theme.spacing(1),
+            padding: theme.spacing(2),
         },
+
         card: {
             backgroundColor: theme.palette.background.paper,
             borderRadius: '16px',
