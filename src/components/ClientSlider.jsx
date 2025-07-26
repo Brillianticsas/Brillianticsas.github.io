@@ -13,7 +13,6 @@ import cliente1 from '../images/cliente1.png';
 import cliente2 from '../images/cliente2.png';
 import cliente3 from '../images/cliente3.png';
 import cliente4 from '../images/cliente4.jpg';
-import cliente5 from '../images/cliente5.jpg';
 import cliente6 from '../images/cliente6.png';
 import cliente7 from '../images/cliente7.png';
 import cliente8 from '../images/cliente8.png';
@@ -29,7 +28,6 @@ const ClientSlider = () => {
         { id: 2, img: cliente2 },
         { id: 3, img: cliente3 },
         { id: 4, img: cliente4 },
-        { id: 5, img: cliente5 },
         { id: 6, img: cliente6 },
         { id: 7, img: cliente7 },
         { id: 8, img: cliente8 },
