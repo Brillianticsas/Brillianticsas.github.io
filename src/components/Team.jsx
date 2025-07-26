@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
     Box,
     Container,
@@ -49,6 +49,13 @@ const TeamSection = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [slidesPerView, setSlidesPerView] = useState(3);
 
+    // Refs para scroll y drag
+    const carouselRef = useRef(null);
+    const isDragging = useRef(false);
+    const startX = useRef(0);
+    const scrollLeft = useRef(0);
+
+    // Responsive slidesPerView
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 600) setSlidesPerView(1);
@@ -61,16 +68,51 @@ const TeamSection = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // Carousel nav buttons
     const handleNext = () => {
         if (currentSlide < teamMembers.length - slidesPerView) {
             setCurrentSlide(prev => prev + 1);
+            scrollToSlide(currentSlide + 1);
         }
     };
 
     const handlePrev = () => {
         if (currentSlide > 0) {
             setCurrentSlide(prev => prev - 1);
+            scrollToSlide(currentSlide - 1);
         }
+    };
+
+    const scrollToSlide = (index) => {
+        if (carouselRef.current) {
+            const slideWidth = carouselRef.current.offsetWidth / slidesPerView;
+            carouselRef.current.scrollTo({
+                left: slideWidth * index,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    // Drag Handlers
+    const handleMouseDown = (e) => {
+        isDragging.current = true;
+        startX.current = e.pageX || e.touches[0].pageX;
+        scrollLeft.current = carouselRef.current.scrollLeft;
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging.current) return;
+        const x = e.pageX || e.touches[0].pageX;
+        const walk = (x - startX.current) * 1.5;
+        carouselRef.current.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const handleMouseUp = () => {
+        isDragging.current = false;
+    };
+
+    const handleMouseLeave = () => {
+        isDragging.current = false;
     };
 
     const styles = {
@@ -96,7 +138,6 @@ const TeamSection = () => {
                 left: '25%',
             }
         },
-
         carouselContainer: {
             overflow: 'hidden',
             position: 'relative',
@@ -106,31 +147,25 @@ const TeamSection = () => {
         },
         slidesWrapper: {
             display: 'flex',
-            transition: 'transform 0.5s ease-in-out',
-            transform: `translateX(-${currentSlide * (100 / slidesPerView)}%)`,
             gap: theme.spacing(0),
+            overflowX: 'scroll',
+            scrollBehavior: 'smooth',
+            scrollbarWidth: 'none',
+            '&::-webkit-scrollbar': { display: 'none' },
+            cursor: isDragging.current ? 'grabbing' : 'grab',
         },
-        slide: {
-            flex: `0 0 ${100 / slidesPerView}%`,
-            boxSizing: 'border-box',
-            padding: theme.spacing(2),
-        },
-
         card: {
             backgroundColor: theme.palette.background.paper,
             borderRadius: '16px',
-            paddingTop: theme.spacing(3), // Adjusted padding top for avatar
+            paddingTop: theme.spacing(3),
             boxShadow: theme.shadows[4],
             border: `1px solid ${theme.palette.grey[300]}`,
-            display: 'flex', // Use flexbox for centering
+            display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center', // Center content vertically
-            alignItems: 'center', // Center content horizontally
-            textAlign: 'center', // Center text content
-            // Add transitions for smooth hover effects
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
             transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
-
-            // Hover effects
             '&:hover': {
                 backgroundColor: '#412359',
                 boxShadow: theme.shadows[8],
@@ -143,14 +178,13 @@ const TeamSection = () => {
                     boxShadow: theme.shadows[4],
                 },
             },
-
         },
         avatar: {
             width: 100,
             height: 100,
             border: `4px solid ${theme.palette.background.paper}`,
             boxShadow: theme.shadows[2],
-            transition: 'transform 0.3s ease, box-shadow 0.3s ease', // Smooth transition for zoom
+            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
         },
         cardContent: {
             textAlign: 'center',
@@ -174,11 +208,27 @@ const TeamSection = () => {
                     Nuestro Equipo
                 </Typography>
 
-
                 <Box sx={styles.carouselContainer}>
-                    <Box sx={styles.slidesWrapper}>
+                    <Box
+                        ref={carouselRef}
+                        sx={styles.slidesWrapper}
+                        onMouseDown={handleMouseDown}
+                        onMouseMove={handleMouseMove}
+                        onMouseUp={handleMouseUp}
+                        onMouseLeave={handleMouseLeave}
+                        onTouchStart={handleMouseDown}
+                        onTouchMove={handleMouseMove}
+                        onTouchEnd={handleMouseUp}
+                    >
                         {teamMembers.map((member, index) => (
-                            <Box key={index} sx={styles.slide}>
+                            <Box
+                                key={index}
+                                sx={{
+                                    flex: `0 0 ${100 / slidesPerView}%`,
+                                    boxSizing: 'border-box',
+                                    padding: theme.spacing(2),
+                                }}
+                            >
                                 <Card sx={styles.card}>
                                     <Avatar
                                         alt={member.name}
