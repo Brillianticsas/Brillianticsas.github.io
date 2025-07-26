@@ -83,6 +83,10 @@ const Hero = () => {
                     justifyContent="space-between"
                     alignItems="center"
                     gap={4}
+                    flex={1}
+                    mt={{ xs: 8, md: 0 }}
+                    pl={{ md: 6 }}
+
                 >
                     {/* Left Column */}
                     <Box flex={1} maxWidth={{ md: '50%' }}>
