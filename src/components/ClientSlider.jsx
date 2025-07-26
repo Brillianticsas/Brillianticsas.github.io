@@ -43,19 +43,67 @@ const ClientSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const maxIndex = Math.max(0, clients.length - itemsPerView);
 
+    // Auto-slide
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
-        }, 3000);
+        }, 5000);
         return () => clearInterval(interval);
     }, [maxIndex]);
 
+    // Navegación manual
     const handlePrev = () => {
         setCurrentIndex(prev => (prev <= 0 ? maxIndex : prev - 1));
     };
 
     const handleNext = () => {
         setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
+    };
+
+    // Eventos de arrastre
+    const [startX, setStartX] = useState(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [deltaX, setDeltaX] = useState(0);
+
+    const handleTouchStart = (e) => {
+        setStartX(e.touches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        if (startX === null) return;
+        setDeltaX(e.touches[0].clientX - startX);
+    };
+
+    const handleTouchEnd = () => {
+        if (deltaX > 50 && currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        } else if (deltaX < -50 && currentIndex < maxIndex) {
+            setCurrentIndex(currentIndex + 1);
+        }
+        setStartX(null);
+        setDeltaX(0);
+    };
+
+    const handleMouseDown = (e) => {
+        setStartX(e.clientX);
+        setIsDragging(true);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        setDeltaX(e.clientX - startX);
+    };
+
+    const handleMouseUp = () => {
+        if (!isDragging) return;
+        if (deltaX > 50 && currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        } else if (deltaX < -50 && currentIndex < maxIndex) {
+            setCurrentIndex(currentIndex + 1);
+        }
+        setIsDragging(false);
+        setStartX(null);
+        setDeltaX(0);
     };
 
     return (
@@ -75,9 +123,17 @@ const ClientSlider = () => {
                 <Box
                     sx={{
                         display: 'flex',
-                        transition: 'transform 0.5s ease-in-out',
-                        transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`
+                        transition: isDragging ? 'none' : 'transform 0.5s ease-in-out',
+                        transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+                        cursor: isDragging ? 'grabbing' : 'grab'
                     }}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseUp}
                 >
                     {clients.map((client, index) => (
                         <Box
@@ -122,14 +178,13 @@ const ClientSlider = () => {
                                     />
                                 </Box>
                             ) : (
-                                <Box sx={{ flex: 1 }} /> // espacio vacío para mantener el tamaño
+                                <Box sx={{ flex: 1 }} />
                             )}
                         </Box>
                     ))}
                 </Box>
             </Box>
 
-            {/* Indicadores */}
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, gap: 1 }}>
                 {Array.from({ length: maxIndex + 1 }).map((_, index) => (
                     <Box
