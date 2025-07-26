@@ -75,7 +75,7 @@ const HeroImage = styled('img')(() => ({
 const Hero = () => {
     return (
         <HeroSection>
-            <Container maxWidth="lg">
+            <Container>
                 <Box
                     id="hero"
                     display="flex"
