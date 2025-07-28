@@ -18,6 +18,7 @@ const AppRoutes = () => {
         element={
           <>
             <Hero id="hero" />
+            <Cluster />
             <ClientSlider />
             <OrganicEvolution />
             <Services id="services" />

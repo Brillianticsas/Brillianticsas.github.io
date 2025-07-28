@@ -12,6 +12,14 @@ import WebIcon from '@mui/icons-material/Language';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import LanguageIcon from '@mui/icons-material/Language';
+import DnsIcon from '@mui/icons-material/Dns';
+import SecurityIcon from '@mui/icons-material/Security';
+import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+import WifiIcon from '@mui/icons-material/Wifi';
+import SensorsIcon from '@mui/icons-material/Sensors';
+import CloudQueueIcon from '@mui/icons-material/CloudQueue';
+
 
 const Cluster = () => {
 
@@ -41,94 +49,138 @@ const Cluster = () => {
 
                     </Box>
 
-                    <Button
-                        variant="contained"
-                        size="large"
-                        sx={{ borderRadius: '30px', backgroundColor: '#5A46FF' }}
-                    >
-                        Conoce más                    </Button>
+
                 </Grid>
 
                 {/* DERECHA */}
                 <Grid item xs={12} md={7}>
                     <Grid container spacing={3}>
-                        <Grid item xs={12} sm={4}>
-                            <Card
-                                sx={{
-                                    borderRadius: 3,
-                                    boxShadow: 6,
-                                }}
-                            >
+                        {/* Tarjeta 1 */}
+                        <Grid item xs={12} sm={3}>
+                            <Card sx={{ borderRadius: 3, boxShadow: 6 }}>
                                 <CardContent>
                                     <WebIcon color="primary" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Web Design
+                                        Redes Administrativas
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary" mb={1}>
                                         One for all and all for one,<br />
                                         Muskehounds are always ready.
                                     </Typography>
-                                    <Link href="#" underline="none" color="primary" fontWeight="bold">
-                                        Learn more
-                                    </Link>
                                 </CardContent>
                             </Card>
                         </Grid>
 
-                        <Grid item xs={12} sm={4}>
+                        {/* Tarjeta 2 */}
+                        <Grid item xs={12} sm={3}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
                                 <CardContent>
                                     <LightbulbIcon color="warning" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Ad-Creatives
+                                        Centro de Datos
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary" mb={1}>
                                         Alphabet Village and the subline<br />of her own road.
                                     </Typography>
-                                    <Link href="#" underline="none" color="primary" fontWeight="bold">
-                                        Learn more
-                                    </Link>
                                 </CardContent>
                             </Card>
                         </Grid>
 
-                        <Grid item xs={12} sm={4}>
+                        {/* Tarjeta 3 */}
+                        <Grid item xs={12} sm={3}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
                                 <CardContent>
                                     <SettingsIcon color="error" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Automation
+                                        Seguridad Electrónica
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary" mb={1}>
                                         Little Blind Text should turn<br />around and return.
                                     </Typography>
-                                    <Link href="#" underline="none" color="primary" fontWeight="bold">
-                                        Learn more
-                                    </Link>
                                 </CardContent>
                             </Card>
                         </Grid>
 
-                        <Grid item xs={12} sm={4}>
+                        {/* Tarjeta 4 */}
+                        <Grid item xs={12} sm={3}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
                                 <CardContent>
                                     <AccessTimeIcon color="info" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Infographics
+                                        Redes Eléctricas
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary" mb={1}>
                                         Nothing the copy said could convince her.
                                     </Typography>
-                                    <Link href="#" underline="none" color="primary" fontWeight="bold">
-                                        Learn more
-                                    </Link>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+
+                        {/* Tarjeta 5 */}
+                        <Grid item xs={12} sm={3}>
+                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
+                                <CardContent>
+                                    <AccessTimeIcon color="info" fontSize="large" />
+                                    <Typography variant="h6" fontWeight="bold" mt={1}>
+                                        WIFI
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" mb={1}>
+                                        Nothing the copy said could convince her.
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+
+                        {/* Tarjeta 6 */}
+                        <Grid item xs={12} sm={3}>
+                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
+                                <CardContent>
+                                    <AccessTimeIcon color="info" fontSize="large" />
+                                    <Typography variant="h6" fontWeight="bold" mt={1}>
+                                        Videovigilancia
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" mb={1}>
+                                        She had been warned, but it was too late.
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+
+                        {/* Tarjeta 7 */}
+                        <Grid item xs={12} sm={3}>
+                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
+                                <CardContent>
+                                    <AccessTimeIcon color="info" fontSize="large" />
+                                    <Typography variant="h6" fontWeight="bold" mt={1}>
+                                        Cableado Estructurado
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" mb={1}>
+                                        Far far away, behind the word mountains.
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+
+                        {/* Tarjeta 8 */}
+                        <Grid item xs={12} sm={3}>
+                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
+                                <CardContent>
+                                    <AccessTimeIcon color="info" fontSize="large" />
+                                    <Typography variant="h6" fontWeight="bold" mt={1}>
+                                        Monitoreo Remoto
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" mb={1}>
+                                        She packed her seven versalia.
+                                    </Typography>
                                 </CardContent>
                             </Card>
                         </Grid>
                     </Grid>
                 </Grid>
+
             </Grid>
-        </Box>
+
+        </Box >
     );
 };
 
