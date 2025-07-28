@@ -1,12 +1,20 @@
-import React from "react";
-import "./App.css";
-/* import { HashRouter } from "react-router-dom";*/
-import { BrowserRouter } from 'react-router-dom';
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AppRoutes from "./AppRoutes";
 
-function App() {
+const App = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const redirectPath = sessionStorage.redirect;
+    if (redirectPath) {
+      sessionStorage.removeItem("redirect");
+      navigate(redirectPath, { replace: true });
+    }
+  }, [navigate]);
+
   return (
     <browserRouter>
       <Navbar />
@@ -16,6 +24,6 @@ function App() {
       <Footer />
     </browserRouter>
   );
-}
+};
 
 export default App;
