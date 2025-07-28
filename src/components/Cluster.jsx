@@ -3,36 +3,29 @@ import {
     Box,
     Typography,
     Grid,
-    Button,
     Card,
-    CardContent,
-    Link
+    CardContent
 } from '@mui/material';
 import WebIcon from '@mui/icons-material/Language';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import SettingsIcon from '@mui/icons-material/Settings';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import LanguageIcon from '@mui/icons-material/Language';
-import DnsIcon from '@mui/icons-material/Dns';
-import SecurityIcon from '@mui/icons-material/Security';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import WifiIcon from '@mui/icons-material/Wifi';
 import SensorsIcon from '@mui/icons-material/Sensors';
+import DnsIcon from '@mui/icons-material/Dns';
 import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 
-
 const Cluster = () => {
-
     return (
         <Box sx={{ px: { xs: 3, md: 8 }, py: 6 }}>
             <Grid container spacing={6} alignItems="flex-start">
-                {/* IZQUIERDA */}
-                <Grid item xs={12} md={5}>
+                {/* IZQUIERDA - Texto */}
+                <Grid item xs={12} lg={4}>
                     <Typography variant="h4" fontWeight="bold" gutterBottom>
                         PLATAFORMA<br />DE SOLUCIONES
                     </Typography>
                     <Typography color="text.secondary" paragraph>
-                        "La conectividad e infraestructura son  elementos en una autopista dinámica,<br />
+                        "La conectividad e infraestructura son elementos en una autopista dinámica,<br />
                         que se orquestan entre varios actores, todos en sincronía, que garantizan<br />
                         una correcta y segura fluidez de la información y los servicios".
                     </Typography>
@@ -43,22 +36,17 @@ const Cluster = () => {
                             🛠️ MANTENIMIENTO <br />
                             ⚙️ OPERACIÓN <br />
                             🎨 DISEÑO
-
-
                         </Typography>
-
                     </Box>
-
-
                 </Grid>
 
-                {/* DERECHA */}
-                <Grid item xs={12} md={7}>
+                {/* DERECHA - Tarjetas */}
+                <Grid item xs={12} lg={8}>
                     <Grid container spacing={3}>
                         {/* Tarjeta 1 */}
-                        <Grid item xs={12} sm={3}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Card sx={{ borderRadius: 3, boxShadow: 6 }}>
-                                <CardContent>
+                                <CardContent sx={{ textAlign: 'center' }}>
                                     <WebIcon color="primary" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
                                         Redes Administrativas
@@ -72,9 +60,9 @@ const Cluster = () => {
                         </Grid>
 
                         {/* Tarjeta 2 */}
-                        <Grid item xs={12} sm={3}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent>
+                                <CardContent sx={{ textAlign: 'center' }}>
                                     <LightbulbIcon color="warning" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
                                         Centro de Datos
@@ -87,9 +75,9 @@ const Cluster = () => {
                         </Grid>
 
                         {/* Tarjeta 3 */}
-                        <Grid item xs={12} sm={3}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent>
+                                <CardContent sx={{ textAlign: 'center' }}>
                                     <SettingsIcon color="error" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
                                         Seguridad Electrónica
@@ -102,10 +90,10 @@ const Cluster = () => {
                         </Grid>
 
                         {/* Tarjeta 4 */}
-                        <Grid item xs={12} sm={3}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent>
-                                    <AccessTimeIcon color="info" fontSize="large" />
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <ElectricBoltIcon color="info" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
                                         Redes Eléctricas
                                     </Typography>
@@ -117,10 +105,10 @@ const Cluster = () => {
                         </Grid>
 
                         {/* Tarjeta 5 */}
-                        <Grid item xs={12} sm={3}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent>
-                                    <AccessTimeIcon color="info" fontSize="large" />
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <WifiIcon color="info" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
                                         WIFI
                                     </Typography>
@@ -132,10 +120,10 @@ const Cluster = () => {
                         </Grid>
 
                         {/* Tarjeta 6 */}
-                        <Grid item xs={12} sm={3}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent>
-                                    <AccessTimeIcon color="info" fontSize="large" />
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <SensorsIcon color="info" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
                                         Videovigilancia
                                     </Typography>
@@ -147,10 +135,10 @@ const Cluster = () => {
                         </Grid>
 
                         {/* Tarjeta 7 */}
-                        <Grid item xs={12} sm={3}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent>
-                                    <AccessTimeIcon color="info" fontSize="large" />
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <DnsIcon color="info" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
                                         Cableado Estructurado
                                     </Typography>
@@ -162,10 +150,10 @@ const Cluster = () => {
                         </Grid>
 
                         {/* Tarjeta 8 */}
-                        <Grid item xs={12} sm={3}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent>
-                                    <AccessTimeIcon color="info" fontSize="large" />
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <CloudQueueIcon color="info" fontSize="large" />
                                     <Typography variant="h6" fontWeight="bold" mt={1}>
                                         Monitoreo Remoto
                                     </Typography>
@@ -177,10 +165,8 @@ const Cluster = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-
             </Grid>
-
-        </Box >
+        </Box>
     );
 };
 
