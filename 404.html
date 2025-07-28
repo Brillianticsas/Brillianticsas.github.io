@@ -2,10 +2,19 @@
 <html>
 
 <head>
-    <meta http-equiv="refresh" content="0; URL=/" />
+    <meta charset="UTF-8" />
+    <title>Redirigiendo...</title>
+    <script>
+        // Captura la ruta a la que intentaron acceder
+        const redirectTo = window.location.pathname.replace(/\/+$/, "");
+        // Redirige hacia el mismo path, pero React lo interpretará
+        sessionStorage.redirect = redirectTo;
+        window.location.replace("/");
+    </script>
 </head>
 
 <body>
+    <p>Redirigiendo…</p>
 </body>
 
 </html>
