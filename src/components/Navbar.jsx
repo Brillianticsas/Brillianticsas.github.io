@@ -19,9 +19,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import { HashLink } from 'react-router-hash-link';
 
 const navItems = [
-    { label: 'Inicio', href: '#hero' },
-    { label: 'Servicios', href: '#services' },
-    { label: 'Contacto', href: '#contacto' }
+    { label: 'Inicio', href: 'hero' },
+    { label: 'Servicios', href: 'services' },
+    { label: 'Contacto', href: 'contacto' }
 ];
 
 // Hook para detectar scroll

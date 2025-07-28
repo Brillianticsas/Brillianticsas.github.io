@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Typography, Box, Divider, Link } from '@mui/material';
+import { Container, Typography, Box, Divider } from '@mui/material';
+import { Link as MuiLink } from '@mui/material';
 
 const DataPolitics = () => {
     return (
@@ -96,7 +97,7 @@ const DataPolitics = () => {
                 <Box component="ul" sx={{ pl: 3 }}>
                     <Typography component="li">
                         <strong>Correo electrónico:</strong>{' '}
-                        <Link href="mailto:gerencia@brilliantic.com.co">gerencia@brilliantic.com.co</Link>
+                        <MuiLink href="mailto:gerencia@brilliantic.com.co">gerencia@brilliantic.com.co</MuiLink>
                     </Typography>
                     <Typography component="li"><strong>Plazo de respuesta:</strong> Hasta 15 días hábiles desde la recepción de la solicitud.</Typography>
                     <Typography component="li"><strong>Requisitos mínimos:</strong> Indicar nombre completo, número de identificación, descripción clara de la solicitud y copia del documento de identidad si aplica.</Typography>
