@@ -62,12 +62,10 @@ ${formData.message}
 
     return (
         <Box sx={{
-            width: "100%",
             background: "linear-gradient(135deg, #4d5ca0ff 0%, #1b0c2bff 100%)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            minHeight: "100vh",
             justifyContent: "center",
             px: { xs: 1, sm: 2 },
             py: { xs: 2, sm: 3 }

@@ -13,6 +13,7 @@ import evolution from '../images/evolution.jpg';
 const SectionWrapper = styled(Box)(({ }) => ({
     minHeight: '50vh',
     display: 'flex',
+    padding: '30px',
     alignItems: 'center',
 }));
 

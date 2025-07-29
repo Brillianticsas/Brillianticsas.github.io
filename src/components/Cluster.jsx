@@ -6,167 +6,169 @@ import {
     Card,
     CardContent
 } from '@mui/material';
-import WebIcon from '@mui/icons-material/Language';
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
-import SettingsIcon from '@mui/icons-material/Settings';
-import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
-import WifiIcon from '@mui/icons-material/Wifi';
-import SensorsIcon from '@mui/icons-material/Sensors';
-import DnsIcon from '@mui/icons-material/Dns';
-import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 
+import consultoria from '../images/consultoria.png';
+import sotware from '../images/software.png';
+import seguridadinformacion from '../images/seguridadinformacion.png';
+import infraestructura from '../images/infraestructura.png';
+import brilliantickets from '../images/brilliantickets.png';
 const Cluster = () => {
+
     return (
-        <Box sx={{ px: { xs: 3, md: 8 }, py: 6 }}>
-            <Grid container spacing={6} alignItems="flex-start">
-                {/* IZQUIERDA - Texto */}
-                <Grid item xs={12} lg={4}>
-                    <Typography variant="h4" fontWeight="bold" gutterBottom>
-                        PLATAFORMA<br />DE SOLUCIONES
+        <Box sx={{ px: { xs: 6, md: 8, mb: 4 }, py: 6, borderRadius: 4 }} >
+            {/* Título y descripción */}
+            <Grid
+                container
+                justifyContent="center"
+                sx={{ textAlign: 'center', mb: 4 }}
+            >
+                <Grid item xs={12} md={8}>
+                    <Typography
+                        variant="h1"
+                        sx={{
+                            fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem', lg: '4rem' },
+                            fontWeight: 'bold',
+                            lineHeight: 1.2,
+                            background: 'linear-gradient(90deg, #dd8ad2ff, #27CFF5)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            textShadow: '2px 2px 4px rgba(8, 0, 0, 0.1)',
+                            cursor: 'default',
+                        }}
+                        gutterBottom
+                    >
+                        CLUSTER EVOLUTIVO
                     </Typography>
-                    <Typography color="text.secondary" paragraph>
-                        "La conectividad e infraestructura son elementos en una autopista dinámica,<br />
-                        que se orquestan entre varios actores, todos en sincronía, que garantizan<br />
+
+
+
+                    <Typography
+                        variant="h6"
+                        sx={{
+                            color: 'text.secondary',
+                            maxWidth: '1000px',
+                            lineHeight: 1.6,
+                            fontWeight: 400,
+                        }}
+                    >
+                        "La conectividad e infraestructura son elementos en una autopista dinámica,
+                        que se orquestan entre varios actores, todos en sincronía, que garantizan
                         una correcta y segura fluidez de la información y los servicios".
                     </Typography>
-
-                    <Box mb={2}>
-                        <Typography variant="h6" fontWeight="bold" sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                            📦 INVENTORIA <br />
-                            🛠️ MANTENIMIENTO <br />
-                            ⚙️ OPERACIÓN <br />
-                            🎨 DISEÑO
-                        </Typography>
-                    </Box>
-                </Grid>
-
-                {/* DERECHA - Tarjetas */}
-                <Grid item xs={12} lg={8}>
-                    <Grid container spacing={3}>
-                        {/* Tarjeta 1 */}
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Card sx={{ borderRadius: 3, boxShadow: 6 }}>
-                                <CardContent sx={{ textAlign: 'center' }}>
-                                    <WebIcon color="primary" fontSize="large" />
-                                    <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Redes Administrativas
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary" mb={1}>
-                                        One for all and all for one,<br />
-                                        Muskehounds are always ready.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Tarjeta 2 */}
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent sx={{ textAlign: 'center' }}>
-                                    <LightbulbIcon color="warning" fontSize="large" />
-                                    <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Centro de Datos
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary" mb={1}>
-                                        Alphabet Village and the subline<br />of her own road.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Tarjeta 3 */}
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent sx={{ textAlign: 'center' }}>
-                                    <SettingsIcon color="error" fontSize="large" />
-                                    <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Seguridad Electrónica
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary" mb={1}>
-                                        Little Blind Text should turn<br />around and return.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Tarjeta 4 */}
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent sx={{ textAlign: 'center' }}>
-                                    <ElectricBoltIcon color="info" fontSize="large" />
-                                    <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Redes Eléctricas
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary" mb={1}>
-                                        Nothing the copy said could convince her.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Tarjeta 5 */}
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent sx={{ textAlign: 'center' }}>
-                                    <WifiIcon color="info" fontSize="large" />
-                                    <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        WIFI
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary" mb={1}>
-                                        Nothing the copy said could convince her.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Tarjeta 6 */}
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent sx={{ textAlign: 'center' }}>
-                                    <SensorsIcon color="info" fontSize="large" />
-                                    <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Videovigilancia
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary" mb={1}>
-                                        She had been warned, but it was too late.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Tarjeta 7 */}
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent sx={{ textAlign: 'center' }}>
-                                    <DnsIcon color="info" fontSize="large" />
-                                    <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Cableado Estructurado
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary" mb={1}>
-                                        Far far away, behind the word mountains.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-
-                        {/* Tarjeta 8 */}
-                        <Grid item xs={12} sm={6} md={4}>
-                            <Card sx={{ borderRadius: 3, boxShadow: 2 }}>
-                                <CardContent sx={{ textAlign: 'center' }}>
-                                    <CloudQueueIcon color="info" fontSize="large" />
-                                    <Typography variant="h6" fontWeight="bold" mt={1}>
-                                        Monitoreo Remoto
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary" mb={1}>
-                                        She packed her seven versalia.
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
                 </Grid>
             </Grid>
-        </Box>
+
+            {/* Tarjetas */}
+            <Grid container spacing={4} justifyContent="center">
+                {/* Reusable Card Template */}
+                {[
+                    {
+                        image: consultoria,
+                        title: "CONSULTORÍA INTEGRAL EN TI",
+                        description:
+                            "Conectamos tendencias tecnológicas que respondan a sus objetivos comerciales entendiendo su sector económico, necesidades de transformación digital y entorno sociocultural, para entregar soluciones personalizadas.",
+
+                    },
+                    {
+                        title: "SOFTWARE",
+                        description: "Sea a la medida o como servicio flexible, iterativo y rápido, acompañamos el ciclo completo  desde el diseño hasta la apropiación de los usuarios.",
+                        image: sotware,
+                    },
+
+                    {
+                        title: "BRILLIANTICKETS",
+                        description: "Gestiona de manera eficiente y centralizada todos los Clientes externos e internos  y las solicitudes de tu equipo con el uso de herramientas y servicios tic de la compañía,  bajo un modelo ITSM.( Gestión de servicios de TI)",
+                        image: brilliantickets
+                    },
+                    {
+                        title: "INFRAESTRUCTURA EN TI",
+                        description: "Proporcionarte infraestructura robusta y flexible que pueda crecer junto con tu empresa, respalde tus operaciones comerciales y asegure la continuidad del negocio con un soporte y mantenimiento continuo.",
+                        image: infraestructura
+
+                    },
+                    {
+                        title: "SEGURIDAD DE LA INFORMACIÓN",
+                        description: "Protege la reputación de la organización y garantiza la confidencialidad, integridad y disponibilidad de la información, cumpliendo con regulaciones legales y estándares de la industria.",
+                        image: seguridadinformacion
+
+                    },
+
+
+
+
+                ].map((card, index) => (
+                    <Grid justifyContent={'center'} key={index}>
+                        <Card
+                            sx={{
+                                borderRadius: 3,
+                                boxShadow: 3,
+                                width: '100%',
+                                maxWidth: 350,
+                                height: 320,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                transition: 'transform 0.3s ease',
+                                '&:hover': {
+                                    transform: 'scale(1.03)',
+                                    boxShadow: 8,
+                                },
+                            }}
+                        >
+
+                            <CardContent
+                                sx={{
+                                    textAlign: 'center',
+                                    display: 'flex',
+                                    growflex: 1,
+                                    alignItems: 'center',
+                                    flexDirection: 'column',
+                                    overflow: 'hidden'
+                                }}
+                            >
+                                <Box
+                                    component="img"
+                                    src={card.image}
+                                    alt={card.title}
+                                    sx={{
+                                        width: 100,
+                                        height: 100,
+                                        objectFit: 'contain',
+                                        mx: 'auto',
+                                        mb: 2,
+                                    }}
+                                />
+                                <Typography
+                                    variant="h6"
+                                    sx={{
+                                        color: 'text.primary',
+                                        lineHeight: 1.6,
+                                        fontWeight: 400,
+                                    }}
+                                >
+                                    {card.title}
+                                </Typography>
+                                <Typography
+                                    variant="body2"
+                                    color="text.secondary"
+
+                                    sx={{
+                                        lineHeight: 1.6,
+                                        fontWeight: 400,
+                                        overflow: 'hidden',
+                                        display: '-webkit-box',
+                                        WebkitBoxOrient: 'vertical',
+                                    }}
+                                >
+                                    {card.description}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+
+                ))}
+            </Grid>
+        </Box >
     );
 };
 

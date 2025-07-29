@@ -61,7 +61,7 @@ const SubmitButton = styled(Button)(() => ({
 
 
 const HeroImage = styled('img')(() => ({
-    width: '600px',
+    width: '100%',
     height: '400px',
     maxHeight: '550px',
     borderRadius: '12px',

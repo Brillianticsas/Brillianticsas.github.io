@@ -9,6 +9,8 @@ import DataPolitics from "./components/DataPolitics";
 import OrganicEvolution from "./components/OrganicEvolution";
 import ClientSlider from "./components/ClientSlider";
 import Cluster from "./components/Cluster";
+import TecnologiesInformation from "./components/TecnologiesInformation";
+import BrillianticketsCard from "./components/BrillianticketsCard";
 const AppRoutes = () => {
   return (
     <Routes>
@@ -19,9 +21,8 @@ const AppRoutes = () => {
           <>
             <Hero id="hero" />
             <ClientSlider />
-            <OrganicEvolution />
             <Services id="services" />
-            <Team />
+            <OrganicEvolution />
             <Contact id="contacto" />
           </>
         }

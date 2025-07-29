@@ -104,7 +104,7 @@ const Navbar = () => {
     });
 
     const mobileMenuStyles = {
-        width: '85%',
+        width: '60%',
         background: 'rgba(30, 30, 30, 0.95)',
         backdropFilter: 'blur(20px)',
         color: 'white',
