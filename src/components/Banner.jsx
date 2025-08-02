@@ -17,10 +17,10 @@ import preview from '../images/banner.jpg';
 
 
 const HeroSection = styled(Box)(({ theme }) => ({
-    paddingTop: theme.spacing(10),
+    paddingTop: theme.spacing(15),
     paddingBottom: theme.spacing(2),
 
-    minHeight: '60vh',
+    minHeight: '8s0vh',
     display: 'flex',
     alignItems: 'center',
 }));

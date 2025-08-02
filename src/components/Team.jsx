@@ -13,31 +13,31 @@ import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 
 const teamMembers = [
     {
-        name: 'Jorge Antonio Valencia',
+        name: '',
         role: 'Gerente General',
         description: 'Fundador con más de 10 años de experiencia en tecnología.',
         image: 'https://randomuser.me/api/portraits/men/1.jpg',
     },
     {
-        name: 'John Alexander Mora',
+        name: '',
         role: 'Asesor Comercial',
         description: 'Apasionado por la innovación y el desarrollo de software.',
         image: 'https://randomuser.me/api/portraits/men/3.jpg',
     },
     {
-        name: 'Luisa Fernanda Piamba',
+        name: '',
         role: 'Lider Administrativa',
         description: 'Diseñador centrado en mejorar la experiencia del usuario.',
         image: 'https://randomuser.me/api/portraits/women/4.jpg',
     },
     {
-        name: 'Frand Lebaza',
+        name: '',
         role: 'Desarrollador Full Stack',
         description: 'Encargado del desarrollo del frontend y backend.',
         image: 'https://randomuser.me/api/portraits/men/4.jpg',
     },
     {
-        name: 'Jose Dario Vargas',
+        name: '',
         role: 'Tester QA',
         description: 'Responsable de asegurar la calidad del producto final.',
         image: 'https://randomuser.me/api/portraits/men/5.jpg',

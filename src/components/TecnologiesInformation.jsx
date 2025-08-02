@@ -68,12 +68,13 @@ export default function TecnologiesInformation() {
                     fontSize: { xs: '1rem', sm: '1rem', md: '1rem', lg: '3rem' },
                     fontWeight: 'bold',
                     lineHeight: 1.2,
-                    color: 'text.primary',
+                    background: 'linear-gradient(90deg, #9616afff, #2931a1ff)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    mb: 1,
                 }}
             >
-                <GradientText>
-                    TECNOLOGÍAS DE LA INFORMACIÓN
-                </GradientText>
+                TECNOLOGÍAS DE LA INFORMACIÓN
             </Typography>
 
             <Typography

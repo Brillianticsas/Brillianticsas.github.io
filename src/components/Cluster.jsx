@@ -8,7 +8,6 @@ import {
 } from '@mui/material';
 
 import consultoria from '../images/consultoria.png';
-import sotware from '../images/software.png';
 import seguridadinformacion from '../images/seguridadinformacion.png';
 import infraestructura from '../images/infraestructura.png';
 import brilliantickets from '../images/brilliantickets.png';
@@ -29,7 +28,7 @@ const Cluster = () => {
                             fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem', lg: '4rem' },
                             fontWeight: 'bold',
                             lineHeight: 1.2,
-                            background: 'linear-gradient(90deg, #dd8ad2ff, #27CFF5)',
+                            background: 'linear-gradient(90deg, #9616afff, #2931a1ff)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             textShadow: '2px 2px 4px rgba(8, 0, 0, 0.1)',
@@ -59,7 +58,7 @@ const Cluster = () => {
             </Grid>
 
             {/* Tarjetas */}
-            <Grid container spacing={4} justifyContent="center">
+            <Grid container spacing={10} justifyContent="center">
                 {/* Reusable Card Template */}
                 {[
                     {
@@ -70,28 +69,26 @@ const Cluster = () => {
 
                     },
                     {
-                        title: "SOFTWARE",
-                        description: "Sea a la medida o como servicio flexible, iterativo y rápido, acompañamos el ciclo completo  desde el diseño hasta la apropiación de los usuarios.",
-                        image: sotware,
-                    },
-
-                    {
-                        title: "BRILLIANTICKETS",
-                        description: "Gestiona de manera eficiente y centralizada todos los Clientes externos e internos  y las solicitudes de tu equipo con el uso de herramientas y servicios tic de la compañía,  bajo un modelo ITSM.( Gestión de servicios de TI)",
-                        image: brilliantickets
-                    },
-                    {
                         title: "INFRAESTRUCTURA EN TI",
                         description: "Proporcionarte infraestructura robusta y flexible que pueda crecer junto con tu empresa, respalde tus operaciones comerciales y asegure la continuidad del negocio con un soporte y mantenimiento continuo.",
                         image: infraestructura
 
                     },
+
                     {
                         title: "SEGURIDAD DE LA INFORMACIÓN",
                         description: "Protege la reputación de la organización y garantiza la confidencialidad, integridad y disponibilidad de la información, cumpliendo con regulaciones legales y estándares de la industria.",
                         image: seguridadinformacion
 
                     },
+                    {
+                        title: "BRILLIANTICKETS",
+                        description: "Gestiona de manera eficiente y centralizada todos los Clientes externos e internos  y las solicitudes de tu equipo con el uso de herramientas y servicios tic de la compañía,  bajo un modelo ITSM.( Gestión de servicios de TI)",
+                        image: brilliantickets
+                    }
+
+
+
 
 
 

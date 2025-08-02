@@ -13,7 +13,7 @@ import evolution from '../images/evolution.jpg';
 const SectionWrapper = styled(Box)(({ }) => ({
     minHeight: '50vh',
     display: 'flex',
-    padding: '30px',
+    padding: '70px',
     alignItems: 'center',
 }));
 
@@ -28,6 +28,7 @@ const StyledImage = styled('img')(() => ({
     height: '400px',
     maxHeight: '550px',
     borderRadius: '12px',
+    position: 'relative',
     transition: 'transform 0.3s ease-in-out',
     objectFit: 'cover',
     boxShadow: '0px 6px 30px rgba(0, 0, 0, 0.15)',
@@ -45,17 +46,12 @@ const OrganicEvolution = () => {
                     flexDirection={{ xs: 'column', md: 'row' }}
                     justifyContent="space-between"
                     alignItems="center"
-                    gap={8}
+                    gap={4}
                 >
-                    {/* Right Column - Image */}
-                    <Slide direction="left" in timeout={1000}>
-                        <Box flex={1} mt={{ xs: 8, md: 0 }} pl={{ md: 6 }}>
-                            <StyledImage src={evolution} alt="Equipo de trabajo" />
-                        </Box>
-                    </Slide>
+
                     {/* Left Column - Text */}
-                    <Box flex={1} maxWidth={{ md: '50%' }}>
-                        <Box display="flex" flexDirection="column" gap={4}>
+                    <Box flex={1} maxWidth={{ md: '60%' }}>
+                        <Box display="flex" flexDirection="column" gap={2}>
                             <Slide direction="right" in timeout={800}>
                                 <Typography
                                     variant="h3"
@@ -75,7 +71,7 @@ const OrganicEvolution = () => {
                                     sx={{
                                         color: 'text.secondary',
                                         maxWidth: '600px',
-                                        lineHeight: 1.7,
+                                        lineHeight: 1.5,
                                         fontSize: 18,
                                     }}
                                 >
@@ -83,8 +79,14 @@ const OrganicEvolution = () => {
                                 </Typography>
                             </Fade>
                         </Box>
-                    </Box>
 
+                    </Box>
+                    {/* Right Column - Image */}
+                    <Slide direction="left" in timeout={1000}>
+                        <Box flex={1} mt={{ xs: 8, md: 0 }} pl={{ md: 6 }} >
+                            <StyledImage src={evolution} alt="Equipo de trabajo" />
+                        </Box>
+                    </Slide>
 
                 </Box>
             </Container>

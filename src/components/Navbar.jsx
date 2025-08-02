@@ -14,22 +14,22 @@ import {
     Slide,
     useScrollTrigger
 } from '@mui/material';
+import { Link, useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { HashLink } from 'react-router-hash-link';
 
+// Navegación
 const navItems = [
     { label: 'Inicio', href: '#hero' },
     { label: 'Servicios', href: '#services' },
+    { label: 'Quiénes Somos', href: '/QuienesSomos', isPage: true },
     { label: 'Contacto', href: '#contacto' }
 ];
 
-// Hook para detectar scroll
+// Oculta la navbar al hacer scroll
 function HideOnScroll({ children }) {
-    const trigger = useScrollTrigger({
-        threshold: 100,
-    });
-
+    const trigger = useScrollTrigger({ threshold: 100 });
     return (
         <Slide appear={false} direction="down" in={!trigger}>
             {children}
@@ -38,36 +38,40 @@ function HideOnScroll({ children }) {
 }
 
 const Navbar = () => {
-    const [, setIsTop] = useState(true);
     const [openDrawer, setOpenDrawer] = useState(false);
     const [activeSection, setActiveSection] = useState('inicio');
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            setIsTop(scrollPosition <= 50);
+            if (location.pathname === '/' || location.pathname === '/#' || location.hash) {
+                const sections = ['hero', 'services', 'contacto'];
+                const current = sections.find((section) => {
+                    const element = document.getElementById(section);
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        return rect.top <= 100 && rect.bottom >= 100;
+                    }
+                    return false;
+                });
 
-            // Detectar sección activa
-            const sections = ['inicio', 'services', 'contacto'];
-            const currentSection = sections.find(section => {
-                const element = document.getElementById(section);
-                if (element) {
-                    const rect = element.getBoundingClientRect();
-                    return rect.top <= 100 && rect.bottom >= 100;
+                if (current) {
+                    setActiveSection(current);
                 }
-                return false;
-            });
-
-            if (currentSection) {
-                setActiveSection(currentSection);
             }
         };
 
+        if (location.pathname === '/QuienesSomos') {
+            setActiveSection('quienes-somos');
+        } else {
+            handleScroll();
+        }
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [location]);
 
     const navbarStyles = {
         backgroundColor: 'rgba(30, 30, 30, 0.95)',
@@ -80,7 +84,6 @@ const Navbar = () => {
         py: { xs: 1, md: 1.5 },
     };
 
-
     const linkStyles = (isActive) => ({
         textDecoration: 'none',
         color: 'inherit',
@@ -90,12 +93,8 @@ const Navbar = () => {
         padding: '8px 16px',
         borderRadius: '25px',
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-        backgroundColor: isActive
-            ? 'rgba(66, 165, 245, 0.2)'
-            : 'transparent',
-        border: isActive
-            ? '1px solid rgba(66, 165, 245, 0.4)'
-            : '1px solid transparent',
+        backgroundColor: isActive ? 'rgba(66, 165, 245, 0.2)' : 'transparent',
+        border: isActive ? '1px solid rgba(66, 165, 245, 0.4)' : '1px solid transparent',
         '&:hover': {
             backgroundColor: 'rgba(66, 165, 245, 0.15)',
             transform: 'translateY(-2px)',
@@ -128,16 +127,8 @@ const Navbar = () => {
     return (
         <>
             <HideOnScroll>
-                <AppBar
-                    position="fixed"
-                    elevation={0}
-                    sx={navbarStyles}
-                >
-                    <Toolbar sx={{
-                        justifyContent: 'space-between',
-                        minHeight: { xs: '64px', md: '72px' }
-                    }}>
-                        {/* Logo */}
+                <AppBar position="fixed" elevation={0} sx={navbarStyles}>
+                    <Toolbar sx={{ justifyContent: 'space-between', minHeight: { xs: '64px', md: '72px' } }}>
                         <Box
                             component={HashLink}
                             smooth
@@ -147,9 +138,7 @@ const Navbar = () => {
                                 alignItems: 'center',
                                 textDecoration: 'none',
                                 transition: 'all 0.3s ease',
-                                '&:hover': {
-                                    transform: 'scale(1.05)',
-                                }
+                                '&:hover': { transform: 'scale(1.05)' }
                             }}
                         >
                             <img
@@ -164,23 +153,23 @@ const Navbar = () => {
                             />
                         </Box>
 
-                        {/* Desktop Links */}
                         {!isMobile && (
-                            <Box sx={{
-                                display: 'flex',
-                                gap: 1,
-                                alignItems: 'center'
-                            }}>
+                            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                                 {navItems.map((item) => {
-                                    const sectionName = item.href.replace('#', '');
+                                    const sectionName = item.isPage
+                                        ? 'quienes-somos'
+                                        : item.href.replace('#', '');
+
                                     const isActive = activeSection === sectionName;
+                                    const LinkComponent = item.isPage ? Link : HashLink;
+                                    const toProp = item.isPage ? item.href : `/${item.href}`;
 
                                     return (
                                         <Typography
                                             key={item.label}
-                                            component={HashLink}
-                                            smooth
-                                            to={`/${item.href}`}
+                                            component={LinkComponent}
+                                            smooth={!item.isPage}
+                                            to={toProp}
                                             sx={linkStyles(isActive)}
                                         >
                                             {item.label}
@@ -190,7 +179,6 @@ const Navbar = () => {
                             </Box>
                         )}
 
-                        {/* Mobile Menu Button */}
                         {isMobile && (
                             <IconButton
                                 onClick={() => setOpenDrawer(true)}
@@ -212,14 +200,11 @@ const Navbar = () => {
                 </AppBar>
             </HideOnScroll>
 
-            {/* Drawer para móviles */}
             <Drawer
                 anchor="right"
                 open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
-                PaperProps={{
-                    sx: mobileMenuStyles,
-                }}
+                PaperProps={{ sx: mobileMenuStyles }}
             >
                 <Box sx={{
                     display: 'flex',
@@ -228,9 +213,7 @@ const Navbar = () => {
                     p: 3,
                     borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
                 }}>
-                    <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                        Menú
-                    </Typography>
+                    <Typography variant="h6" sx={{ fontWeight: 700 }}>Menú</Typography>
                     <IconButton
                         onClick={() => setOpenDrawer(false)}
                         sx={{
@@ -247,16 +230,18 @@ const Navbar = () => {
 
                 <List sx={{ pt: 2 }}>
                     {navItems.map((item) => {
-                        const sectionName = item.href.replace('#', '');
+                        const sectionName = item.isPage ? 'quienes-somos' : item.href.replace('#', '');
                         const isActive = activeSection === sectionName;
+                        const LinkComponent = item.isPage ? Link : HashLink;
+                        const toProp = item.isPage ? item.href : `/${item.href}`;
 
                         return (
                             <ListItem
                                 button
                                 key={item.label}
-                                component={HashLink}
-                                smooth
-                                to={`/${item.href}`}
+                                component={LinkComponent}
+                                smooth={!item.isPage}
+                                to={toProp}
                                 onClick={() => setOpenDrawer(false)}
                                 sx={mobileItemStyles(isActive)}
                             >
