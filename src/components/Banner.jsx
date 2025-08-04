@@ -12,8 +12,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link as ScrollLink } from 'react-scroll';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import preview from '../images/banner.jpg';
+import banner from '../images/banner.jpg';
 
 
 const HeroSection = styled(Box)(({ theme }) => ({
@@ -124,11 +123,11 @@ const Hero = () => {
 
                             <Grow in timeout={1200}>
                                 <Box display="flex" gap={1.5} maxWidth="400px">
-                                    <ScrollLink to="contacto" smooth={true} duration={500}>
+                                    <ScrollLink to="acordeon" smooth={true} duration={500}>
                                         <SubmitButton
                                             variant="contained"
                                         >
-                                            Contáctanos
+                                            Conocenos más
                                         </SubmitButton>
                                     </ScrollLink>
                                 </Box>
@@ -145,7 +144,7 @@ const Hero = () => {
                         >
                             <Box >
                                 <HeroImage
-                                    src={preview}
+                                    src={banner}
                                     alt="Team meeting"
                                 />
                             </Box>

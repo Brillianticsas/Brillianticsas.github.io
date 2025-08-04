@@ -22,7 +22,7 @@ import CloseIcon from '@mui/icons-material/Close';
 // Navegación
 const navItems = [
     { label: 'Inicio', href: '#hero' },
-    { label: 'Servicios', href: '#services' },
+    { label: 'Servicios', href: '#acordeon' },
     { label: 'Quiénes Somos', href: '/QuienesSomos', isPage: true },
     { label: 'Contacto', href: '#contacto' }
 ];
