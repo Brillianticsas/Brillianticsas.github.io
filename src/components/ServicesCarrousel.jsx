@@ -102,7 +102,7 @@ const ServicesCarousel = () => {
                         display: 'flex',
                         justifyContent: 'center',
                         gap: 3,
-                        px: 2,
+
                         transition: 'transform 0.5s ease-in-out',
                     }}
                 >

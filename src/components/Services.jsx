@@ -31,6 +31,10 @@ import ip from '../images/ip.png';
 import message from '../images/message.png';
 import form from '../images/form.png';
 import incidente from '../images/incidente.png';
+import profesional from '../images/profesional.png';
+import vision from '../images/vision.png';
+import tecno from '../images/tecno.png';
+import plata from '../images/plata.png';
 
 
 
@@ -217,6 +221,38 @@ const softwareData = {
         }
     ]
 };
+const brillianticketsData = {
+    title: 'BRILLIANTICKETS',
+    description: 'Descubre como a través de herramientas a la medida podemos potenciar la toma de decisiones para incrementar la efectividad de tu equipo de trabajo, ofrecemos una solución integral diseñada para la gestión eficiente de eventos y actividades, que permite a las empresas optimizar sus procesos, mejorar la experiencia del usuario y maximizar el retorno de inversión.',
+    items: [
+        {
+            name: 'Ingenieros Especializados',
+            image: profesional,
+            description: 'Nuestro equipo de ingenieros especializados está dedicado a brindar soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de cada cliente.'
+
+
+        },
+        {
+            name: 'Análisis de Comportamientos',
+            image: vision,
+            description: 'Utilizamos herramientas avanzadas para analizar el comportamiento de los usuarios, lo que nos permite ofrecer una visión 360 de las interacciones y mejorar continuamente la experiencia del cliente.'
+
+        },
+        {
+            name: 'Tecnología a la Medida',
+            image: tecno,
+            description: 'Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de cada cliente, garantizando una integración perfecta con sus procesos existentes.'
+        },
+        {
+            name: 'Plataforma Automatizada',
+            image: plata,
+            description: 'Nuestra plataforma automatizada permite una gestión eficiente de eventos, facilitando la planificación, seguimiento y control de actividades en tiempo real.'
+        }
+    ]
+};
+
+
+
 
 
 
@@ -271,11 +307,18 @@ const Services = () => {
                 />
 
             </div>
-
-            {/* 🎯 Objetivo del scroll 
             <div id="brilliantickets">
-                <BrillianticketsCard />
-            </div>*/}
+                <ServicesCards
+
+                    title={brillianticketsData.title}
+                    description={brillianticketsData.description}
+                    items={brillianticketsData.items}
+                    carouselPosition="left"
+                />
+
+            </div>
+
+
         </div>
     );
 };
