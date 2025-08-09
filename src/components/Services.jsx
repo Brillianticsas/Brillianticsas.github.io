@@ -272,10 +272,10 @@ const Services = () => {
 
             </div>
 
-            {/* 🎯 Objetivo del scroll */}
+            {/* 🎯 Objetivo del scroll 
             <div id="brilliantickets">
                 <BrillianticketsCard />
-            </div>
+            </div>*/}
         </div>
     );
 };
