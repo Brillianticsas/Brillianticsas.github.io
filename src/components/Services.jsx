@@ -1,231 +1,283 @@
-import React from "react";
-import {
-    Box,
-    Typography,
-    Grid,
-    Card,
-    CardContent,
-    CardHeader,
-    Paper,
-    Chip,
-    LinearProgress,
-    Divider,
-    Rating,
-} from "@mui/material";
-import LanguageIcon from "@mui/icons-material/Language";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import CodeIcon from "@mui/icons-material/Code";
-import CloudIcon from "@mui/icons-material/Cloud";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import WorkIcon from "@mui/icons-material/Work";
+import React from 'react';
+import BrillianticketsCard from './BrillianticketsCard';
+import ServicesCarrousel from './ServicesCarrousel';
+import ServicesCards from './ServicesCard';
+import innovacioimg from '../images/innovacion.png'
+import transformacionimg from '../images/transformacion.png'
+import planeacionimg from '../images/planeacion.png'
+import adopcionimg from '../images/adopcion.png';
+import empresarial from '../images/empresarial.png';
+import dedicado from '../images/dedicado.png';
+import transporte from '../images/transporte.png';
+import administracion from '../images/administracion.png'
+import camara from '../images/camara.png';
+import redeselectricas from '../images/redeselectricas.png';
+import fijasymoviles from '../images/fijasymoviles.png';
+import aires from '../images/aires.png';
+import plantas from '../images/plantas.png';
+import ups from '../images/ups.png';
+import confidencialidad from '../images/confidencialidad.png';
+import normativa from '../images/normativa.png';
+import reputacion from '../images/reputacion.png';
+import ataque from '../images/ataque.png';
+import control from '../images/control.png';
+import perimetro from '../images/perimetro.png';
+import continuidad from '../images/continuidad.png';
+import desrrollo from '../images/desarrollo.png';
+import saas from '../images/saas.png';
+import auto from '../images/auto.png';
+import crm from '../images/crm.png';
+import ip from '../images/ip.png';
+import message from '../images/message.png';
+import form from '../images/form.png';
+import incidente from '../images/incidente.png';
 
-const services = [
 
-    {
-        title: "Infraestructura y Conectividad",
-        description: "Diseñamos y operamos infraestructuras de red robustas que aseguran una conectividad fluida y segura para tu operación empresarial.",
-        icon: <LanguageIcon sx={{ fontSize: 24 }} />,
-        color: "#1976d2",
-        gradient: "linear-gradient(135deg, #1976d2 0%, #1565c0 100%)",
-        popularity: 95,
-        features: ["Redes eléctricas", "Wifi empresarial", "Seguridad electrónica"],
-        rating: 4.9,
-    },
-    {
-        title: "Conectividad Empresarial",
-        description: "Servicios dedicados de Internet y transporte de datos en fibra óptica simétrica, garantizando alta disponibilidad y velocidad.",
-        icon: <CloudIcon sx={{ fontSize: 24 }} />,
-        color: "#0097a7",
-        gradient: "linear-gradient(135deg, #0097a7 0%, #006064 100%)",
-        popularity: 88,
-        features: ["Fibra óptica dedicada", "Transporte de datos", "Capas 2 y 3"],
-        rating: 4.7,
-    },
-    {
-        title: "Desarrollo de Aplicaciones",
-        description: "Apps nativas y multiplataforma centradas en la experiencia del usuario, desarrolladas con tecnologías modernas y eficientes.",
-        icon: <PhoneIphoneIcon sx={{ fontSize: 24 }} />,
-        color: "#f57c00",
-        gradient: "linear-gradient(135deg, #f57c00 0%, #ef6c00 100%)",
-        popularity: 92,
-        features: ["Flutter", "React Native", "Swift"],
-        rating: 4.9,
-    },
-    {
-        title: "Desarrollo Backend y Arquitecturas",
-        description: "Diseño y desarrollo de APIs robustas y escalables con arquitecturas modernas, seguras y listas para integraciones complejas.",
-        icon: <CodeIcon sx={{ fontSize: 24 }} />,
-        color: "#7b1fa2",
-        gradient: "linear-gradient(135deg, #7b1fa2 0%, #6a1b9a 100%)",
-        popularity: 89,
-        features: ["Node.js", "Python", "Arquitectura de microservicios"],
-        rating: 4.7,
-    },
-    {
-        title: "Infraestructura en la Nube",
-        description: "Servicios en la nube optimizados para alto rendimiento, escalabilidad y seguridad, con tecnologías líderes como AWS y Azure.",
-        icon: <CloudIcon sx={{ fontSize: 24 }} />,
-        color: "#d32f2f",
-        gradient: "linear-gradient(135deg, #d32f2f 0%, #c62828 100%)",
-        popularity: 84,
-        features: ["AWS", "Azure", "Docker"],
-        rating: 4.8,
-    },
-    {
-        title: "Mesa de Servicio y HelpDesk",
-        description: "Atención centralizada de incidentes y solicitudes bajo el modelo ITSM, con monitoreo de KPI y soporte remoto especializado.",
-        icon: <WorkIcon sx={{ fontSize: 24 }} />,
-        color: "#0288d1",
-        gradient: "linear-gradient(135deg, #0288d1 0%, #0277bd 100%)",
-        popularity: 82,
-        features: ["Modelo ITSM", "Soporte remoto", "Monitoreo de KPI"],
-        rating: 4.7,
-    }
-];
 
-const Services = () => (
-    <Box id="services" sx={{ p: 2 }}>
-        {/* TÍTULO */}
-        <Typography
-            variant="h5"
-            align="center"
-            sx={{ mb: 3, fontWeight: 600 }}
-        >
-            Nuestros Servicios
-        </Typography>
-        <Grid container spacing={2} justifyContent="center">
-            {services.map((service, i) => (
-                <Grid
-                    item
-                    // Ajusta el número de columnas; aquí en XL ocuparán 2/12 (~16%), en MD 3/12 (~25%)
-                    xs={6}
-                    sm={4}
-                    md={3}
-                    lg={2}
-                    key={i}
-                    sx={{ display: "flex", justifyContent: "center" }}
-                >
-                    <Card
-                        sx={{
-                            // Ya no tiene height fija
-                            maxWidth: 280,            // ancho máximo
-                            width: "100%",            // escalar al 100% de su contenedor
-                            borderRadius: 4,
-                            background: "#fff",
-                            border: "1px solid #eee",
-                            display: "inline-flex",   // para adaptarse al contenido
-                            flexDirection: "column",
-                            transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                            "&:hover": {
-                                transform: "translateY(-4px)",
-                                boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
-                            },
-                        }}
-                    >
-                        <CardHeader
-                            avatar={
-                                <Paper
-                                    elevation={4}
-                                    sx={{
-                                        p: 1,
-                                        borderRadius: 3,
-                                        background: service.gradient,
-                                        color: "#fff",
-                                    }}
-                                >
-                                    {service.icon}
-                                </Paper>
-                            }
-                            title={
-                                <>
-                                    <Typography variant="subtitle1" fontWeight={700}>
-                                        {service.title}
-                                    </Typography>
-                                    <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                                        <Rating
-                                            value={service.rating}
-                                            precision={0.1}
-                                            readOnly
-                                            size="small"
-                                        />
-                                        <Typography variant="caption" fontWeight={600}>
-                                            {service.rating}
-                                        </Typography>
-                                    </Box>
-                                </>
-                            }
-                            sx={{ pb: 0 }}
-                        />
+const consultoriaData = {
+    title: 'CONSULTORIA Y FORMACIÓN PARA EL ÉXITO EMPRESARIAL',
+    description: 'Impulsamos la competitividad de su empresa con innovación digital, transformación tecnológica y planeación estratégica en TI.\nImplementamos estándares internacionales que garantizan calidad, seguridad y eficiencia en sus procesos, asegurando una gestión alineada con sus objetivos de negocio y respaldada por tecnología de vanguardia.',
+    items: [
+        {
+            name: 'Innvovación Digital',
+            description: 'Definimos una visión clara y alineada con los objetivos estratégicos de la empresas, ayudando a identificar oportunidades clave para mejorar procesos, productos y servicios a través de la tecnología',
+            image: innovacioimg
+        },
+        {
+            name: 'Transformación Digital',
+            description: 'acompañamos y guiamos los procesos que permitan diferenciación en el mercado, y competitividad, adoptando tecnología de vanguardia.',
+            image: transformacionimg
+        },
+        {
+            name: 'Planeación Estratégica en Tecnologías de la Información',
+            description: 'Sincronice sus objetivos de negocio con sus capacidades tecnológicas para maximizar los recursos alineados estratégicamente bajo actividades evaluadas dentro de un entorno tecnológico.',
+            image: planeacionimg
+        },
+        {
+            name: 'Adopción de Estándares Internacionales ',
+            description: 'Sincronice sus objetivos de negocio con sus capacidades tecnológicas para maximizar los recursos alineados estratégicamente bajo actividades evaluadas dentro de un entorno tecnológico.',
+            image: adopcionimg
+        }
+    ]
+};
 
-                        <CardContent sx={{ pt: 1, px: 2, pb: 2 }}>
-                            <Typography
-                                variant="body2"
-                                sx={{ color: "#555", mb: 1, lineHeight: 1.4 }}
-                            >
-                                {service.description}
-                            </Typography>
+const conectividadData = {
+    title: 'CONECTIVIDAD',
+    description: "Instalamos Internet Dedicado para máxima estabilidad, con segmentación de redes WiFi, adecuación de cableado estructurado en rack y suministro de switches administrables homologados. \nOptimice la seguridad, el rendimiento y la gestión de su red con nuestro servicio especializado.",
+    items: [
+        {
+            name: 'Internet Empresarial',
+            description: 'Servicios de conectividad a nivel nacional en servicios banda ancha con reuso en fibra óptica y redes microondas de respaldo según las necesidades del cliente.',
+            image: empresarial
+        },
+        {
+            name: 'Internet Dedicado',
+            description: 'Conectividad en fibra óptica sin reuso y con simetría en alta velocidad y excelente experiencia de navegación',
+            image: dedicado
+        },
+        {
+            name: 'Transporte de datos',
+            description: 'Navegue bajo su propia intranet desde cualqier parte del país y asegure una perfecta transmisión de datos en servicios simétricos en fibra óptica en capas 2 y 3.',
+            image: transporte
+        },
+        {
+            name: 'Administración de Redes Satelitales y Fijas',
+            description: 'Realice la integración de las distintas redes bajo un único modelo de conectividad administrada para gestionar operación consumo y soporte con nosotros.',
+            image: administracion
+        }
+    ]
+}
 
-                            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mb: 1 }}>
-                                {service.features.map((f, idx) => (
-                                    <Chip
-                                        key={idx}
-                                        label={f}
-                                        size="small"
-                                        variant="outlined"
-                                        sx={{
-                                            bgcolor: `${service.color}10`,
-                                            color: service.color,
-                                            fontSize: "0.7rem",
-                                            border: `1px solid ${service.color}30`,
-                                        }}
-                                    />
-                                ))}
-                            </Box>
+const infraestructuraData = {
+    title: 'INFRAESTRUCTURA FÍSICA Y OPERATIVA',
+    description: 'Brindamos servicios especializados en redes eléctricas (baja, media y alta tensión), plantas eléctricas con mantenimiento preventivo, predictivo y correctivo, y sistemas UPS con suministro y soporte especializado.\nTambién ofrecemos instalación y mantenimiento de sistemas de enfriamiento y aires acondicionados, soluciones de CCTV y seguridad electrónica (cámaras, grabadores, switches, etc.), cableado estructurado, interventoría técnica y operación, así como mantenimiento de infraestructura crítica. \nNuestro equipo garantiza calidad, seguridad y continuidad operativa en cada proyecto, adaptándonos a las necesidades de su empresa.',
+    items: [
+        {
+            name: 'Seguridad Eléctronica',
+            description: 'Diseño, instalación y mantenimiento predictivo, preventivo y correctivo de cámaras de seguridad, grabadores, switches entre otros, con base a normas y protocolos de calidad establecidos por los fabricantes; Asi mismo contamos con centros de servicio aliados para mantenimiento correctivo de equipos electrónicos.',
+            image: camara
+        },
+        {
+            name: 'Redes Eléctricas',
+            description: 'Diseño, instalación y mantenimiento predictivo, preventivo y correctivo de plantas eléctricas, UPS, circuitos eléctricos y redes de protección, de baja, media y alta tensión con personal altamante calificado.',
+            image: redeselectricas
+        },
+        {
+            name: 'Redes Fijas y Móviles',
+            description: 'Suministramos y administramos sistemas de conectividad inalámbrica para optimizar el uso de la red según las necesidades del cliente, zonas Wifi-portal cautivo, redes satelitales, acces point entre otros.',
+            image: fijasymoviles
+        },
+        {
+            name: 'Sistemas de enfriamiento',
+            description: 'Mantenimiento preventivo, predictivo y correctivo de sistemas de aires acondicionados con reportes personalizados y seguimiento de acuerdo a marcos normativos.',
+            image: aires
+        },
 
-                            <Divider sx={{ my: 1 }} />
+        {
+            name: 'Plantas Eléctricas',
+            description: 'Ofrecemos servicio integral de mantenimiento de plantas eléctricas. Equipo técnico altamente capacitado realiza inspecciones preventivas, pruebas de carga, limpieza de componentes, verificación de sistemas de arranque y control, así como el cambio de aceites y filtros según las especificaciones del fabricante.',
+            image: plantas
+        },
+        {
+            name: 'UPS',
+            description: 'Brindamos un servicio especializado de mantenimiento para sistemas UPS. Nuestro mantenimiento incluye la revisión detallada de baterías, ventiladores, conexiones eléctricas, tarjetas electrónicas y sistemas de monitoreo, así como pruebas de respaldo y carga.',
+            image: ups
+        }
+    ]
 
-                            <Box>
-                                <Box
-                                    sx={{
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        mb: 0.5,
-                                    }}
-                                >
-                                    <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                                        <TrendingUpIcon sx={{ fontSize: 16, color: service.color }} />
-                                        <Typography variant="caption" fontWeight={600}>
-                                            Demanda
-                                        </Typography>
-                                    </Box>
-                                    <Typography
-                                        variant="caption"
-                                        fontWeight={700}
-                                        color={service.color}
-                                    >
-                                        {service.popularity}%
-                                    </Typography>
-                                </Box>
-                                <LinearProgress
-                                    variant="determinate"
-                                    value={service.popularity}
-                                    sx={{
-                                        height: 6,
-                                        borderRadius: 3,
-                                        backgroundColor: `${service.color}15`,
-                                        "& .MuiLinearProgress-bar": {
-                                            borderRadius: 3,
-                                            background: service.gradient,
-                                        },
-                                    }}
-                                />
-                            </Box>
-                        </CardContent>
-                    </Card>
-                </Grid>
-            ))}
-        </Grid>
-    </Box>
-);
+
+
+}
+const seguridadData = {
+    title: 'SEGURIDAD DE LA INFORMACIÓN',
+    description: 'Ofrecemos soluciones integrales para proteger la información de su organización, asegurando su confidencialidad, integridad y disponibilidad. Cumplimos con normativas legales, prevenimos ciberataques y filtraciones de datos, y protegemos la reputación organizacional. Implementamos medidas para garantizar la continuidad del negocio, seguridad perimetral y el uso de herramientas y políticas de control adaptadas a las necesidades de cada cliente.',
+    items: [
+        {
+            name: 'Confidencialidad, Integridad y Disponibilidad',
+            description: 'Garantizamos que la información esté protegida contra accesos no autorizados, modificaciones indebidas y que siempre esté disponible para los usuarios autorizados.',
+            image: confidencialidad
+        },
+        {
+            name: 'Cumplimiento de Normativas Legales',
+            description: 'Aseguramos que todos los procesos de gestión de información cumplan con las leyes y regulaciones aplicables, evitando sanciones y riesgos legales.',
+            image: normativa,
+        },
+        {
+            name: 'Protección de Reputación Organizacional',
+            image: reputacion,
+            description: 'Implementamos medidas proactivas para prevenir incidentes que puedan afectar la imagen y credibilidad de su empresa.',
+        },
+        {
+            name: 'Prevención de Ciberataques y Filtraciones',
+            image: ataque,
+            description: 'Desplegamos soluciones avanzadas para identificar, prevenir y mitigar amenazas cibernéticas y fugas de información.',
+        },
+        {
+            name: 'Continuidad del Negocio',
+            image: continuidad,
+            description: 'Diseñamos e implementamos planes de continuidad para que las operaciones críticas se mantengan ante cualquier eventualidad.',
+        },
+        {
+            name: 'Seguridad Perimetral',
+            image: perimetro,
+            description: 'Protegemos la red corporativa mediante firewalls, sistemas de detección y prevención de intrusiones, y monitoreo constante.',
+        },
+        {
+            name: 'Herramientas y Políticas de Control',
+            image: control,
+            description: 'Desarrollamos e implementamos políticas de seguridad y herramientas de monitoreo para una gestión segura y eficiente de la información.',
+        }
+    ]
+}
+
+const softwareData = {
+    title: 'SOFTWARE',
+    description: 'Desarrollamos soluciones de software innovadoras adaptadas a las necesidades de cada cliente, incluyendo desarrollo a la medida, servicios SaaS, automatización de procesos, CRM, sistemas IP PBX, plataformas de mensajería masiva, formularios web y herramientas de gestión de eventos y actividades.',
+    items: [
+        {
+            name: 'Desarrollo de software a la medida',
+            image: desrrollo,
+            description: 'Creamos soluciones de software personalizadas que se adaptan a los procesos, objetivos y necesidades específicas de su organización.',
+
+        },
+        {
+            name: 'SaaS (Software como servicio)',
+            image: saas,
+            description: 'Ofrecemos aplicaciones accesibles desde la nube con disponibilidad 24/7, sin necesidad de instalación local y con escalabilidad garantizada.',
+        },
+        {
+            name: 'Automatización de procesos',
+            image: auto,
+            description: 'Diseñamos sistemas que optimizan y agilizan tareas repetitivas, reduciendo costos operativos y aumentando la eficiencia.',
+        },
+        {
+            name: 'CRM empresarial',
+            image: crm,
+            description: 'Implementamos plataformas CRM para gestionar de forma integral las relaciones con clientes y oportunidades de negocio.',
+        },
+        {
+            name: 'Plataformas IP PBX',
+            image: ip,
+            description: 'Ofrecemos soluciones de telefonía IP para mejorar la comunicación interna y externa de su empresa con flexibilidad y escalabilidad.',
+        },
+        {
+            name: 'Plataformas de mensajería masiva',
+            image: message,
+            description: 'Sistemas que permiten el envío automatizado y segmentado de mensajes a gran escala a través de múltiples canales.',
+        },
+        {
+            name: 'Formularios web',
+            image: form,
+            description: 'Creamos formularios en línea personalizados para capturar, procesar y analizar datos de manera eficiente.',
+        },
+        {
+            name: 'Plataformas de gestión de eventos y actividades',
+            image: incidente,
+            description: 'Soluciones para la planificación, seguimiento y control de eventos y actividades corporativas.',
+        }
+    ]
+};
+
+
+
+const Services = () => {
+    return (
+        <div style={{ padding: '4rem' }}>
+            <ServicesCarrousel />
+            <div id="consultoria">
+                <ServicesCards
+                    id="consultoria"
+                    title={consultoriaData.title}
+                    description={consultoriaData.description}
+                    items={consultoriaData.items}
+                    carouselPosition="right"
+                />
+            </div>
+            <div id="infraestructura">
+                <ServicesCards
+
+                    title={infraestructuraData.title}
+                    description={infraestructuraData.description}
+                    items={infraestructuraData.items}
+                    carouselPosition="left"
+                />
+
+            </div>
+            <div id="conectividad">
+                <ServicesCards
+
+                    title={conectividadData.title}
+                    description={conectividadData.description}
+                    items={conectividadData.items}
+                />
+
+            </div>
+            <div id="seguridad">
+                <ServicesCards
+
+                    title={seguridadData.title}
+                    description={seguridadData.description}
+                    items={seguridadData.items}
+                    carouselPosition="left"
+                />
+
+            </div>
+            <div id="software">
+                <ServicesCards
+
+                    title={softwareData.title}
+                    description={softwareData.description}
+                    items={softwareData.items}
+                />
+
+            </div>
+
+            {/* 🎯 Objetivo del scroll */}
+            <div id="brilliantickets">
+                <BrillianticketsCard />
+            </div>
+        </div>
+    );
+};
 
 export default Services;

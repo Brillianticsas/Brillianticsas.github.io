@@ -61,7 +61,7 @@ export default function BrillianticketsSlider() {
     const next = () => setIndex((i) => (i === cards.length - 1 ? 0 : i + 1));
 
     return (
-        <Box sx={{ py: 6, bgcolor: '#f7f7f7' }}>
+        <Box sx={{ py: 2, bgcolor: '#f7f7f7' }}>
             <Container maxWidth="md">
                 <Typography
                     variant="h2"
@@ -69,7 +69,7 @@ export default function BrillianticketsSlider() {
                     fontWeight={600}
                     gutterBottom
                     sx={{
-                        background: 'linear-gradient(90deg, #9616afff, #2931a1ff)',
+                        background: 'black',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
                         mb: 4,

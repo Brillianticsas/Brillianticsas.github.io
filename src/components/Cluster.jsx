@@ -75,7 +75,7 @@ const Cluster = () => {
                             fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem', lg: '4rem' },
                             fontWeight: 'bold',
                             lineHeight: 1.2,
-                            background: 'linear-gradient(90deg, #9616afff, #2931a1ff)',
+                            background: 'black',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             textShadow: '2px 2px 4px rgba(8, 0, 0, 0.1)',

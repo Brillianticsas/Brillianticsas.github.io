@@ -19,15 +19,13 @@ import { HashLink } from 'react-router-hash-link';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
-// Navegación
 const navItems = [
     { label: 'Inicio', href: '#hero' },
-    { label: 'Servicios', href: '#acordeon' },
+    { label: 'Servicios', href: '/Services', isPage: true },
     { label: 'Quiénes Somos', href: '/QuienesSomos', isPage: true },
     { label: 'Contacto', href: '#contacto' }
 ];
 
-// Oculta la navbar al hacer scroll
 function HideOnScroll({ children }) {
     const trigger = useScrollTrigger({ threshold: 100 });
     return (
@@ -46,21 +44,16 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (location.pathname === '/' || location.pathname === '/#' || location.hash) {
-                const sections = ['hero', 'services', 'contacto'];
-                const current = sections.find((section) => {
-                    const element = document.getElementById(section);
-                    if (element) {
-                        const rect = element.getBoundingClientRect();
-                        return rect.top <= 100 && rect.bottom >= 100;
-                    }
-                    return false;
-                });
-
-                if (current) {
-                    setActiveSection(current);
+            const sections = ['hero', 'services', 'contacto'];
+            const current = sections.find((id) => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    return rect.top <= 100 && rect.bottom >= 100;
                 }
-            }
+                return false;
+            });
+            if (current) setActiveSection(current);
         };
 
         if (location.pathname === '/QuienesSomos') {
@@ -77,8 +70,7 @@ const Navbar = () => {
         backgroundColor: 'rgba(30, 30, 30, 0.95)',
         backdropFilter: 'blur(20px)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-        color: '#ffffff',
-        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        color: '#fff',
         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
         px: { xs: 2, md: 6, lg: 8 },
         py: { xs: 1, md: 1.5 },
@@ -89,12 +81,11 @@ const Navbar = () => {
         color: 'inherit',
         fontWeight: 600,
         fontSize: '0.95rem',
-        position: 'relative',
         padding: '8px 16px',
         borderRadius: '25px',
-        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         backgroundColor: isActive ? 'rgba(66, 165, 245, 0.2)' : 'transparent',
         border: isActive ? '1px solid rgba(66, 165, 245, 0.4)' : '1px solid transparent',
+        transition: 'all 0.3s ease',
         '&:hover': {
             backgroundColor: 'rgba(66, 165, 245, 0.15)',
             transform: 'translateY(-2px)',
@@ -137,59 +128,46 @@ const Navbar = () => {
                                 display: 'flex',
                                 alignItems: 'center',
                                 textDecoration: 'none',
-                                transition: 'all 0.3s ease',
-                                '&:hover': { transform: 'scale(1.05)' }
+                                '&:hover': { transform: 'scale(1.05)' },
+                                transition: 'all 0.3s ease'
                             }}
                         >
                             <img
                                 src="/logo_navbar.png"
                                 alt="Brilliantic SAS"
-                                style={{
-                                    height: '80px',
-                                    width: 'auto',
-                                    maxWidth: '90%',
-                                    objectFit: 'contain'
-                                }}
+                                style={{ height: '80px', objectFit: 'contain' }}
                             />
                         </Box>
 
-                        {!isMobile && (
+                        {!isMobile ? (
                             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                                {navItems.map((item) => {
-                                    const sectionName = item.isPage
-                                        ? 'quienes-somos'
-                                        : item.href.replace('#', '');
-
+                                {navItems.map(({ label, href, isPage }) => {
+                                    const sectionName = isPage ? 'quienes-somos' : href.replace('#', '');
                                     const isActive = activeSection === sectionName;
-                                    const LinkComponent = item.isPage ? Link : HashLink;
-                                    const toProp = item.isPage ? item.href : `/${item.href}`;
+                                    const LinkComponent = isPage ? Link : HashLink;
+                                    const toProp = isPage ? href : `/${href}`;
 
                                     return (
                                         <Typography
-                                            key={item.label}
+                                            key={label}
                                             component={LinkComponent}
-                                            smooth={!item.isPage}
                                             to={toProp}
+                                            smooth={!isPage}
                                             sx={linkStyles(isActive)}
                                         >
-                                            {item.label}
+                                            {label}
                                         </Typography>
                                     );
                                 })}
                             </Box>
-                        )}
-
-                        {isMobile && (
+                        ) : (
                             <IconButton
                                 onClick={() => setOpenDrawer(true)}
                                 color="inherit"
                                 sx={{
                                     backgroundColor: 'rgba(66, 165, 245, 0.15)',
                                     borderRadius: '12px',
-                                    '&:hover': {
-                                        backgroundColor: 'rgba(66, 165, 245, 0.25)',
-                                        transform: 'scale(1.05)',
-                                    },
+                                    '&:hover': { backgroundColor: 'rgba(66, 165, 245, 0.25)', transform: 'scale(1.05)' },
                                     transition: 'all 0.2s ease'
                                 }}
                             >
@@ -219,9 +197,7 @@ const Navbar = () => {
                         sx={{
                             color: 'white',
                             backgroundColor: 'rgba(66, 165, 245, 0.2)',
-                            '&:hover': {
-                                backgroundColor: 'rgba(66, 165, 245, 0.3)',
-                            }
+                            '&:hover': { backgroundColor: 'rgba(66, 165, 245, 0.3)' }
                         }}
                     >
                         <CloseIcon />
@@ -229,27 +205,26 @@ const Navbar = () => {
                 </Box>
 
                 <List sx={{ pt: 2 }}>
-                    {navItems.map((item) => {
-                        const sectionName = item.isPage ? 'quienes-somos' : item.href.replace('#', '');
+                    {navItems.map(({ label, href, isPage }) => {
+                        const sectionName = isPage ? 'quienes-somos' : href.replace('#', '');
                         const isActive = activeSection === sectionName;
-                        const LinkComponent = item.isPage ? Link : HashLink;
-                        const toProp = item.isPage ? item.href : `/${item.href}`;
+                        const LinkComponent = isPage ? Link : HashLink;
+                        const toProp = isPage ? href : `/${href}`;
 
                         return (
                             <ListItem
-                                button
-                                key={item.label}
+                                key={label}
                                 component={LinkComponent}
-                                smooth={!item.isPage}
                                 to={toProp}
+                                smooth={!isPage}
                                 onClick={() => setOpenDrawer(false)}
                                 sx={mobileItemStyles(isActive)}
                             >
                                 <ListItemText
-                                    primary={item.label}
+                                    primary={label}
                                     sx={{
                                         '& .MuiTypography-root': {
-                                            color: "white",
+                                            color: 'white',
                                             fontWeight: isActive ? 700 : 500,
                                             fontSize: '1.1rem'
                                         }

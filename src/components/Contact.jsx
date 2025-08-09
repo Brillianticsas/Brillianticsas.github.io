@@ -36,7 +36,7 @@ const Contact = () => {
         e.preventDefault();
 
         // Crear el enlace mailto con los datos del formulario
-        const mailtoLink = `mailto:demo@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`
+        const mailtoLink = `mailto:gerencia@brilliantic.com.co?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`
 Nombre: ${formData.name}
 Email: ${formData.email}
 

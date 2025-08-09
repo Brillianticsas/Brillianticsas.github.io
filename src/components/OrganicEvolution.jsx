@@ -24,7 +24,7 @@ const GradientText = styled('span')(() => ({
 }));
 
 const StyledImage = styled('img')(() => ({
-    width: '600px',
+    width: '390px',
     height: '400px',
     maxHeight: '550px',
     borderRadius: '12px',

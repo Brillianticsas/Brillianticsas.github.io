@@ -10,7 +10,6 @@ import OrganicEvolution from "./components/OrganicEvolution";
 import ClientSlider from "./components/ClientSlider";
 import Cluster from "./components/Cluster";
 import Acordeon from "./components/Acordeon";
-import BrillianticketsCard from "./components/BrillianticketsCard";
 import QuienesSomos from "./components/QuienesSomos";
 // import Consulting from "./components/Consulting";
 
@@ -26,7 +25,6 @@ const AppRoutes = () => {
             <Cluster id="cluster" />
             <ClientSlider />
             <Acordeon id="acordeon" />
-            <BrillianticketsCard />
             <Contact id="contacto" />
           </>
         }
@@ -35,6 +33,8 @@ const AppRoutes = () => {
       {/* Ruta para política de datos */}
       <Route path="/DataPolitics" element={<DataPolitics />} />
       <Route path="/QuienesSomos" element={<QuienesSomos />} />
+      <Route path="/Services" element={<Services />} />
+
     </Routes>
   );
 };

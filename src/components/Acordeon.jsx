@@ -12,12 +12,12 @@ import {
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import consultoria from '../images/integral.jpeg';
-import infraestructura from '../images/iot.jpg';
-import internet from '../images/conectividad.jpg';
-import seguridad from '../images/seguridad.jpg';
-import software from '../images/software.jpg';
-import brilliantickets from '../images/helpdesk.jpg';
+import consultoria from '../images/1.png';
+import infraestructura from '../images/2.png';
+import internet from '../images/3.png';
+import seguridad from '../images/4.png';
+import software from '../images/5.png';
+import brilliantickets from '../images/6.png';
 
 const servicios = [
     { titulo: 'CONSULTORÍA INTEGRAL EN TI', descripcion: `- Innovación digital\n- Transformación digital\n- Planeación estratégica en Tecnologías de la Información\n- Adopción de estándares internacionales\n- Gestión de la innovación\n- Formación y acompañamiento\n- Estandarización de calidad y seguridad\n- Sincronización de objetivos de negocio con capacidades tecnológicas\n- Consultoría en seguridad de la información`, imagen: consultoria },
@@ -47,12 +47,11 @@ export default function TecnologiesInformation() {
         < Container id="acordeon" maxWidth="lg" sx={{ py: 6 }
         }>
             <Typography
-                variant="h2"
+                variant="h3"
                 align="center"
                 sx={{
-                    fontSize: '2.5rem',
-                    fontWeight: 700,
-                    color: '#37065f',
+                    fontWeight: 600,
+                    color: '#000000ff',
                     mb: 2
                 }}
             >
@@ -73,7 +72,7 @@ export default function TecnologiesInformation() {
                 Descubre cómo nuestros servicios pueden transformar tu día a día.
             </Typography>
 
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4 }}>
+            <Box sx={{ paddingBottom: '50px', display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4 }}>
                 {/* Acordeones 60% */}
                 <Box sx={{ width: { xs: '100%', md: '60%' } }}>
                     {servicios.map((item, index) => (
