@@ -198,21 +198,15 @@ ${formData.message}
 
                     {/* Formulario */}
                     <Grid item xs={12} lg={4}>
-                        <Box sx={{ p: { xs: 1, sm: 2 }, height: "100%" }}>
+                        <Box sx={{ height: "100%" }}>
+
                             <Typography
-                                variant="h5"
+                                variant="h1"
                                 fontWeight="bold"
-                                gutterBottom
-                                sx={{ fontSize: { xs: "1.3rem", sm: "1.5rem" } }}
-                            >
-                                Envíanos un mensaje
-                            </Typography>
-                            <Typography
-                                variant="body2"
-                                color="text.secondary"
+                                color="text.primary"
                                 sx={{
-                                    mb: 3,
-                                    fontSize: { xs: "0.85rem", sm: "0.9rem" }
+                                    mb: 2,
+                                    fontSize: { xs: "0.9rem", sm: "0.9rem" }
                                 }}
                             >
                                 Completa el formulario y nos pondremos en contacto contigo

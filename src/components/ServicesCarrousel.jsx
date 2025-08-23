@@ -101,7 +101,7 @@ const ServicesCarousel = () => {
                     sx={{
                         display: 'flex',
                         justifyContent: 'center',
-                        gap: 3,
+                        gap: 6,
 
                         transition: 'transform 0.5s ease-in-out',
                     }}

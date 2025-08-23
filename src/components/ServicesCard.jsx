@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Container,
@@ -11,10 +11,7 @@ import {
 import { styled } from '@mui/material/styles';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 
-// Estilos reutilizables
-const SectionWrapper = styled(Box)(() => ({
-
-}));
+const SectionWrapper = styled(Box)(() => ({}));
 
 const CarouselCard = styled(Paper)(() => ({
     padding: '40px',
@@ -43,6 +40,15 @@ const ServicesCard = ({ title, subtitle, description, items, carouselPosition = 
         setCurrentIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
     };
 
+    // Auto cambio cada 5s
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleNext();
+        }, 5000); // 5 segundos
+
+        return () => clearInterval(interval); // limpiar cuando desmonta o cambia
+    }, [currentIndex]); // se reinicia cuando cambia el índice
+
     return (
         <Container maxWidth="lg">
             <Box
@@ -61,10 +67,8 @@ const ServicesCard = ({ title, subtitle, description, items, carouselPosition = 
                         <Slide direction={carouselPosition === "right" ? "right" : "left"} in timeout={800}>
                             <Typography
                                 variant="h4"
-
                                 sx={{
                                     mt: 2,
-
                                     fontWeight: 'bold',
                                     color: '#31177aff',
                                 }}
@@ -124,6 +128,7 @@ const ServicesCard = ({ title, subtitle, description, items, carouselPosition = 
                                 >
                                     {items[currentIndex].description}
                                 </Typography>
+
                                 {/* Indicadores */}
                                 <Box sx={{ mt: 1, display: 'flex', justifyContent: 'center', gap: 1 }}>
                                     {items.map((_, i) => (
@@ -161,8 +166,6 @@ const ServicesCard = ({ title, subtitle, description, items, carouselPosition = 
                             >
                                 <ArrowForwardIos fontSize="small" />
                             </IconButton>
-
-
                         </Box>
                     </Slide>
                 </Box>
