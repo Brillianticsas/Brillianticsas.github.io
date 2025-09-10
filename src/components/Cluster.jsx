@@ -15,6 +15,7 @@ import infraestructura from '../images/infraestructura.png';
 import brilliantickets from '../images/brilliantickets.png';
 import software from '../images/software.png';
 import internet from '../images/internet.png';
+import integracion from '../images/integracion.png';
 
 const Cluster = () => {
     const cards = [
@@ -39,12 +40,20 @@ const Cluster = () => {
             image: internet,
             color: "#2511d6ff" // azul
         },
+
         {
             title: "SEGURIDAD DE LA INFORMACIÓN",
             description: "Protege la reputación de la organización y garantiza la confidencialidad, integridad y disponibilidad de la información, cumpliendo con regulaciones legales y estándares de la industria.",
             features: ["Confidencialidad", "Normativas"],
             image: seguridadinformacion,
             color: "#c62828" // rojo
+        },
+        {
+            title: "INTELIGENCIA ARTIFICIAL Y AUTOMATIZACIÓN",
+            description: "Implementamos soluciones de IA como agentes conversacionales, asistentes virtuales y automatización de procesos, integrándolas con sus plataformas de negocio para mejorar la eficiencia y experiencia del usuario.",
+            features: ["Agentes IA", "Integración"],
+            image: integracion,
+            color: "#2511d6ff" // azul
         },
         {
             title: "SOFTWARE",
