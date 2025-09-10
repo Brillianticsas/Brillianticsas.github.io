@@ -15,6 +15,7 @@ import internet from '../images/3.png';
 import seguridad from '../images/4.png';
 import software from '../images/5.png';
 import brilliantickets from '../images/6.png';
+import inteligencia from '../images/7.png';
 
 const ServicesCarousel = () => {
     const theme = useTheme();
@@ -25,6 +26,7 @@ const ServicesCarousel = () => {
         { id: 'consultoria', title: 'CONSULTORÍA INTEGRAL EN TI', image: consultoria },
         { id: 'infraestructura', title: 'INFRAESTRUCTURA FÍSICA Y OPERATIVA', image: infraestructura },
         { id: 'conectividad', title: 'CONECTIVIDAD', image: internet },
+        { id: 'inteligencia', title: 'INTELIGENCIA ARTIFICIAL Y AUTOMATIZACIÓN', image: inteligencia },
         { id: 'seguridad', title: 'SEGURIDAD DE LA INFORMACIÓN', image: seguridad },
         { id: 'software', title: 'SOFTWARE', image: software },
         { id: 'brilliantickets', title: 'MESA DE AYUDA Y GESTIÓN DE SERVICIOS (ITSM)', image: brilliantickets },

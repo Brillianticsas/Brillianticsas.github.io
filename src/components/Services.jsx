@@ -1,5 +1,4 @@
 import React from 'react';
-import BrillianticketsCard from './BrillianticketsCard';
 import ServicesCarrousel from './ServicesCarrousel';
 import ServicesCards from './ServicesCard';
 import innovacioimg from '../images/innovacion.png'
@@ -35,7 +34,10 @@ import profesional from '../images/profesional.png';
 import vision from '../images/vision.png';
 import tecno from '../images/tecno.png';
 import plata from '../images/plata.png';
-
+import autoia from '../images/autoia.png';
+import bot from '../images/bot.png';
+import asistenteia from '../images/asistenteia.png';
+import integracion from '../images/integracion.png';
 
 
 const consultoriaData = {
@@ -91,6 +93,35 @@ const conectividadData = {
         }
     ]
 }
+
+const inteligenciaData = {
+    title: 'INTELIGENCIA ARTIFICIAL Y AUTOMATIZACIÓN',
+    description: 'Impulsamos la eficiencia operativa y la innovación en su empresa mediante soluciones de inteligencia artificial y automatización. Desarrollamos agentes conversacionales y asistentes virtuales que mejoran la interacción con clientes y optimizan procesos internos. Además, implementamos sistemas de automatización de procesos con IA, integrándolos con sus plataformas de negocio para maximizar la productividad y reducir costos operativos.',
+    items: [
+        {
+            name: 'Agentes Conversacionales',
+            description: 'Desarrollamos agentes que utilizan procesamiento de lenguaje natural para interactuar de manera efectiva con los usuarios, mejorando la atención al cliente y la experiencia del usuario.',
+            image: bot
+        },
+        {
+            name: 'Asistentes Virtuales',
+            description: 'Creamos asistentes virtuales personalizados que ayudan a automatizar tareas repetitivas, proporcionando soporte 24/7 y mejorando la eficiencia operativa.',
+            image: asistenteia
+        },
+        {
+            name: 'Automatización de Procesos con IA',
+            description: 'Implementamos soluciones de automatización que utilizan inteligencia artificial para optimizar procesos empresariales, reducir errores y aumentar la productividad.',
+            image: autoia
+        },
+        {
+            name: 'Integración con Plataformas de Negocio',
+            description: 'Integramos nuestras soluciones de IA y automatización con sus sistemas y plataformas existentes, asegurando una transición fluida y maximización del retorno de inversión.',
+            image: integracion
+        }
+
+    ]
+}
+
 
 const infraestructuraData = {
     title: 'INFRAESTRUCTURA FÍSICA Y OPERATIVA',
@@ -288,13 +319,23 @@ const Services = () => {
                 />
 
             </div>
+            <div id="inteligencia">
+                <ServicesCards
+
+                    title={inteligenciaData.title}
+                    description={inteligenciaData.description}
+                    items={inteligenciaData.items}
+                    carouselPosition="left"
+
+                />
+
+            </div>
             <div id="seguridad">
                 <ServicesCards
 
                     title={seguridadData.title}
                     description={seguridadData.description}
                     items={seguridadData.items}
-                    carouselPosition="left"
                 />
 
             </div>
@@ -304,6 +345,8 @@ const Services = () => {
                     title={softwareData.title}
                     description={softwareData.description}
                     items={softwareData.items}
+                    carouselPosition="left"
+
                 />
 
             </div>
@@ -313,7 +356,6 @@ const Services = () => {
                     title={brillianticketsData.title}
                     description={brillianticketsData.description}
                     items={brillianticketsData.items}
-                    carouselPosition="left"
                 />
 
             </div>
