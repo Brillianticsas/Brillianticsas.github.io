@@ -244,7 +244,7 @@ ${t.message}
 - Formularios web
 - Plataformas de gestión de eventos y actividades`,imagen:y1},{titulo:"MESA DE AYUDA Y GESTIÓN DE SERVICIOS (ITSM)",descripcion:`- Plataforma Brilliantickets
 - Gestión de solicitudes e incidencias
-- Modelos de soporte en múltiples niveles (hasta Nivel 2)
+- Modelo de soporte en múltiples niveles (hasta Nivel 2)
 - Atención a clientes internos y externos
 - Gestión de servicios para ISP y empresas
 - Seguimiento de KPI e informes personalizados
