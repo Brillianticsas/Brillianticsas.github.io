@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppChatButton from '../components/WhatsAppChatButton';
+import Card3D from '../components/3DCard';
 
 const Arquitectura = () => {
   return (
@@ -25,13 +26,45 @@ const Arquitectura = () => {
           </p>
         </header>
 
-        {/* 2. DIAGRAMA PRINCIPAL DOMINANTE VECTORIAL SPOC CONCÉNTRICO */}
+        {/* 2. DIAGRAMA PRINCIPAL DOMINANTE VECTORIAL SPOC CONCÉNTRICO (TARJETA 3D) */}
         <section aria-label="Cobertura Nacional SPOC y Niveles Operativos" className="mb-16 lg:mb-20">
-          <div className="rounded-2xl border border-[#232A3B] bg-[#171B26] p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
-            <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#8B5CF6]/15 rounded-full blur-3xl pointer-events-none"></div>
+          <Card3D
+            className="w-full max-w-7xl mx-auto"
+            faceLabels={['Cobertura SPOC (Vista 1)', 'Beneficios del Modelo (Vista 2)']}
+            showControls={true}
+          >
+            {/* CARA 1: COBERTURA NACIONAL SPOC */}
+            <div className="w-full rounded-2xl border border-[#232A3B] bg-[#171B26] p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+              <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+              <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#8B5CF6]/15 rounded-full blur-3xl pointer-events-none"></div>
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Banner interactivo UX: Acceso a Cara 2 */}
+              <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 mb-6 p-3.5 rounded-xl bg-gradient-to-r from-brand-cyan/15 via-brand-cyanBright/10 to-brand-magenta/15 border border-brand-cyan/40 backdrop-blur-md shadow-lg">
+                <div className="flex items-center gap-3">
+                  <span className="relative flex h-3.5 w-3.5 flex-shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-brand-cyan"></span>
+                  </span>
+                  <div className="text-left">
+                    <span className="font-mono text-xs text-brand-cyan uppercase tracking-wider block font-bold">
+                      ⚡ ARQUITECTURA SPOC // DOBLE VISTA INTERACTIVA
+                    </span>
+                    <span className="text-[#94A3B8] text-xs hidden sm:inline">
+                      Gire la tarjeta para explorar los beneficios del modelo integrado
+                    </span>
+                  </div>
+                </div>
+                <Card3D.Trigger
+                  to={1}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-brand text-slate-950 font-display text-xs sm:text-sm font-bold shadow-[0_0_20px_rgba(25,227,255,0.4)] hover:shadow-[0_0_28px_rgba(217,0,196,0.6)] hover:scale-105 active:scale-95 transition-all cursor-pointer flex-shrink-0"
+                >
+                  <span className="material-symbols-outlined text-[18px]">sync_alt</span>
+                  <span>Girar para ver Beneficios</span>
+                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </Card3D.Trigger>
+              </div>
+
+              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* COLUMNA IZQUIERDA: MÉTRICAS Y MAPA DE COLOMBIA CON CONEXIONES */}
               <div className="lg:col-span-7 flex flex-col justify-between h-full">
                 <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
@@ -249,88 +282,149 @@ const Arquitectura = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* 3. BENEFICIOS DEL MODELO INTEGRADO */}
-        <section aria-label="Beneficios del modelo de integración" className="mb-16 lg:mb-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-mono uppercase tracking-wider text-brand-cyan font-semibold block mb-2">
-              Valor institucional
-            </span>
-            <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#F8FAFC]">
-              Beneficios del modelo integrado
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {/* Beneficio 1 */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-brand-cyan/40 transition-all duration-200">
-              <div className="w-12 h-12 rounded-lg bg-[#121622] flex items-center justify-center text-brand-cyan mb-4 border border-[#232A3B]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="3" strokeWidth="2"></circle>
-                  <path d="M12 3v3m0 12v3m-9-9h3m12 0h3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                </svg>
+            {/* Pie inferior con trigger de giro Cara 1 */}
+            <div className="mt-8 pt-4 border-t border-[#232A3B] flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="flex items-center gap-2 text-[#94A3B8] font-mono text-xs">
+                <span className="w-2 h-2 rounded-full bg-brand-green"></span>
+                <span>VISTA 1 DE 2 &bull; COBERTURA NACIONAL Y MATRIZ SPOC</span>
               </div>
-              <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Centralización de la gestión</h3>
-              <p className="text-[#94A3B8] text-xs leading-relaxed">
-                Consolidación y gobierno uniforme de componentes y servicios en un único esquema directivo.
-              </p>
-            </div>
-
-            {/* Beneficio 2 */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-brand-cyanBright/40 transition-all duration-200">
-              <div className="w-12 h-12 rounded-lg bg-[#121622] flex items-center justify-center text-brand-cyanBright mb-4 border border-[#232A3B]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                </svg>
-              </div>
-              <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Interoperabilidad</h3>
-              <p className="text-[#94A3B8] text-xs leading-relaxed">
-                Intercambio armónico y fluido de información entre plataformas de diversa naturaleza y propósito.
-              </p>
-            </div>
-
-            {/* Beneficio 3 */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-brand-magenta/40 transition-all duration-200">
-              <div className="w-12 h-12 rounded-lg bg-[#121622] flex items-center justify-center text-brand-magenta mb-4 border border-[#232A3B]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                </svg>
-              </div>
-              <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Visibilidad operativa</h3>
-              <p className="text-[#94A3B8] text-xs leading-relaxed">
-                Claridad total sobre el estado, interacción y comportamiento de las operaciones tecnológicas.
-              </p>
-            </div>
-
-            {/* Beneficio 4 */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-[#8B5CF6]/40 transition-all duration-200">
-              <div className="w-12 h-12 rounded-lg bg-[#121622] flex items-center justify-center text-[#8B5CF6] mb-4 border border-[#232A3B]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                </svg>
-              </div>
-              <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Escalabilidad</h3>
-              <p className="text-[#94A3B8] text-xs leading-relaxed">
-                Crecimiento modular y flexible de la infraestructura sin comprometer la estabilidad actual.
-              </p>
-            </div>
-
-            {/* Beneficio 5 */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-brand-green/40 transition-all duration-200">
-              <div className="w-12 h-12 rounded-lg bg-[#121622] flex items-center justify-center text-brand-green mb-4 border border-[#232A3B]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                </svg>
-              </div>
-              <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Continuidad tecnológica</h3>
-              <p className="text-[#94A3B8] text-xs leading-relaxed">
-                Respaldo coordinado para mantener las funciones críticas activas ante contingencias operativas.
-              </p>
+              <Card3D.Trigger
+                to={1}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#121622] hover:bg-[#1a2030] border border-brand-cyan/40 text-brand-cyan hover:text-white font-mono text-xs font-semibold transition-all cursor-pointer group shadow-sm"
+              >
+                <span>Ver Cara 2: Operaciones &amp; Niveles</span>
+                <span className="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">
+                  flip
+                </span>
+              </Card3D.Trigger>
             </div>
           </div>
-        </section>
+
+          {/* CARA 2: BENEFICIOS DEL MODELO INTEGRADO */}
+          <div className="w-full h-full rounded-2xl border border-[#232A3B] bg-[#171B26] p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#8B5CF6]/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            {/* Header de retorno en Cara 2 */}
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 mb-8 p-3.5 rounded-xl bg-gradient-to-r from-brand-magenta/15 via-[#8B5CF6]/15 to-brand-cyan/15 border border-[#8B5CF6]/40 backdrop-blur-md shadow-lg">
+              <div className="flex items-center gap-3">
+                <span className="relative flex h-3.5 w-3.5 flex-shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8B5CF6] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#8B5CF6]"></span>
+                </span>
+                <div className="text-left">
+                  <span className="font-mono text-xs text-[#8B5CF6] uppercase tracking-wider block font-bold">
+                    ⚡ VISTA 2 // VALOR AGREGADO &amp; GOBERNANZA
+                  </span>
+                  <span className="text-[#94A3B8] text-xs hidden sm:inline">
+                    5 pilares estratégicos de la integración tecnológica
+                  </span>
+                </div>
+              </div>
+              <Card3D.Trigger
+                to={0}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-brand-cyan to-brand-magenta text-slate-950 font-display text-xs sm:text-sm font-bold shadow-[0_0_20px_rgba(25,227,255,0.4)] hover:scale-105 active:scale-95 transition-all cursor-pointer flex-shrink-0"
+              >
+                <span className="material-symbols-outlined text-[18px]">replay</span>
+                <span>Volver a Cobertura Nacional</span>
+              </Card3D.Trigger>
+            </div>
+
+            {/* Título de Beneficios */}
+            <div className="text-center max-w-2xl mx-auto mb-8">
+              <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#F8FAFC]">
+                Beneficios del modelo integrado
+              </h2>
+            </div>
+
+            {/* Grid de 5 Beneficios */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+              {/* Beneficio 1 */}
+              <div className="rounded-xl border border-[#232A3B] bg-[#121622] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-brand-cyan/40 transition-all duration-200">
+                <div className="w-12 h-12 rounded-lg bg-[#171B26] flex items-center justify-center text-brand-cyan mb-4 border border-[#232A3B]">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" strokeWidth="2"></circle>
+                    <path d="M12 3v3m0 12v3m-9-9h3m12 0h3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
+                  </svg>
+                </div>
+                <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Centralización de la gestión</h3>
+                <p className="text-[#94A3B8] text-xs leading-relaxed">
+                  Consolidación y gobierno uniforme de componentes y servicios en un único esquema directivo.
+                </p>
+              </div>
+
+              {/* Beneficio 2 */}
+              <div className="rounded-xl border border-[#232A3B] bg-[#121622] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-brand-cyanBright/40 transition-all duration-200">
+                <div className="w-12 h-12 rounded-lg bg-[#171B26] flex items-center justify-center text-brand-cyanBright mb-4 border border-[#232A3B]">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
+                  </svg>
+                </div>
+                <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Interoperabilidad</h3>
+                <p className="text-[#94A3B8] text-xs leading-relaxed">
+                  Intercambio armónico y fluido de información entre plataformas de diversa naturaleza y propósito.
+                </p>
+              </div>
+
+              {/* Beneficio 3 */}
+              <div className="rounded-xl border border-[#232A3B] bg-[#121622] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-brand-magenta/40 transition-all duration-200">
+                <div className="w-12 h-12 rounded-lg bg-[#171B26] flex items-center justify-center text-brand-magenta mb-4 border border-[#232A3B]">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
+                    <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
+                  </svg>
+                </div>
+                <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Visibilidad operativa</h3>
+                <p className="text-[#94A3B8] text-xs leading-relaxed">
+                  Claridad total sobre el estado, interacción y comportamiento de las operaciones tecnológicas.
+                </p>
+              </div>
+
+              {/* Beneficio 4 */}
+              <div className="rounded-xl border border-[#232A3B] bg-[#121622] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-[#8B5CF6]/40 transition-all duration-200">
+                <div className="w-12 h-12 rounded-lg bg-[#171B26] flex items-center justify-center text-[#8B5CF6] mb-4 border border-[#232A3B]">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
+                  </svg>
+                </div>
+                <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Escalabilidad</h3>
+                <p className="text-[#94A3B8] text-xs leading-relaxed">
+                  Crecimiento modular y flexible de la infraestructura sin comprometer la estabilidad actual.
+                </p>
+              </div>
+
+              {/* Beneficio 5 */}
+              <div className="rounded-xl border border-[#232A3B] bg-[#121622] p-5 text-center flex flex-col items-center shadow-sm hover:-translate-y-1 hover:border-brand-green/40 transition-all duration-200">
+                <div className="w-12 h-12 rounded-lg bg-[#171B26] flex items-center justify-center text-brand-green mb-4 border border-[#232A3B]">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
+                  </svg>
+                </div>
+                <h3 className="font-display font-bold text-base text-[#F8FAFC] mb-2">Continuidad tecnológica</h3>
+                <p className="text-[#94A3B8] text-xs leading-relaxed">
+                  Respaldo coordinado para mantener las funciones críticas activas ante contingencias operativas.
+                </p>
+              </div>
+            </div>
+
+            {/* Pie inferior Cara 2 */}
+            <div className="mt-auto pt-6 border-t border-[#232A3B] flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="flex items-center gap-2 text-[#94A3B8] font-mono text-xs">
+                <span className="w-2 h-2 rounded-full bg-[#8B5CF6]"></span>
+                <span>VISTA 2 DE 2 &bull; BENEFICIOS DEL MODELO INTEGRADO</span>
+              </div>
+              <Card3D.Trigger
+                to={0}
+                className="inline-flex items-center gap-1.5 text-brand-cyan hover:text-white font-mono text-xs font-semibold transition-colors cursor-pointer"
+              >
+                <span className="material-symbols-outlined text-sm">arrow_back</span>
+                <span>Girar tarjeta y volver a Cobertura Nacional (Vista 1)</span>
+              </Card3D.Trigger>
+            </div>
+          </div>
+        </Card3D>
+      </section>
 
         {/* 4. CTA DESTACADO DE CIERRE */}
         <section aria-label="Llamado a la acción" className="rounded-2xl border border-[#232A3B] bg-[#171B26] p-8 sm:p-12 relative overflow-hidden text-center shadow-2xl mb-12">

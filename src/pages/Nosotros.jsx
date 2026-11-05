@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppChatButton from '../components/WhatsAppChatButton';
+import Card3D from '../components/3DCard';
 
 const Nosotros = () => {
-  const [isFlipped, setIsFlipped] = useState(false);
   return (
     <div className="bg-surface-dark-base text-on-surface font-body-md text-body-md min-h-screen selection:bg-primary-container selection:text-on-primary-container relative overflow-x-hidden flex flex-col justify-between">
       {/* Fondo ambiental */}
@@ -34,50 +34,43 @@ const Nosotros = () => {
 
           {/* 2. PRESENTACIÓN CORPORATIVA: 3D FLASHCARD INTERACTIVA */}
           <section className="w-full mb-space-3xl">
-            <div className="max-w-4xl mx-auto w-full card-perspective">
-              <div
-                className={`relative w-full transition-transform duration-700 card-preserve-3d ${
-                  isFlipped ? 'card-rotate-y-180' : 'card-rotate-y-0'
-                }`}
-              >
-                {/* CARA FRONTAL: PERFIL EJECUTIVO & EQUIPO */}
-                <div
-                  className={`w-full bg-surface-dark-indigo/80 border border-dark-subtle rounded-2xl p-space-lg sm:p-space-xl shadow-2xl relative overflow-hidden flex flex-col card-backface-hidden ${
-                    isFlipped ? 'pointer-events-none' : ''
-                  }`}
-                >
-                  <div className="absolute -top-12 -left-12 w-64 h-64 bg-cyan-bright/5 rounded-full blur-3xl pointer-events-none"></div>
+            <Card3D
+              className="max-w-4xl mx-auto w-full"
+              faceLabels={['Perfil Directivo', 'Stack Tecnológico']}
+            >
+              {/* CARA FRONTAL: PERFIL EJECUTIVO & EQUIPO */}
+              <div className="w-full bg-surface-dark-indigo/80 border border-dark-subtle rounded-2xl p-space-lg sm:p-space-xl shadow-2xl relative overflow-hidden flex flex-col">
+                <div className="absolute -top-12 -left-12 w-64 h-64 bg-cyan-bright/5 rounded-full blur-3xl pointer-events-none"></div>
 
-                  {/* Banner interactivo UX: Indicador visible y llamativo del Stack de herramientas */}
-                  <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 mb-space-md p-3.5 rounded-xl bg-gradient-to-r from-cyan-bright/15 via-primary/10 to-brand-magenta/15 border border-cyan-bright/40 backdrop-blur-md shadow-lg group hover:border-cyan-bright transition-all">
-                    <div className="flex items-center gap-3">
-                      <span className="relative flex h-3.5 w-3.5 flex-shrink-0">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-bright opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-cyan-bright"></span>
+                {/* Banner interactivo UX: Indicador visible y llamativo del Stack de herramientas */}
+                <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 mb-space-md p-3.5 rounded-xl bg-gradient-to-r from-cyan-bright/15 via-primary/10 to-brand-magenta/15 border border-cyan-bright/40 backdrop-blur-md shadow-lg group hover:border-cyan-bright transition-all">
+                  <div className="flex items-center gap-3">
+                    <span className="relative flex h-3.5 w-3.5 flex-shrink-0">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-bright opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-cyan-bright"></span>
+                    </span>
+                    <div className="text-left">
+                      <span className="font-label-tech text-xs text-cyan-bright uppercase tracking-wider block font-bold">
+                        ⚡ STACK TECNOLÓGICO MULTINUBE, IA &amp; REDES
                       </span>
-                      <div className="text-left">
-                        <span className="font-label-tech text-xs text-cyan-bright uppercase tracking-wider block font-bold">
-                          ⚡ STACK TECNOLÓGICO MULTINUBE, IA &amp; REDES
-                        </span>
-                        <span className="font-body-sm text-[12px] text-text-dark-muted hidden sm:inline">
-                          AWS • Oracle OCI • Docker • Python • React • WhatsApp API • Fibra Óptica
-                        </span>
-                      </div>
+                      <span className="font-body-sm text-[12px] text-text-dark-muted hidden sm:inline">
+                        AWS • Oracle OCI • Docker • Python • React • WhatsApp API • Fibra Óptica
+                      </span>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => setIsFlipped(true)}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[var(--brand-cyan)] via-[var(--brand-cyan-bright)] to-[var(--brand-magenta)] text-slate-950 font-action-label text-xs sm:text-sm font-bold shadow-[0_0_20px_rgba(25,227,255,0.4)] hover:shadow-[0_0_28px_rgba(217,0,196,0.6)] hover:scale-105 active:scale-95 transition-all cursor-pointer flex-shrink-0"
-                    >
-                      <span className="material-symbols-outlined text-[18px]">
-                        sync_alt
-                      </span>
-                      <span>Girar para ver Stack Técnico</span>
-                      <span className="material-symbols-outlined text-[18px]">
-                        arrow_forward
-                      </span>
-                    </button>
                   </div>
+                  <Card3D.Trigger
+                    to={1}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[var(--brand-cyan)] via-[var(--brand-cyan-bright)] to-[var(--brand-magenta)] text-slate-950 font-action-label text-xs sm:text-sm font-bold shadow-[0_0_20px_rgba(25,227,255,0.4)] hover:shadow-[0_0_28px_rgba(217,0,196,0.6)] hover:scale-105 active:scale-95 transition-all cursor-pointer flex-shrink-0"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">
+                      sync_alt
+                    </span>
+                    <span>Girar para ver Stack Técnico</span>
+                    <span className="material-symbols-outlined text-[18px]">
+                      arrow_forward
+                    </span>
+                  </Card3D.Trigger>
+                </div>
 
                   {/* Header de perfil con fotografía corporativa completa e insignias */}
                   <div className="relative flex flex-col mb-space-lg">
@@ -170,25 +163,20 @@ const Nosotros = () => {
                       <span className="w-2 h-2 rounded-full bg-accent-success"></span>
                       <span>INFRAESTRUCTURA AUDITABLE &bull; CAPACIDADES TÉCNICAS B2B</span>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => setIsFlipped(true)}
+                    <Card3D.Trigger
+                      to={1}
                       className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest border border-cyan-bright/40 text-cyan-bright hover:text-white font-label-tech text-xs font-semibold transition-all cursor-pointer group shadow-sm"
                     >
                       <span>Explorar herramientas &amp; arquitecturas</span>
                       <span className="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">
                         flip
                       </span>
-                    </button>
+                    </Card3D.Trigger>
                   </div>
                 </div>
 
                 {/* CARA POSTERIOR: REVERSO CON EL STACK DE TECNOLOGÍA CERTIFICADA */}
-                <div
-                  className={`absolute inset-0 w-full h-full bg-surface-dark-indigo/95 border-2 border-cyan-bright/40 rounded-2xl p-space-lg sm:p-space-xl shadow-2xl overflow-y-auto flex flex-col justify-between card-backface-hidden card-rotate-y-180 ${
-                    !isFlipped ? 'pointer-events-none' : ''
-                  }`}
-                >
+                <div className="w-full h-full bg-surface-dark-indigo/95 border-2 border-cyan-bright/40 rounded-2xl p-space-lg sm:p-space-xl shadow-2xl overflow-y-auto flex flex-col justify-between">
                   <div className="flex flex-col gap-space-md">
                     {/* Encabezado del Reverso con botón de retorno */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-dark-subtle pb-space-sm">
@@ -201,16 +189,15 @@ const Nosotros = () => {
                           Stack Tecnológico &amp; Herramientas Certificadas
                         </h3>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => setIsFlipped(false)}
+                      <Card3D.Trigger
+                        to={0}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[var(--brand-cyan)] to-[var(--brand-magenta)] text-slate-950 font-action-label text-xs sm:text-sm font-bold shadow-[0_0_18px_rgba(25,227,255,0.35)] hover:scale-105 active:scale-95 transition-all cursor-pointer self-start sm:self-auto"
                       >
                         <span className="material-symbols-outlined text-[18px]">
                           replay
                         </span>
                         <span>Volver al Perfil</span>
-                      </button>
+                      </Card3D.Trigger>
                     </div>
 
                     {/* GRUPO 1: Cloud & DevOps */}
@@ -349,18 +336,16 @@ const Nosotros = () => {
                     <span className="font-label-tech-sm text-text-dark-muted text-xs">
                       // Arquitecturas multinube, IA aplicada e infraestructura corporativa
                     </span>
-                    <button
-                      type="button"
-                      onClick={() => setIsFlipped(false)}
+                    <Card3D.Trigger
+                      to={0}
                       className="inline-flex items-center gap-1.5 text-cyan-bright hover:text-white font-label-tech text-xs font-semibold transition-colors cursor-pointer"
                     >
                       <span className="material-symbols-outlined text-sm">arrow_back</span>
                       <span>Girar tarjeta y ver Perfil de Dirección</span>
-                    </button>
+                    </Card3D.Trigger>
                   </div>
                 </div>
-              </div>
-            </div>
+            </Card3D>
           </section>
 
 
