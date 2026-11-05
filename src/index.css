@@ -404,3 +404,30 @@ html.light polygon[fill="#0a0e18"] {
   animation: pulseRing 3.5s ease-in-out infinite;
   transform-origin: center;
 }
+
+/* ==========================================================================
+   UTILIDADES 3D FLASHCARD INTERACTIVA
+   ========================================================================== */
+.card-perspective {
+  perspective: 1400px;
+}
+
+.card-preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.card-backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-rotate-y-180 {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+.card-rotate-y-0 {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+}
