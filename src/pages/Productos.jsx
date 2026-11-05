@@ -83,10 +83,6 @@ const Productos = () => {
           {/* HEADER SECCIÓN PRODUCTOS */}
           <section className="border-b border-[#20293D] pb-8">
             <div className="mb-6">
-              <div className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.16em] text-[var(--brand-cyan-bright)]">
-                <span className="h-2 w-2 rounded-full bg-[var(--brand-cyan-bright)] shadow-[0_0_8px_var(--brand-cyan)] animate-pulse"></span>
-                PROPIEDAD INTELECTUAL Y DESARROLLO PROPIO (CIIU J6201)
-              </div>
               <h1 className="max-w-4xl text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
                 Tecnología propia diseñada para escalar operaciones y{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand-cyan)] via-[var(--brand-cyan-bright)] to-[var(--brand-magenta)]">

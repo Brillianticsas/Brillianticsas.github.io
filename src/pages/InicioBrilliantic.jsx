@@ -21,16 +21,7 @@ const InicioBrilliantic = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-lg items-center">
               {/* Columna Izquierda: Información & Acciones Estratégicas */}
               <div className="lg:col-span-7 flex flex-col items-start z-10">
-                {/* Telemetría & Etiqueta de Apertura */}
-                <div className="inline-flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-sm mb-space-lg">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-bright opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-success"></span>
-                  </span>
-                  <span className="font-label-tech text-label-tech text-primary tracking-widest uppercase">
-                    PORTAFOLIO CORPORATIVO DE SOLUCIONES E INGENIERÍA TI
-                  </span>
-                </div>
+                
 
                 {/* Título Principal Editorial */}
                 <h1 className="font-display-hero text-headline-xl md:text-display-hero text-on-surface tracking-tight leading-tight max-w-[680px] mb-space-lg font-bold">
@@ -87,9 +78,6 @@ const InicioBrilliantic = () => {
                           IA & INFRAESTRUCTURA SPOC
                         </span>
                       </div>
-                      <span className="font-label-tech-sm text-label-tech-sm text-outline px-2 py-0.5 rounded bg-surface-container-highest/80 backdrop-blur-md">
-                        SYS::STABLE
-                      </span>
                     </div>
                     <div className="relative z-10 p-space-lg pt-0 grid grid-cols-2 gap-space-xs">
                       <div className="p-space-xs rounded-lg bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-space-xs">
@@ -162,10 +150,6 @@ const InicioBrilliantic = () => {
                   <span className="font-label-tech text-label-tech text-on-surface-variant uppercase tracking-wider">
                     RESPALDO INSTITUCIONAL Y EXPERIENCIA EMPRESARIAL
                   </span>
-                </div>
-                <div className="flex items-center gap-space-xs text-outline">
-                  <span className="w-2 h-2 rounded-full bg-accent-success"></span>
-                  <span className="font-label-tech-sm text-label-tech-sm">AUDIT_COMPLIANT</span>
                 </div>
               </div>
 

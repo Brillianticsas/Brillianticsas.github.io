@@ -24,21 +24,6 @@ const Servicios = () => {
 
             {/* 1. ENCABEZADO DE SECCIÓN */}
             <header className="flex flex-col gap-6 lg:gap-8 w-full">
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-green node-pulse"></span>
-                  <span className="font-mono text-xs uppercase tracking-widest text-brand-cyanBright">
-                    ARQUITECTURA INTEGRAL DE EXTREMO A EXTREMO
-                  </span>
-                </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#171b26] text-[#94a3b8] border border-[#232a3b]">
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-[#94a3b8]">
-                    SERVICIOS PROFESIONALES B2B
-                  </span>
-                  <span className="w-1 h-1 rounded-full bg-[#94a3b8]/40"></span>
-                  <span className="font-mono text-[11px] text-brand-cyan">SEC // 03</span>
-                </div>
-              </div>
               <div className="flex flex-col gap-4 max-w-5xl">
                 <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
                   Un ecosistema completo de Ingeniería, Nube e Inteligencia Comercial.
@@ -59,9 +44,6 @@ const Servicios = () => {
                         </svg>
                         <span className="font-sans text-xs tracking-wider font-semibold">Meta</span>
                       </div>
-                      <span className="font-mono text-[10px] text-[#94a3b8] uppercase tracking-wider">
-                        CUADRANTE // 01
-                      </span>
                     </div>
                     <h2 className="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
                       Automatización Comercial, IA y Sistemas ARM/CRM.
@@ -76,9 +58,6 @@ const Servicios = () => {
                 <article className="relative rounded-2xl p-6 sm:p-8 bg-[#0f131d]/90 backdrop-blur-md border border-[#00b8e6]/40 hover:border-[#00b8e6] hover:shadow-[0_16px_36px_-10px_rgba(0,184,230,0.22)] transition-all flex flex-col justify-between group overflow-hidden shadow-xl min-h-[290px]">
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between text-[#00b8e6]">
-                      <span className="font-mono text-[10px] text-[#94a3b8] uppercase tracking-wider">
-                        CUADRANTE // 02
-                      </span>
                       <div className="flex items-center gap-3 text-xs opacity-90">
                         <span className="font-mono font-bold tracking-tight text-sm">aws</span>
                         <div className="w-4 h-4 flex items-center justify-center">
@@ -101,9 +80,6 @@ const Servicios = () => {
                 <article className="relative rounded-2xl p-6 sm:p-8 bg-[#0f131d]/90 backdrop-blur-md border border-[#38bdf8]/40 hover:border-[#38bdf8] hover:shadow-[0_16px_36px_-10px_rgba(56,189,248,0.22)] transition-all flex flex-col justify-between group overflow-hidden shadow-xl min-h-[290px]">
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between text-[#38bdf8]">
-                      <span className="font-mono text-[10px] text-[#94a3b8] uppercase tracking-wider">
-                        CUADRANTE // 03
-                      </span>
                       <span className="material-symbols-outlined text-[20px]">hub</span>
                     </div>
                     <h2 className="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
@@ -119,9 +95,6 @@ const Servicios = () => {
                 <article className="relative rounded-2xl p-6 sm:p-8 bg-[#0f131d]/90 backdrop-blur-md border border-[#10b981]/40 hover:border-[#10b981] hover:shadow-[0_16px_36px_-10px_rgba(16,185,129,0.22)] transition-all flex flex-col justify-between group overflow-hidden shadow-xl min-h-[290px]">
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between text-[#10b981]">
-                      <span className="font-mono text-[10px] text-[#94a3b8] uppercase tracking-wider">
-                        CUADRANTE // 04
-                      </span>
                       <span className="material-symbols-outlined text-[20px]">lan</span>
                     </div>
                     <h2 className="font-heading text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">

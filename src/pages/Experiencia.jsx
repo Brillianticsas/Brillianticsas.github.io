@@ -20,12 +20,6 @@ const Experiencia = () => {
             <div className="absolute top-1/2 right-10 w-80 h-80 bg-tertiary-container/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
             <div className="flex flex-col items-start max-w-4xl">
               {/* Tagline telemetry pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container border border-border-dark-subtle text-cyan-bright mb-6 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-primary animate-ping"></span>
-                <span className="font-label-tech text-label-tech uppercase tracking-widest text-cyan-bright">
-                  EVIDENCIA EMPÍRICA EN OPERACIONES DE MISIÓN CRÍTICA
-                </span>
-              </div>
               {/* Main Section Title */}
               <h1 className="font-headline-xl text-headline-xl text-text-dark-primary tracking-tight mb-6">
                 Impacto medible en sectores<br />
@@ -44,16 +38,10 @@ const Experiencia = () => {
           <section className="w-full mb-20 lg:mb-28">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
               <div>
-                <div className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider mb-1">
-                  // 05.01 ALIANZAS &amp; ECOSISTEMA
-                </div>
                 <h2 className="font-headline-md text-headline-md text-text-dark-primary">
                   Entidades &amp; Despliegues Corporativos
                 </h2>
               </div>
-              <p className="font-label-tech text-label-tech text-text-dark-muted">
-                SLOTS ASIGNADOS: <span className="text-accent-success font-semibold">12 / 12 ACTIVOS</span>
-              </p>
             </div>
 
             {/* Grid 12 Logos Reales + Complementarios */}
@@ -190,16 +178,10 @@ const Experiencia = () => {
           <section className="w-full mb-20 lg:mb-28">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
               <div>
-                <div className="font-label-tech-sm text-label-tech-sm text-primary uppercase tracking-wider mb-1">
-                  // 05.02 IMPACTO COMPROBADO
-                </div>
                 <h2 className="font-headline-md text-headline-md text-text-dark-primary">
                   Casos de Éxito &amp; Soluciones Implementadas
                 </h2>
               </div>
-              <p className="font-body-sm text-body-sm text-text-dark-muted max-w-md">
-                Estructura de intervención metodológica orientada a resultados medibles, escalabilidad y resiliencia de misión crítica.
-              </p>
             </div>
 
             {/* Bento Grid Container */}
@@ -298,9 +280,6 @@ const Experiencia = () => {
             <div className="rounded-2xl bg-surface-container border border-border-dark-subtle p-6 sm:p-10 shadow-lg">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-border-dark-subtle gap-4">
                 <div>
-                  <div className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider mb-1">
-                    // 05.03 CAPACIDAD MULTISECTORIAL
-                  </div>
                   <h2 className="font-headline-md text-headline-md text-text-dark-primary">
                     Experiencia por Sectores Estratégicos
                   </h2>

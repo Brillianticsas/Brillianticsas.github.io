@@ -33,10 +33,6 @@ const Footer = () => {
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
               Soluciones integrales de software propio, inteligencia artificial y conectividad de misión crítica.
             </p>
-            <div className="font-label-tech-sm text-label-tech-sm text-outline flex flex-col gap-1">
-              <span>NIT: 901.453.938-5</span>
-              <span>Cra. 2W #25G-10 Local 26 | Neiva, Huila</span>
-            </div>
           </div>
 
           <div>
@@ -82,7 +78,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-space-lg border-t border-border-dark-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md font-label-tech-sm text-label-tech-sm text-outline">
-          <p>© 2025 Brilliantic S.A.S. Todos los derechos reservados.</p>
+          <p>© 2026 Brilliantic S.A.S. Todos los derechos reservados.</p>
           <div className="flex items-center gap-space-xs">
           </div>
         </div>

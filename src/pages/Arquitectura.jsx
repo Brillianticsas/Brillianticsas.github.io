@@ -14,10 +14,6 @@ const Arquitectura = () => {
       <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex-grow pt-28">
         {/* 1. ENCABEZADO DE SECCIÓN */}
         <header className="max-w-4xl mx-auto text-center mb-14 lg:mb-18">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-cyan/30 bg-[#171B26] text-brand-cyan font-mono text-xs tracking-wider uppercase mb-5 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
-            CONTINUIDAD OPERATIVA EN ZONAS URBANAS Y RURALES CRÍTICAS
-          </div>
           <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-[#F8FAFC] mb-6 leading-tight max-w-4xl mx-auto">
             Cobertura nacional unificada:{' '}
             <span className="block text-gradient-brand text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-cyanBright to-brand-magenta">
@@ -256,149 +252,7 @@ const Arquitectura = () => {
           </div>
         </section>
 
-        {/* 3. CAPAS DE INTEGRACIÓN */}
-        <section aria-label="Capas del modelo de arquitectura" className="mb-16 lg:mb-20">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-            <div>
-              <span className="text-xs font-mono uppercase tracking-wider text-brand-cyan font-semibold block mb-2">
-                Estructura por niveles
-              </span>
-              <h2 className="font-display font-bold text-2xl sm:text-3xl text-[#F8FAFC]">
-                Capas del modelo de integración
-              </h2>
-            </div>
-            {/* NOTA VISIBLE */}
-            <div className="px-3.5 py-2 rounded-lg bg-[#171B26] border border-[#232A3B] text-xs font-mono text-[#94A3B8] max-w-md">
-              <span className="text-brand-magenta font-semibold">● Nota:</span> Propuesta visual de organización, pendiente de validar con la arquitectura real.
-            </div>
-          </div>
-
-          {/* Cuadrícula editorial de las 5 capas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Capa 1: Interacción */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-6 shadow-sm hover:border-brand-cyan/60 transition-colors duration-200 relative flex flex-col justify-between group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-brand-cyan rounded-t-xl"></div>
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono px-2 py-1 rounded bg-brand-cyan/10 text-brand-cyan font-semibold border border-brand-cyan/20">
-                    CAPA 01
-                  </span>
-                  <span className="w-3 h-3 rounded-full bg-brand-cyan/20 flex items-center justify-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan"></span>
-                  </span>
-                </div>
-                <h3 className="font-display font-bold text-xl text-[#F8FAFC] mb-2 group-hover:text-brand-cyan transition-colors">
-                  Interacción
-                </h3>
-                <p className="text-[#94A3B8] text-sm leading-relaxed mb-4">
-                  Canales, interfaces web y móviles, puntos de acceso y experiencias digitales que vinculan usuarios finales y colaboradores con la organización.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#232A3B] font-mono text-xs text-[#94A3B8]">
-                Ámbito: Canales de contacto &amp; accesibilidad
-              </div>
-            </div>
-
-            {/* Capa 2: Aplicaciones y servicios */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-6 shadow-sm hover:border-brand-cyanBright/60 transition-colors duration-200 relative flex flex-col justify-between group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-brand-cyanBright rounded-t-xl"></div>
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono px-2 py-1 rounded bg-brand-cyanBright/10 text-brand-cyanBright font-semibold border border-brand-cyanBright/20">
-                    CAPA 02
-                  </span>
-                  <span className="w-3 h-3 rounded-full bg-brand-cyanBright/20 flex items-center justify-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanBright"></span>
-                  </span>
-                </div>
-                <h3 className="font-display font-bold text-xl text-[#F8FAFC] mb-2 group-hover:text-brand-cyanBright transition-colors">
-                  Aplicaciones y servicios
-                </h3>
-                <p className="text-[#94A3B8] text-sm leading-relaxed mb-4">
-                  Software corporativo, módulos de gestión operativa, productos digitales propios y soluciones especializadas que soportan los procesos de negocio.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#232A3B] font-mono text-xs text-[#94A3B8]">
-                Ámbito: Lógica funcional &amp; plataformas
-              </div>
-            </div>
-
-            {/* Capa 3: Integración */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-6 shadow-sm hover:border-[#8B5CF6]/60 transition-colors duration-200 relative flex flex-col justify-between group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-[#8B5CF6] rounded-t-xl"></div>
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono px-2 py-1 rounded bg-[#8B5CF6]/15 text-[#8B5CF6] font-semibold border border-[#8B5CF6]/20">
-                    CAPA 03
-                  </span>
-                  <span className="w-3 h-3 rounded-full bg-[#8B5CF6]/20 flex items-center justify-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]"></span>
-                  </span>
-                </div>
-                <h3 className="font-display font-bold text-xl text-[#F8FAFC] mb-2 group-hover:text-[#8B5CF6] transition-colors">
-                  Integración
-                </h3>
-                <p className="text-[#94A3B8] text-sm leading-relaxed mb-4">
-                  Mediación de flujos de datos, comunicación entre sistemas heterogéneos, conectividad sincronizada y orquestación de operaciones transversales.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#232A3B] font-mono text-xs text-[#94A3B8]">
-                Ámbito: Interoperabilidad &amp; desacoplamiento
-              </div>
-            </div>
-
-            {/* Capa 4: Infraestructura */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-6 shadow-sm hover:border-brand-magenta/60 transition-colors duration-200 relative flex flex-col justify-between group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-brand-magenta rounded-t-xl"></div>
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono px-2 py-1 rounded bg-brand-magenta/10 text-brand-magenta font-semibold border border-brand-magenta/20">
-                    CAPA 04
-                  </span>
-                  <span className="w-3 h-3 rounded-full bg-brand-magenta/20 flex items-center justify-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-magenta"></span>
-                  </span>
-                </div>
-                <h3 className="font-display font-bold text-xl text-[#F8FAFC] mb-2 group-hover:text-brand-magenta transition-colors">
-                  Infraestructura
-                </h3>
-                <p className="text-[#94A3B8] text-sm leading-relaxed mb-4">
-                  Capas de cómputo, almacenamiento, redes de conectividad corporativa, servidores dedicados y entornos en nube para alta persistencia.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#232A3B] font-mono text-xs text-[#94A3B8]">
-                Ámbito: Redes, cómputo &amp; resiliencia física/nube
-              </div>
-            </div>
-
-            {/* Capa 5: Gestión y monitoreo */}
-            <div className="rounded-xl border border-[#232A3B] bg-[#171B26] p-6 shadow-sm hover:border-brand-green/60 transition-colors duration-200 relative flex flex-col justify-between md:col-span-2 lg:col-span-2 group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-brand-green rounded-t-xl"></div>
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono px-2 py-1 rounded bg-brand-green/10 text-brand-green font-semibold border border-brand-green/20">
-                    CAPA 05
-                  </span>
-                  <span className="w-3 h-3 rounded-full bg-brand-green/20 flex items-center justify-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
-                  </span>
-                </div>
-                <h3 className="font-display font-bold text-xl text-[#F8FAFC] mb-2 group-hover:text-brand-green transition-colors">
-                  Gestión y monitoreo
-                </h3>
-                <p className="text-[#94A3B8] text-sm leading-relaxed mb-4">
-                  Supervisión de salud del ecosistema, soporte estructurado de incidentes, trazabilidad en tiempo real, seguridad de accesos y continuidad del servicio tecnológico continuo.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#232A3B] font-mono text-xs text-[#94A3B8] flex items-center justify-between">
-                <span>Ámbito: Soporte unificado &amp; observabilidad</span>
-                <span className="text-brand-green font-medium">Control integral</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 4. BENEFICIOS DEL MODELO INTEGRADO */}
+        {/* 3. BENEFICIOS DEL MODELO INTEGRADO */}
         <section aria-label="Beneficios del modelo de integración" className="mb-16 lg:mb-20">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-mono uppercase tracking-wider text-brand-cyan font-semibold block mb-2">
@@ -478,7 +332,7 @@ const Arquitectura = () => {
           </div>
         </section>
 
-        {/* 5. CTA DESTACADO DE CIERRE */}
+        {/* 4. CTA DESTACADO DE CIERRE */}
         <section aria-label="Llamado a la acción" className="rounded-2xl border border-[#232A3B] bg-[#171B26] p-8 sm:p-12 relative overflow-hidden text-center shadow-2xl mb-12">
           <div className="absolute -top-24 -right-24 w-80 h-80 bg-brand-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-[#8B5CF6]/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -508,7 +362,7 @@ const Arquitectura = () => {
           </div>
         </section>
 
-        {/* 6. INDICADOR DE CONTINUIDAD SPA */}
+        {/* 5. INDICADOR DE CONTINUIDAD SPA */}
         <div className="w-full flex items-center justify-center pt-8 pb-4">
           <Link
             to="/Experiencia"

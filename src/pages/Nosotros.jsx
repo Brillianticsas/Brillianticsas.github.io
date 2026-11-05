@@ -19,10 +19,6 @@ const Nosotros = () => {
           {/* 1. ENCABEZADO DE SECCIÓN */}
           <section className="relative w-full pt-space-xl pb-space-2xl overflow-hidden">
             <div className="flex flex-col max-w-5xl">
-              <div className="inline-flex items-center gap-space-xs self-start px-3 py-1 rounded bg-surface-container-high text-cyan-bright font-label-tech text-label-tech tracking-wider uppercase mb-space-md shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-bright animate-pulse"></span>
-                GOBERNANZA DE PROYECTOS E INGENIERÍA CERTIFICADA
-              </div>
               <h1 className="font-display-hero text-display-hero text-text-dark-primary font-extrabold tracking-tight mb-space-md">
                 <span className="text-text-dark-primary">Rigor gerencial internacional</span>{' '}
                 <span className="bg-gradient-to-r from-cyan-bright via-primary to-tertiary-container bg-clip-text text-transparent text-gradient-brand">
@@ -32,16 +28,6 @@ const Nosotros = () => {
               <p className="font-body-lg text-body-lg text-text-dark-muted max-w-4xl leading-relaxed">
                 Arquitectura institucional, gobierno técnico y respaldo ejecutivo de alta fidelidad tecnológica en entornos críticos del sector financiero, asegurador y tecnológico en Latinoamérica.
               </p>
-              <div className="flex flex-wrap items-center gap-space-md mt-space-md text-text-dark-muted font-label-tech text-label-tech">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-accent-success"></span>
-                  GOBERNANZA: ACTIVA
-                </span>
-                <span className="opacity-40">/</span>
-                <span className="text-on-surface-variant">INGENIERÍA CERTIFICADA // ALTA DIRECCIÓN</span>
-                <span className="opacity-40">/</span>
-                <span className="text-cyan-bright">NORMATIVA: VIGENTE</span>
-              </div>
             </div>
           </section>
 
@@ -56,7 +42,7 @@ const Nosotros = () => {
                   {/* Fotografía panorámica corporativa de alta fidelidad (aspecto original 16:10 para ver todo el equipo) */}
                   <div className="relative w-full aspect-[2574/1620] rounded-xl overflow-hidden border-2 border-cyan-bright/40 shadow-2xl bg-surface-container-low group/leader mb-space-md">
                     <img
-                      src="/images/AE9A1774.jpg"
+                      src="/images/EquipoB&N.png"
                       alt="Equipo de Dirección e Ingeniería Brilliantic — Jorge Antonio Valencia Córdoba"
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/leader:scale-[1.02]"
                     />
@@ -278,92 +264,6 @@ const Nosotros = () => {
             </div>
           </section>
 
-          {/* 5. RESPALDO INSTITUCIONAL Y LEGAL */}
-          <section className="w-full mb-space-3xl">
-            <div className="bg-surface-dark-indigo rounded-xl p-space-xl shadow-2xl relative overflow-hidden">
-              {/* Decoración de fondo ambiental */}
-              <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-              <div className="flex flex-col md:flex-row md:items-center justify-between mb-space-xl">
-                <div>
-                  <span className="font-label-tech text-label-tech text-cyan-bright block mb-1">
-                    SEGURIDAD JURÍDICA // CUMPLIMIENTO REGULATORIO
-                  </span>
-                  <h2 className="font-headline-lg text-headline-lg text-text-dark-primary">
-                    Respaldo Institucional y Marco Legal
-                  </h2>
-                </div>
-                <div className="mt-4 md:mt-0 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-accent-success"></span>
-                  <span className="font-label-tech text-label-tech text-text-dark-muted">
-                    COMPLIANCE CODE: CO-REG-2025
-                  </span>
-                </div>
-              </div>
-
-              {/* Grid de telemetría y datos legales */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
-                {/* Bloque 1: Información Legal */}
-                <div className="bg-surface-container-high rounded-lg p-space-lg shadow-md flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 text-cyan-bright mb-space-sm">
-                      <span className="material-symbols-outlined text-headline-sm">gavel</span>
-                      <span className="font-label-tech text-label-tech-sm uppercase">CONSTITUCIÓN SOCIETARIA</span>
-                    </div>
-                    <h4 className="font-action-label text-action-label text-text-dark-primary text-base font-bold mb-space-xs">
-                      Brilliantic S.A.S.
-                    </h4>
-                    <p className="font-body-sm text-body-sm text-text-dark-muted leading-relaxed">
-                      Sociedad por Acciones Simplificada legalmente constituida en Colombia. Dedicada a la ingeniería de software, arquitectura cloud e infraestructura crítica bajo actividad económica CIIU J6201.
-                    </p>
-                  </div>
-                  <div className="mt-space-md pt-space-xs font-label-tech-sm text-label-tech-sm text-text-dark-muted flex items-center justify-between border-t border-dark-subtle/50">
-                    <span>ESTADO: ACTIVO Y EN REGLA</span>
-                    <span className="text-cyan-bright">CÁMARA DE COMERCIO</span>
-                  </div>
-                </div>
-
-                {/* Bloque 2: Identificación Empresarial */}
-                <div className="bg-surface-container-high rounded-lg p-space-lg shadow-md flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 text-primary mb-space-sm">
-                      <span className="material-symbols-outlined text-headline-sm">badge</span>
-                      <span className="font-label-tech text-label-tech-sm uppercase">REGISTRO FISCAL</span>
-                    </div>
-                    <h4 className="font-action-label text-action-label text-text-dark-primary text-base font-bold mb-space-xs">
-                      NIT: 901.453.938-5
-                    </h4>
-                    <p className="font-body-sm text-body-sm text-text-dark-muted leading-relaxed">
-                      Registro Único Tributario (RUT) expedido por la DIAN. Responsable de IVA, facturación electrónica validada y cumplimiento regulatorio pleno para contratación pública y privada.
-                    </p>
-                  </div>
-                  <div className="mt-space-md pt-space-xs font-label-tech-sm text-label-tech-sm text-text-dark-muted flex items-center justify-between border-t border-dark-subtle/50">
-                    <span>DIAN COLOMBIA</span>
-                    <span className="text-primary">DV: 5</span>
-                  </div>
-                </div>
-
-                {/* Bloque 3: Sede Corporativa */}
-                <div className="bg-surface-container-high rounded-lg p-space-lg shadow-md flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 text-secondary mb-space-sm">
-                      <span className="material-symbols-outlined text-headline-sm">location_on</span>
-                      <span className="font-label-tech text-label-tech-sm uppercase">DOMICILIO PRINCIPAL</span>
-                    </div>
-                    <h4 className="font-action-label text-action-label text-text-dark-primary text-base font-bold mb-space-xs">
-                      Carrera 2W #25G-10, Local 26
-                    </h4>
-                    <p className="font-body-sm text-body-sm text-text-dark-muted leading-relaxed">
-                      Neiva, Huila — Colombia (C.P. 410001). Sede administrativa, centro de operaciones técnicas y coordinación de proyectos de conectividad nacional y desarrollo TI.
-                    </p>
-                  </div>
-                  <div className="mt-space-md pt-space-xs font-label-tech-sm text-label-tech-sm text-text-dark-muted flex items-center justify-between border-t border-dark-subtle/50">
-                    <span>NEIVA, HUILA</span>
-                    <span className="text-secondary">COBERTURA NACIONAL</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
 
           {/* 6. CIERRE DE TRANSICIÓN SPA: CONTACTO WHATSAPP */}
           <section className="w-full flex flex-col items-center justify-center pt-8 pb-4">
