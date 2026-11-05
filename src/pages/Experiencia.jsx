@@ -1,0 +1,461 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import WhatsAppChatButton from '../components/WhatsAppChatButton';
+
+const Experiencia = () => {
+  return (
+    <div className="bg-surface-dark-base text-text-dark-primary font-sans antialiased min-h-screen selection:bg-cyan-bright/20 selection:text-cyan-bright flex flex-col justify-between overflow-x-hidden">
+      {/* NAVBAR CORPORATIVO INYECTADO */}
+      <Navbar />
+
+      {/* CONTENIDO PRINCIPAL: SECCIÓN 05 EXPERIENCIA B2B */}
+      <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex-1 pt-28">
+        <div className="flex flex-col w-full">
+          {/* ENCABEZADO DE SECCIÓN */}
+          <section className="relative w-full mb-16 lg:mb-24">
+            {/* Ambient micro-glow background decorative elements */}
+            <div className="absolute -top-12 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+            <div className="absolute top-1/2 right-10 w-80 h-80 bg-tertiary-container/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+            <div className="flex flex-col items-start max-w-4xl">
+              {/* Tagline telemetry pill */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container border border-border-dark-subtle text-cyan-bright mb-6 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                <span className="font-label-tech text-label-tech uppercase tracking-widest text-cyan-bright">
+                  EVIDENCIA EMPÍRICA EN OPERACIONES DE MISIÓN CRÍTICA
+                </span>
+              </div>
+              {/* Main Section Title */}
+              <h1 className="font-headline-xl text-headline-xl text-text-dark-primary tracking-tight mb-6">
+                Impacto medible en sectores<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-bright to-tertiary-container text-gradient-brand">
+                  de alta exigencia operativa.
+                </span>
+              </h1>
+              {/* Corporate Subtitle */}
+              <p className="font-body-lg text-body-lg text-text-dark-muted max-w-3xl leading-relaxed">
+                Desplegamos solidez operativa, rigor técnico y metodologías de ingeniería elástica diseñadas para orquestar la evolución digital de infraestructuras críticas en entornos corporativos de alta demanda.
+              </p>
+            </div>
+          </section>
+
+          {/* 05.01 ALIANZAS & ECOSISTEMA (12 SLOTS MATRIZ EMPRESARIAL CON LOGOS) */}
+          <section className="w-full mb-20 lg:mb-28">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+              <div>
+                <div className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider mb-1">
+                  // 05.01 ALIANZAS &amp; ECOSISTEMA
+                </div>
+                <h2 className="font-headline-md text-headline-md text-text-dark-primary">
+                  Entidades &amp; Despliegues Corporativos
+                </h2>
+              </div>
+              <p className="font-label-tech text-label-tech text-text-dark-muted">
+                SLOTS ASIGNADOS: <span className="text-accent-success font-semibold">12 / 12 ACTIVOS</span>
+              </p>
+            </div>
+
+            {/* Grid 12 Logos Reales + Complementarios */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
+              {/* Box 1: Emco Salud */}
+              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="Emco Salud"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmUPKAGnhzkbtTt_OIDAxY6Znh5s6TnR6kJpioCKKB_iWIkRZ7_Gq9BqZtDGREo5vObyMO0cIFiGBVRubm7i_qwQf7mEaNMVsagpsGhC1bPAPQesxYAhc2okmEAfgEuHqb90Qfp_JbDnrf42e3ecJTez765GhK0tjbzntiieHPkM15rqlkWUuWRoZtEFhWny-u-JFd8P7naThxIeliFKjUa278u6GwwxE1QKbWLRDGW6dDTRtwNHGm"
+                  />
+                </div>
+                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                  Emco Salud
+                </span>
+              </div>
+
+              {/* Box 2: Asmet Salud */}
+              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="Asmet Salud EPS"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyOC4KInKR4qEEIuq-YaJcsdjZvCDbCbFAfVo3Km_ZJICJrYSWBXejdyqA6KAt8fHz_VXJDlr1KSpfewF45S490P535HDzNQCUrI0H7uA5A9C4df4213aVSbbFaQ8o7dNPb4UXp9zO8-847jjTbPc_XyO6bps9pJ8yYxuuDNNQCTmdXkgsxnQ8ycRPbH_D-kTNr83BE4pyyhvxgtUsTxfVAm_DVgT2CRL0_zy0hW2ZqeQlGU7aQZmI"
+                  />
+                </div>
+                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                  Asmet Salud EPS
+                </span>
+              </div>
+
+              {/* Box 3: PuntoNet */}
+              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="Puntonet"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtV-kVpf_OAjSHav40jd0nPFNQ6VEuh4KVxvBphfvXuvlSAZoJbA92Luf3eX2QHTrwmSMcu7_jlEIip8_DGaIzEoxNk8uipl0OtRN6_jEAHQ8EKbmSYGNeFPQ2-D4P0PBbBLUvaS8e6WmDaxfs-kAh93lja7gbTUijTebsV6in2b6OQ3IVWw_0h-eWLNfQefjm7LXV_zF0ZMcfQeT6e0YAbdAx7ou6nkWO5-ZkjZtKOc-ErA4FzAnz"
+                  />
+                </div>
+                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                  Puntonet S.A.S.
+                </span>
+              </div>
+
+              {/* Box 4: Punto de Pago */}
+              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="Punto de Pago Multibanco"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzfz3ELAFgzBIgc_LDT1Cgt00cGCgGksTEz-XpAB6ReNzRiah6eHvjLsWGXf1xfd6JQHV5f6a2GcaRumaiPKdfhEzUS5Jv7EdGUPznx9jpNeeiR0R32ho8gepkFQieI9w-9DdyfnaPHPesMwmHJzWslhWyTMFwB4bfnEo81-LcFUzomx2glIKk5-6R56rUra4kaooNfXDqoEVBv1qBmPUsUGs2q4Z6-HQg3Qb6Td2J3GD2iO1KvO0k"
+                  />
+                </div>
+                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                  Punto de Pago
+                </span>
+              </div>
+
+              {/* Box 5: Banco W */}
+              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="Banco W"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCryFqWtwCoL-w_F7Gum9RAPiNtQ37_FSMEeaIYSCinc-hCqqxagOKvDVsHlNvrrAFJRdxr7FTZcUXAjLYJAI4RemfnjhKhYXrtTZPt9kpQpMLhUpXim34gWo9qSMxHIGdbGVWA0S7FhoK4IOv9pOAMMWFClRtpj4DckD5jyRgpVQW54n012ffdeMl5gVRn_D_50UUcOsDAMAPjxA2BIrgQZEpff7yZCn9eRvn7bRRzmv9-LZ13QvwB"
+                  />
+                </div>
+                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                  Banco W
+                </span>
+              </div>
+
+              {/* Box 6: Banco Agrario */}
+              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="Banco Agrario de Colombia"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqSqu5XsVSi5WrBvD9wMeDshIzpCa8pCbt9WryJQZmzjgeqGzde9yafchQC6F6OFbi_E24wTxILS9yugO5FBlAqTIQmvEYvUBc-93km8eyVykEy9uLe8iB4_QJ1ZhDnSvO74P6Y5S1ZakJgJvtSwRe6Z75ZlxbiTAXv7v4hMpHMslQsSjtXmaNbX_ziFuuRx9lXf8MCuNtPBGs1BS9B9CGGnf0wgZb89z3dlR2FKn2vNhRPno2uewP"
+                  />
+                </div>
+                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                  Banco Agrario
+                </span>
+              </div>
+
+              {/* Box 7: Scotiabank Colpatria */}
+              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="Scotiabank Colpatria"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA8pSh4L0SBkOXaza4Vxcp5m9v2gow9nH5AMckhNRPCrGe4JZaw-TxFfQOB3i_foRuCO0mecwPHi7UqySUhzHGXGeiuHYxZmthfpJqbaNloMJv6ToPmQflrDBMsRDOoicWUWPhcCeK9l9n1WKXM86yrVMX9AB3kWK2q7M-hPYVTAlzXJ1BIz1NTViR3Tdx2lMRaC9BSksplZTzELqHAF3BCY4lb4R2l-FtvXL0HQakd_yZ4v4JbOgp"
+                  />
+                </div>
+                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                  Scotiabank Colpatria
+                </span>
+              </div>
+
+              {/* Box 8: Gecolsa CAT */}
+              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="Gecolsa CAT"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHOKS0BdERNw71Jc3gkAX8WEaJitskUnTcxgUQBiXKVyFdkcFtDyGk5lM2jYkZTwMaHLR9eyc6CrEU_TOZHZ8tlpKE50-_pxzaJGMkWL-PBK4jgRaLbdbYtEjVIgxjv5y1p8ErLdHnHAgJs_hj1Sg5NPop8zYI0j6txNwD9JdefE4K35I97pz1-YHpq7oxspB-104ZoM6aDsAVqsXTFp6YS0-VY46TDhetOoKqVxf7n5gIcgdPM_mj"
+                  />
+                </div>
+                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                  Gecolsa CAT
+                </span>
+              </div>
+
+              {/* Box 9: Ibiza */}
+              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="Ibiza"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTtpHPGZg1hYJT_8II2DNFS2gtCumJCQhOUstO6HfKYh5q_jAqVrRxkFh6ByxQ5nyaWcif7icaBtz-hm-TtpxjIVAknv_jsx-PAKdj1R1zfkLnCe1nERJYaZaR0P1CFCfpNBcrhnjMWCYRKZwUgtVabmumP16lnq0AmdS4h_8dfzJZ5w1t57ioxYhzRAB0Tk7cqJdwBPgQkHX6l97ZPOn0fIwgZWFwLgOzG_954j26TiOQcuYdMJk4"
+                  />
+                </div>
+                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                  Ibiza
+                </span>
+              </div>
+            </div>
+          </section>
+
+          {/* 05.02 CASOS DE ÉXITO (BENTO EDITORIAL ASIMÉTRICO) */}
+          <section className="w-full mb-20 lg:mb-28">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+              <div>
+                <div className="font-label-tech-sm text-label-tech-sm text-primary uppercase tracking-wider mb-1">
+                  // 05.02 IMPACTO COMPROBADO
+                </div>
+                <h2 className="font-headline-md text-headline-md text-text-dark-primary">
+                  Casos de Éxito &amp; Soluciones Implementadas
+                </h2>
+              </div>
+              <p className="font-body-sm text-body-sm text-text-dark-muted max-w-md">
+                Estructura de intervención metodológica orientada a resultados medibles, escalabilidad y resiliencia de misión crítica.
+              </p>
+            </div>
+
+            {/* Bento Grid Container */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+              {/* Columna 1: Sector Salud */}
+              <div className="flex flex-col rounded-xl overflow-hidden border border-border-dark-subtle bg-surface-container shadow-xl transition-all duration-300 hover:border-primary/50">
+                {/* Header Azul Noche */}
+                <div className="bg-[#07182c] border-b border-border-dark-subtle px-6 py-5 text-center flex items-center justify-center min-h-[88px]">
+                  <h3 className="font-headline-sm text-headline-sm text-text-dark-primary font-bold leading-snug">
+                    Sector Salud (Clínicas, IPS y<br />Centros Diagnósticos)
+                  </h3>
+                </div>
+                {/* Body: Desafío y Solución */}
+                <div className="flex-1 p-6 space-y-6 bg-surface-container flex flex-col justify-start">
+                  <div className="border-b border-border-dark-subtle pb-5">
+                    <p className="font-body-md text-body-md text-text-dark-muted leading-relaxed">
+                      <strong className="text-text-dark-primary font-bold">Desafío:</strong> Fuga de hasta el 52% de pacientes captados en pauta digital por demoras en recepción de WhatsApp y transcripción manual de órdenes médicas.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-body-md text-body-md text-text-dark-muted leading-relaxed">
+                      <strong className="text-text-dark-primary font-bold">Solución Brilliantic:</strong> Integración de campañas de Meta Ads con Connectmsg, agentes KLERK (lectura OCR), plataforma K-lender y CRM (KLARI / Bitrix24).
+                    </p>
+                  </div>
+                </div>
+                {/* Franja Verde: Resultado Medible */}
+                <div className="bg-[#007038] text-white p-6 mt-auto">
+                  <p className="font-body-md text-body-md leading-snug text-white">
+                    <strong className="font-bold">Resultado Medible:</strong> Respuesta en &lt; 10s (24/7), reducción de inasistencia (No-Show) a &lt; 10% y 100% de trazabilidad publicitaria.
+                  </p>
+                </div>
+              </div>
+
+              {/* Columna 2: Sector Financiero */}
+              <div className="flex flex-col rounded-xl overflow-hidden border border-border-dark-subtle bg-surface-container shadow-xl transition-all duration-300 hover:border-primary/50">
+                {/* Header Azul Noche */}
+                <div className="bg-[#07182c] border-b border-border-dark-subtle px-6 py-5 text-center flex items-center justify-center min-h-[88px]">
+                  <h3 className="font-headline-sm text-headline-sm text-text-dark-primary font-bold leading-snug">
+                    Sector Financiero y Redes<br />Transaccionales Nacionales
+                  </h3>
+                </div>
+                {/* Body: Desafío y Solución */}
+                <div className="flex-1 p-6 space-y-6 bg-surface-container flex flex-col justify-start">
+                  <div className="border-b border-border-dark-subtle pb-5">
+                    <p className="font-body-md text-body-md text-text-dark-muted leading-relaxed">
+                      <strong className="text-text-dark-primary font-bold">Desafío:</strong> Alta complejidad administrativa e intermitencia operativa en enlaces de datos distribuidos en zonas urbanas y rurales apartadas del país.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-body-md text-body-md text-text-dark-muted leading-relaxed">
+                      <strong className="text-text-dark-primary font-bold">Solución Brilliantic:</strong> Despliegue del modelo SPOC 360° articulando fibra óptica y enlaces dedicados con más de 12 operadores locales bajo monitoreo NOC centralizado.
+                    </p>
+                  </div>
+                </div>
+                {/* Franja Verde: Resultado Medible */}
+                <div className="bg-[#007038] text-white p-6 mt-auto">
+                  <p className="font-body-md text-body-md leading-snug text-white">
+                    <strong className="font-bold">Resultado Medible:</strong> Continuidad transaccional en 32 sedes de 16 departamentos, unificación en 1 sola factura y cumplimiento estricto de SLA corporativos.
+                  </p>
+                </div>
+              </div>
+
+              {/* Columna 3: Sector Hidrocarburos */}
+              <div className="flex flex-col rounded-xl overflow-hidden border border-border-dark-subtle bg-surface-container shadow-xl transition-all duration-300 hover:border-primary/50">
+                {/* Header Azul Noche */}
+                <div className="bg-[#07182c] border-b border-border-dark-subtle px-6 py-5 text-center flex items-center justify-center min-h-[88px]">
+                  <h3 className="font-headline-sm text-headline-sm text-text-dark-primary font-bold leading-snug">
+                    Sector Hidrocarburos, Energía<br />e Infraestructura Crítica
+                  </h3>
+                </div>
+                {/* Body: Desafío y Solución */}
+                <div className="flex-1 p-6 space-y-6 bg-surface-container flex flex-col justify-start">
+                  <div className="border-b border-border-dark-subtle pb-5">
+                    <p className="font-body-md text-body-md text-text-dark-muted leading-relaxed">
+                      <strong className="text-text-dark-primary font-bold">Desafío:</strong> Adecuación tecnológica de sede corporativa y enlaces industriales bajo rigurosas normativas técnicas, de seguridad y presupuesto.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-body-md text-body-md text-text-dark-muted leading-relaxed">
+                      <strong className="text-text-dark-primary font-bold">Solución Brilliantic:</strong> Ingeniería de valor en diseño y construcción de red LAN/WLAN, cableado estructurado Categoría 6A certificado, fusión de fibra óptica ODF y respaldo eléctrico RETIE.
+                    </p>
+                  </div>
+                </div>
+                {/* Franja Verde: Resultado Medible */}
+                <div className="bg-[#007038] text-white p-6 mt-auto">
+                  <p className="font-body-md text-body-md leading-snug text-white">
+                    <strong className="font-bold">Resultado Medible:</strong> Entrega certificada a satisfacción, optimización financiera del CAPEX y disponibilidad continua de red.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 05.03 EXPERIENCIA POR SECTORES (CHIPS & BADGES DE COBERTURA) */}
+          <section className="w-full mb-20 lg:mb-28">
+            <div className="rounded-2xl bg-surface-container border border-border-dark-subtle p-6 sm:p-10 shadow-lg">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-border-dark-subtle gap-4">
+                <div>
+                  <div className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider mb-1">
+                    // 05.03 CAPACIDAD MULTISECTORIAL
+                  </div>
+                  <h2 className="font-headline-md text-headline-md text-text-dark-primary">
+                    Experiencia por Sectores Estratégicos
+                  </h2>
+                </div>
+                <p className="font-label-tech text-label-tech text-text-dark-muted">
+                  VERTICALES REGULADAS &amp; TECNOLÓGICAS
+                </p>
+              </div>
+
+              {/* 8 Classification Chips/Cards */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4">
+                {/* Chip 1 */}
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-primary border border-border-dark-subtle">
+                    <span className="material-symbols-outlined text-xl">account_balance</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 01</div>
+                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                      Financiero &amp; Bancario
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chip 2 */}
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-cyan-bright/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-cyan-bright border border-border-dark-subtle">
+                    <span className="material-symbols-outlined text-xl">vital_signs</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 02</div>
+                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                      Salud &amp; EPS
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chip 3 */}
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-tertiary-container/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-tertiary-container border border-border-dark-subtle">
+                    <span className="material-symbols-outlined text-xl">local_shipping</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 03</div>
+                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                      Logística &amp; Carga
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chip 4 */}
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-accent-success/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-accent-success border border-border-dark-subtle">
+                    <span className="material-symbols-outlined text-xl">bolt</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 04</div>
+                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                      Energía &amp; Servicios
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chip 5 */}
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-primary border border-border-dark-subtle">
+                    <span className="material-symbols-outlined text-xl">storefront</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 05</div>
+                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                      Retail &amp; Comercio
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chip 6 */}
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-cyan-bright/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-cyan-bright border border-border-dark-subtle">
+                    <span className="material-symbols-outlined text-xl">domain</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 06</div>
+                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                      Gobierno &amp; Público
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chip 7 */}
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-tertiary-container/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-tertiary-container border border-border-dark-subtle">
+                    <span className="material-symbols-outlined text-xl">school</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 07</div>
+                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                      Educación Superior
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chip 8 */}
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-accent-success/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-accent-success border border-border-dark-subtle">
+                    <span className="material-symbols-outlined text-xl">cloud_sync</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 08</div>
+                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                      Telecomunicaciones
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FRANJA DE CONTINUIDAD SPA */}
+          <section className="w-full flex flex-col items-center justify-center pt-8 pb-4 border-t border-border-dark-subtle/50">
+            <Link
+              to="/Nosotros"
+              className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[460px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
+            >
+              <div className="flex items-center gap-space-md mb-space-sm">
+                <div className="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+                  <span className="material-symbols-outlined text-[26px]">groups</span>
+                </div>
+                <div className="text-left">
+                  <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block">
+                    Siguiente Sección
+                  </span>
+                  <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block">
+                    Continuar a Nosotros &amp; Equipo
+                  </span>
+                </div>
+              </div>
+              <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[340px] mb-space-md">
+                Gobernanza institucional, liderazgo certificado y respaldo normativo y legal.
+              </p>
+              <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-primary animate-bounce">
+                <span className="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+              </div>
+            </Link>
+          </section>
+        </div>
+      </main>
+
+      {/* FOOTER CORPORATIVO INYECTADO */}
+      <Footer />
+
+      {/* WHATSAPP CHAT BUTTON INYECTADO */}
+      <WhatsAppChatButton />
+    </div>
+  );
+};
+
+export default Experiencia;

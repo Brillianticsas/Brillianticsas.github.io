@@ -1,94 +1,94 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Box, Container, Grid, Typography, IconButton } from "@mui/material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const Footer = () => {
-    return (
-        <Box
-            sx={{
-                width: "100%",
-                backgroundColor: "#1a1a1a",
-                paddingTop: "2rem",
-                paddingBottom: "2rem",
-                color: "#fff",
-            }}
-        >
-            <Container maxWidth="lg">
-                <Grid container direction="column" alignItems="center" spacing={2}>
-                    <Grid item>
-                        <Typography variant="h6" fontWeight="bold">
-                            BRILLIANTIC S.A.S.
-                        </Typography>
-                    </Grid>
+  const { isDark } = useTheme();
 
-                    {/* Redes sociales */}
-                    <Grid item>
-                        <Box display="flex" gap={1}>
-                            <IconButton
-                                aria-label="facebook"
-                                href="https://www.facebook.com/"
-                                target="_blank"
-                                sx={{
-                                    color: "#fff",
-                                    "&:hover": {
-                                        boxShadow: "0 0 10px #3b5998",
-                                        backgroundColor: "transparent",
-                                    },
-                                }}
-                            >
-                                <FacebookIcon />
-                            </IconButton>
+  return (
+    <footer className="w-full bg-surface-container border-t border-border-dark-subtle text-outline mt-auto transition-colors">
+      <div className="max-w-[1440px] mx-auto px-margin-sm md:px-margin lg:px-margin-lg py-space-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+          <div className="flex flex-col items-start">
+            <Link
+              to="/"
+              className="flex items-center gap-space-sm group mb-space-md"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              <img
+                src={isDark ? "/Logo brillantic Para fondos Oscuros.png" : "/logo.png"}
+                alt="Logo Brilliantic"
+                className="w-9 h-9 object-contain"
+              />
+              <div className="flex items-baseline">
+                <span className="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">
+                  Brilliantic
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-bright ml-0.5 animate-pulse shadow-[0_0_8px_#19E3FF]"></span>
+                <span className="font-label-tech-sm text-label-tech-sm text-outline ml-space-xs tracking-wider">
+                  S.A.S.
+                </span>
+              </div>
+            </Link>
+            <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+              Soluciones integrales de software propio, inteligencia artificial y conectividad de misión crítica.
+            </p>
+            <div className="font-label-tech-sm text-label-tech-sm text-outline flex flex-col gap-1">
+              <span>NIT: 901.453.938-5</span>
+              <span>Cra. 2W #25G-10 Local 26 | Neiva, Huila</span>
+            </div>
+          </div>
 
-                            <IconButton
-                                aria-label="instagram"
-                                href="https://www.instagram.com/"
-                                target="_blank"
-                                sx={{
-                                    color: "#fff",
-                                    "&:hover": {
-                                        boxShadow: "0 0 10px #e1306c",
-                                        backgroundColor: "transparent",
-                                    },
-                                }}
-                            >
-                                <InstagramIcon />
-                            </IconButton>
+          <div>
+            <h4 className="font-headline-sm text-sm font-semibold text-on-surface uppercase tracking-wider mb-space-md">
+              Ecosistema
+            </h4>
+            <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm">
+              <li>
+                <Link to="/Productos" className="text-on-surface-variant hover:text-primary transition-colors">
+                  Productos
+                </Link>
+              </li>
+              <li>
+                <Link to="/Servicios" className="text-on-surface-variant hover:text-primary transition-colors">
+                  Servicios
+                </Link>
+              </li>
+              <li>
+                <Link to="/Arquitectura" className="text-on-surface-variant hover:text-primary transition-colors">
+                  Arquitectura
+                </Link>
+              </li>
+            </ul>
+          </div>
 
+          <div>
+            <h4 className="font-headline-sm text-sm font-semibold text-on-surface uppercase tracking-wider mb-space-md">
+              Compañía
+            </h4>
+            <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm">
+              <li>
+                <Link to="/Nosotros" className="text-on-surface-variant hover:text-primary transition-colors">
+                  Nosotros
+                </Link>
+              </li>
+              <li>
+                <Link to="/Experiencia" className="text-on-surface-variant hover:text-primary transition-colors">
+                  Experiencia
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-
-                            <IconButton
-                                aria-label="whatsapp"
-                                href="https://wa.me/573106059266"
-                                target="_blank"
-                                sx={{
-                                    color: "#fff",
-                                    "&:hover": {
-                                        boxShadow: "0 0 10px #25D366",
-                                        backgroundColor: "transparent",
-                                    },
-                                }}
-                            >
-                                <WhatsAppIcon />
-                            </IconButton>
-                        </Box>
-                    </Grid>
-
-                    <Grid item>
-                        <Typography variant="body2" color="gray" align="center">
-                            {`${new Date().getFullYear()} © BRILLIANTIC S.A.S. Todos los derechos reservados.`}
-                            <Link to="/DataPolitics" style={{ color: "#fff", textDecoration: "underline" }}>
-                                <br />Politica de Tratamiento de Datos
-                            </Link>
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Container>
-        </Box>
-    );
+        <div className="pt-space-lg border-t border-border-dark-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md font-label-tech-sm text-label-tech-sm text-outline">
+          <p>© 2025 Brilliantic S.A.S. Todos los derechos reservados.</p>
+          <div className="flex items-center gap-space-xs">
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

@@ -1,11 +1,24 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WhatsAppChatButton from "./components/WhatsAppChatButton";
 import AppRoutes from "./AppRoutes";
 
 const App = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isStandalonePage =
+    location.pathname === "/" ||
+    location.pathname.toLowerCase() === "/productos" ||
+    location.pathname.toLowerCase() === "/servicios" ||
+    location.pathname.toLowerCase() === "/services" ||
+    location.pathname.toLowerCase() === "/arquitectura" ||
+    location.pathname.toLowerCase() === "/architecture" ||
+    location.pathname.toLowerCase() === "/experiencia" ||
+    location.pathname.toLowerCase() === "/experience" ||
+    location.pathname.toLowerCase() === "/nosotros" ||
+    location.pathname.toLowerCase() === "/about";
 
   useEffect(() => {
     const redirectPath = sessionStorage.redirect;
@@ -16,13 +29,12 @@ const App = () => {
   }, [navigate]);
 
   return (
-    <browserRouter>
-      <Navbar />
-      <main>
-        <AppRoutes />
-      </main>
-      <Footer />
-    </browserRouter>
+    <>
+      {!isStandalonePage && <Navbar />}
+      <AppRoutes />
+      {!isStandalonePage && <Footer />}
+      {!isStandalonePage && <WhatsAppChatButton />}
+    </>
   );
 };
 

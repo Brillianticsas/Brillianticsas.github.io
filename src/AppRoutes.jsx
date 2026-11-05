@@ -1,40 +1,29 @@
 // src/AppRoutes.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Hero from "./components/Banner";
-import Team from "./components/Team";
-import Services from "./components/Services";
-import Contact from "./components/Contact";
-import DataPolitics from "./components/DataPolitics";
-import OrganicEvolution from "./components/OrganicEvolution";
-import ClientSlider from "./components/ClientSlider";
-import Cluster from "./components/Cluster";
-import Acordeon from "./components/Acordeon";
-import QuienesSomos from "./components/QuienesSomos";
-// import Consulting from "./components/Consulting";
+import InicioBrilliantic from "./pages/InicioBrilliantic";
+import Productos from "./pages/Productos";
+import Servicios from "./pages/Servicios";
+import Arquitectura from "./pages/Arquitectura";
+import Experiencia from "./pages/Experiencia";
+import Nosotros from "./pages/Nosotros";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* Ruta principal */}
-      <Route
-        path="/"
-        element={
-          <>
-            <Hero id="hero" />
-            <Cluster id="cluster" />
-            <ClientSlider />
-            <Acordeon id="acordeon" />
-            <Contact id="contacto" />
-          </>
-        }
-      />
+      {/* Ruta principal - Pantalla de inicio */}
+      <Route path="/" element={<InicioBrilliantic />} />
 
-      {/* Ruta para política de datos */}
-      <Route path="/DataPolitics" element={<DataPolitics />} />
-      <Route path="/QuienesSomos" element={<QuienesSomos />} />
-      <Route path="/Services" element={<Services />} />
-
+      {/* Pantallas del Ecosistema */}
+      <Route path="/Productos" element={<Productos />} />
+      <Route path="/Servicios" element={<Servicios />} />
+      <Route path="/Services" element={<Servicios />} />
+      <Route path="/Arquitectura" element={<Arquitectura />} />
+      <Route path="/Architecture" element={<Arquitectura />} />
+      <Route path="/Experiencia" element={<Experiencia />} />
+      <Route path="/Experience" element={<Experiencia />} />
+      <Route path="/Nosotros" element={<Nosotros />} />
+      <Route path="/About" element={<Nosotros />} />
     </Routes>
   );
 };
