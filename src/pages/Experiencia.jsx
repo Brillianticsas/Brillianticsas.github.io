@@ -53,7 +53,7 @@ const Experiencia = () => {
                   <img
                     alt="Emco Salud"
                     className="max-h-full max-w-full object-contain filter"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmUPKAGnhzkbtTt_OIDAxY6Znh5s6TnR6kJpioCKKB_iWIkRZ7_Gq9BqZtDGREo5vObyMO0cIFiGBVRubm7i_qwQf7mEaNMVsagpsGhC1bPAPQesxYAhc2okmEAfgEuHqb90Qfp_JbDnrf42e3ecJTez765GhK0tjbzntiieHPkM15rqlkWUuWRoZtEFhWny-u-JFd8P7naThxIeliFKjUa278u6GwwxE1QKbWLRDGW6dDTRtwNHGm"
+                    src="src/images/cliente1.png"
                   />
                 </div>
                 <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
@@ -67,7 +67,7 @@ const Experiencia = () => {
                   <img
                     alt="Asmet Salud EPS"
                     className="max-h-full max-w-full object-contain filter"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyOC4KInKR4qEEIuq-YaJcsdjZvCDbCbFAfVo3Km_ZJICJrYSWBXejdyqA6KAt8fHz_VXJDlr1KSpfewF45S490P535HDzNQCUrI0H7uA5A9C4df4213aVSbbFaQ8o7dNPb4UXp9zO8-847jjTbPc_XyO6bps9pJ8yYxuuDNNQCTmdXkgsxnQ8ycRPbH_D-kTNr83BE4pyyhvxgtUsTxfVAm_DVgT2CRL0_zy0hW2ZqeQlGU7aQZmI"
+                    src="src/images/cliente2.png"
                   />
                 </div>
                 <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
@@ -81,7 +81,7 @@ const Experiencia = () => {
                   <img
                     alt="Puntonet"
                     className="max-h-full max-w-full object-contain filter"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtV-kVpf_OAjSHav40jd0nPFNQ6VEuh4KVxvBphfvXuvlSAZoJbA92Luf3eX2QHTrwmSMcu7_jlEIip8_DGaIzEoxNk8uipl0OtRN6_jEAHQ8EKbmSYGNeFPQ2-D4P0PBbBLUvaS8e6WmDaxfs-kAh93lja7gbTUijTebsV6in2b6OQ3IVWw_0h-eWLNfQefjm7LXV_zF0ZMcfQeT6e0YAbdAx7ou6nkWO5-ZkjZtKOc-ErA4FzAnz"
+                    src="src/images/cliente3.png"
                   />
                 </div>
                 <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
@@ -95,7 +95,7 @@ const Experiencia = () => {
                   <img
                     alt="Punto de Pago Multibanco"
                     className="max-h-full max-w-full object-contain filter"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzfz3ELAFgzBIgc_LDT1Cgt00cGCgGksTEz-XpAB6ReNzRiah6eHvjLsWGXf1xfd6JQHV5f6a2GcaRumaiPKdfhEzUS5Jv7EdGUPznx9jpNeeiR0R32ho8gepkFQieI9w-9DdyfnaPHPesMwmHJzWslhWyTMFwB4bfnEo81-LcFUzomx2glIKk5-6R56rUra4kaooNfXDqoEVBv1qBmPUsUGs2q4Z6-HQg3Qb6Td2J3GD2iO1KvO0k"
+                    src="src/images/cliente4.jpg"
                   />
                 </div>
                 <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
@@ -109,7 +109,7 @@ const Experiencia = () => {
                   <img
                     alt="Banco W"
                     className="max-h-full max-w-full object-contain filter"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCryFqWtwCoL-w_F7Gum9RAPiNtQ37_FSMEeaIYSCinc-hCqqxagOKvDVsHlNvrrAFJRdxr7FTZcUXAjLYJAI4RemfnjhKhYXrtTZPt9kpQpMLhUpXim34gWo9qSMxHIGdbGVWA0S7FhoK4IOv9pOAMMWFClRtpj4DckD5jyRgpVQW54n012ffdeMl5gVRn_D_50UUcOsDAMAPjxA2BIrgQZEpff7yZCn9eRvn7bRRzmv9-LZ13QvwB"
+                    src="src/images/cliente6.png"
                   />
                 </div>
                 <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
@@ -123,7 +123,7 @@ const Experiencia = () => {
                   <img
                     alt="Banco Agrario de Colombia"
                     className="max-h-full max-w-full object-contain filter"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqSqu5XsVSi5WrBvD9wMeDshIzpCa8pCbt9WryJQZmzjgeqGzde9yafchQC6F6OFbi_E24wTxILS9yugO5FBlAqTIQmvEYvUBc-93km8eyVykEy9uLe8iB4_QJ1ZhDnSvO74P6Y5S1ZakJgJvtSwRe6Z75ZlxbiTAXv7v4hMpHMslQsSjtXmaNbX_ziFuuRx9lXf8MCuNtPBGs1BS9B9CGGnf0wgZb89z3dlR2FKn2vNhRPno2uewP"
+                    src="src/images/cliente7.png"
                   />
                 </div>
                 <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
@@ -137,7 +137,7 @@ const Experiencia = () => {
                   <img
                     alt="Scotiabank Colpatria"
                     className="max-h-full max-w-full object-contain filter"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA8pSh4L0SBkOXaza4Vxcp5m9v2gow9nH5AMckhNRPCrGe4JZaw-TxFfQOB3i_foRuCO0mecwPHi7UqySUhzHGXGeiuHYxZmthfpJqbaNloMJv6ToPmQflrDBMsRDOoicWUWPhcCeK9l9n1WKXM86yrVMX9AB3kWK2q7M-hPYVTAlzXJ1BIz1NTViR3Tdx2lMRaC9BSksplZTzELqHAF3BCY4lb4R2l-FtvXL0HQakd_yZ4v4JbOgp"
+                    src="src/images/cliente8.png"
                   />
                 </div>
                 <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
@@ -151,7 +151,7 @@ const Experiencia = () => {
                   <img
                     alt="Gecolsa CAT"
                     className="max-h-full max-w-full object-contain filter"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHOKS0BdERNw71Jc3gkAX8WEaJitskUnTcxgUQBiXKVyFdkcFtDyGk5lM2jYkZTwMaHLR9eyc6CrEU_TOZHZ8tlpKE50-_pxzaJGMkWL-PBK4jgRaLbdbYtEjVIgxjv5y1p8ErLdHnHAgJs_hj1Sg5NPop8zYI0j6txNwD9JdefE4K35I97pz1-YHpq7oxspB-104ZoM6aDsAVqsXTFp6YS0-VY46TDhetOoKqVxf7n5gIcgdPM_mj"
+                    src="src/images/cliente9.png"
                   />
                 </div>
                 <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
@@ -165,7 +165,7 @@ const Experiencia = () => {
                   <img
                     alt="Ibiza"
                     className="max-h-full max-w-full object-contain filter"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTtpHPGZg1hYJT_8II2DNFS2gtCumJCQhOUstO6HfKYh5q_jAqVrRxkFh6ByxQ5nyaWcif7icaBtz-hm-TtpxjIVAknv_jsx-PAKdj1R1zfkLnCe1nERJYaZaR0P1CFCfpNBcrhnjMWCYRKZwUgtVabmumP16lnq0AmdS4h_8dfzJZ5w1t57ioxYhzRAB0Tk7cqJdwBPgQkHX6l97ZPOn0fIwgZWFwLgOzG_954j26TiOQcuYdMJk4"
+                    src="src/images/cliente10.png"
                   />
                 </div>
                 <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
