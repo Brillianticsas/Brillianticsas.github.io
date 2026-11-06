@@ -14,6 +14,8 @@ const App = () => {
     location.pathname.toLowerCase() === "/productos" ||
     location.pathname.toLowerCase() === "/servicios" ||
     location.pathname.toLowerCase() === "/services" ||
+    location.pathname.toLowerCase() === "/ecosistema" ||
+    location.pathname.toLowerCase() === "/ecosystem" ||
     location.pathname.toLowerCase() === "/arquitectura" ||
     location.pathname.toLowerCase() === "/architecture" ||
     location.pathname.toLowerCase() === "/experiencia" ||

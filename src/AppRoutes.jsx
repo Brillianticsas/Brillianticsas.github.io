@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import InicioBrilliantic from "./pages/InicioBrilliantic";
 import Productos from "./pages/Productos";
 import Servicios from "./pages/Servicios";
-import Arquitectura from "./pages/Arquitectura";
+import Ecosistema from "./pages/Ecosistema";
 import Experiencia from "./pages/Experiencia";
 import Nosotros from "./pages/Nosotros";
 
@@ -18,8 +18,10 @@ const AppRoutes = () => {
       <Route path="/Productos" element={<Productos />} />
       <Route path="/Servicios" element={<Servicios />} />
       <Route path="/Services" element={<Servicios />} />
-      <Route path="/Ecosistema" element={<Arquitectura />} />
-      <Route path="/Ecosystem" element={<Arquitectura />} />
+      <Route path="/Ecosistema" element={<Ecosistema />} />
+      <Route path="/Ecosystem" element={<Ecosistema />} />
+      <Route path="/Arquitectura" element={<Ecosistema />} />
+      <Route path="/Architecture" element={<Ecosistema />} />
       <Route path="/Experiencia" element={<Experiencia />} />
       <Route path="/Experience" element={<Experiencia />} />
       <Route path="/Nosotros" element={<Nosotros />} />

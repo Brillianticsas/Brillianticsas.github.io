@@ -45,131 +45,145 @@ const Experiencia = () => {
               </div>
             </div>
 
-            {/* Grid 12 Logos Reales + Complementarios */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
+            {/* Grid 10 Logos Clientes y Alianzas */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-4">
               {/* Box 1: Emco Salud */}
-              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
                 <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
                   <img
                     alt="Emco Salud"
                     className="max-h-full max-w-full object-contain filter"
-                    src="src/images/cliente1.png"
+                    src="/images/cliente1.png"
                   />
                 </div>
-                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
                   Emco Salud
                 </span>
               </div>
 
               {/* Box 2: Asmet Salud */}
-              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
                 <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
                   <img
                     alt="Asmet Salud EPS"
                     className="max-h-full max-w-full object-contain filter"
-                    src="src/images/cliente2.png"
+                    src="/images/cliente2.png"
                   />
                 </div>
-                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
                   Asmet Salud EPS
                 </span>
               </div>
 
               {/* Box 3: PuntoNet */}
-              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
                 <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
                   <img
                     alt="Puntonet"
                     className="max-h-full max-w-full object-contain filter"
-                    src="src/images/cliente3.png"
+                    src="/images/cliente3.png"
                   />
                 </div>
-                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
                   Puntonet S.A.S.
                 </span>
               </div>
 
               {/* Box 4: Punto de Pago */}
-              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
                 <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
                   <img
                     alt="Punto de Pago Multibanco"
                     className="max-h-full max-w-full object-contain filter"
-                    src="src/images/cliente4.jpg"
+                    src="/images/cliente4.jpg"
                   />
                 </div>
-                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
                   Punto de Pago
                 </span>
               </div>
 
               {/* Box 5: Banco W */}
-              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
                 <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
                   <img
                     alt="Banco W"
                     className="max-h-full max-w-full object-contain filter"
-                    src="src/images/cliente6.png"
+                    src="/images/cliente6.png"
                   />
                 </div>
-                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
                   Banco W
                 </span>
               </div>
 
               {/* Box 6: Banco Agrario */}
-              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
                 <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
                   <img
                     alt="Banco Agrario de Colombia"
                     className="max-h-full max-w-full object-contain filter"
-                    src="src/images/cliente7.png"
+                    src="/images/cliente7.png"
                   />
                 </div>
-                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
                   Banco Agrario
                 </span>
               </div>
 
               {/* Box 7: Scotiabank Colpatria */}
-              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
                 <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
                   <img
                     alt="Scotiabank Colpatria"
                     className="max-h-full max-w-full object-contain filter"
-                    src="src/images/cliente8.png"
+                    src="/images/cliente8.png"
                   />
                 </div>
-                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
                   Scotiabank Colpatria
                 </span>
               </div>
 
               {/* Box 8: Gecolsa CAT */}
-              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
                 <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
                   <img
                     alt="Gecolsa CAT"
                     className="max-h-full max-w-full object-contain filter"
-                    src="src/images/cliente9.png"
+                    src="/images/cliente9.png"
                   />
                 </div>
-                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
                   Gecolsa CAT
                 </span>
               </div>
 
               {/* Box 9: Ibiza */}
-              <div className="group relative flex flex-col items-center justify-center p-4 h-32 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
                 <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
                   <img
                     alt="Ibiza"
                     className="max-h-full max-w-full object-contain filter"
-                    src="src/images/cliente10.png"
+                    src="/images/cliente10.png"
                   />
                 </div>
-                <span className="mt-2 font-label-tech-sm text-label-tech-sm text-text-dark-muted group-hover:text-cyan-bright text-center truncate w-full">
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
                   Ibiza
+                </span>
+              </div>
+
+              {/* Box 10: ExpansionTI */}
+              <div className="group relative flex flex-col items-center justify-center p-3.5 h-36 rounded-xl bg-surface-container border border-border-dark-subtle hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-primary/10 cursor-pointer overflow-hidden">
+                <div className="w-full h-16 rounded-lg bg-white flex items-center justify-center p-2.5 transition-transform duration-300 group-hover:scale-105 shadow-inner">
+                  <img
+                    alt="ExpansionTI"
+                    className="max-h-full max-w-full object-contain filter"
+                    src="/images/alianza1.jpeg"
+                  />
+                </div>
+                <span className="mt-2.5 text-xs sm:text-sm font-semibold text-text-dark-primary group-hover:text-cyan-bright text-center truncate w-full transition-colors">
+                  ExpansionTI
                 </span>
               </div>
             </div>

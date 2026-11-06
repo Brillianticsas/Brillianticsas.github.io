@@ -5,13 +5,13 @@ import Footer from '../components/Footer';
 import WhatsAppChatButton from '../components/WhatsAppChatButton';
 import Card3D from '../components/3DCard';
 
-const Arquitectura = () => {
+const Ecosistema = () => {
   return (
     <div className="bg-[#0A0E18] text-[#F8FAFC] font-sans antialiased min-h-screen selection:bg-brand-cyan/25 selection:text-brand-cyanBright flex flex-col justify-between overflow-x-hidden">
       {/* NAVBAR */}
       <Navbar />
 
-      {/* CONTENIDO PRINCIPAL: SECCIÓN 04 ARQUITECTURA SPOC */}
+      {/* CONTENIDO PRINCIPAL: SECCIÓN 04 ECOSISTEMA SPOC */}
       <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex-grow pt-28">
         {/* 1. ENCABEZADO DE SECCIÓN */}
         <header className="max-w-4xl mx-auto text-center mb-14 lg:mb-18">
@@ -30,7 +30,7 @@ const Arquitectura = () => {
         <section aria-label="Cobertura Nacional SPOC y Niveles Operativos" className="mb-16 lg:mb-20">
           <Card3D
             className="w-full max-w-7xl mx-auto"
-            faceLabels={['Cobertura SPOC (Vista 1)', 'Beneficios del Modelo (Vista 2)']}
+            faceLabels={['Cobertura SPOC', 'Beneficios del Modelo']}
             showControls={true}
           >
             {/* CARA 1: COBERTURA NACIONAL SPOC */}
@@ -47,7 +47,7 @@ const Arquitectura = () => {
                   </span>
                   <div className="text-left">
                     <span className="font-mono text-xs text-brand-cyan uppercase tracking-wider block font-bold">
-                      ⚡ ARQUITECTURA SPOC // DOBLE VISTA INTERACTIVA
+                      ⚡ ECOSISTEMA SPOC // DOBLE VISTA INTERACTIVA
                     </span>
                     <span className="text-[#94A3B8] text-xs hidden sm:inline">
                       Gire la tarjeta para explorar los beneficios del modelo integrado
@@ -432,7 +432,7 @@ const Arquitectura = () => {
           <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-[#8B5CF6]/20 rounded-full blur-3xl pointer-events-none"></div>
           <div className="relative z-10 max-w-3xl mx-auto">
             <span className="inline-block px-3.5 py-1 rounded bg-[#121622] border border-[#232A3B] text-xs font-mono text-brand-cyan uppercase mb-4 tracking-wider">
-              ADOPCIÓN ARQUITECTÓNICA // B2B
+              ADOPCIÓN DE ECOSISTEMA // B2B
             </span>
             <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-[#F8FAFC] mb-4 leading-snug">
               ¿Preparado para armonizar la tecnología de su organización?
@@ -494,4 +494,4 @@ const Arquitectura = () => {
   );
 };
 
-export default Arquitectura;
+export default Ecosistema;
