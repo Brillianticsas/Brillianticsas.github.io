@@ -5,10 +5,10 @@ import React, {
   useMemo,
   useEffect,
   useRef,
-  useCallback
+  useCallback,
 } from 'react';
 
-// Contexto compartido para que cualquier hijo o botón interno pueda controlar la tarjeta 3D
+// Contexto compartido para que cualquier botón interno pueda controlar la tarjeta 3D
 export const Card3DContext = createContext(null);
 
 export const useCard3D = () => {
@@ -22,6 +22,7 @@ export const useCard3D = () => {
       flipPrev: () => {},
       goToFace: () => {},
       flip: () => {},
+      isAnimating: false,
     };
   }
   return context;
@@ -29,21 +30,13 @@ export const useCard3D = () => {
 
 /**
  * 3DCard (o Card3D)
- * Componente modular de tarjeta 3D con perspectiva física y aceleración GPU.
- * Empaqueta 2 o 3 (o más) `div`s como caras intercambiables.
+ * Componente modular de tarjeta 3D de alta fidelidad.
  *
- * Props:
- * - children: 2 o 3 elementos React (o función render prop).
- * - className: Clases para el contenedor externo (default: "max-w-4xl mx-auto w-full").
- * - cardClassName: Clases adicionales para el elemento giratorio 3D.
- * - faceLabels: Array opcional con nombres de las caras (ej: ['Perfil', 'Stack', 'Certificaciones']).
- * - showControls: Booleano para mostrar u ocultar la barra de navegación integrada.
- *                 (Por defecto: true si hay 3 o más caras, false si hay 2 caras).
- * - controlsPosition: 'top' | 'bottom' (default: 'bottom').
- * - initialFace: Índice inicial (default: 0).
- * - perspective: Perspectiva CSS (default: '1400px').
- * - transitionDuration: Duración del giro en ms (default: 700).
- * - onFaceChange: Callback opcional ejecutado al cambiar de cara: (newIndex) => void.
+ * Características clave de optimización:
+ * - Anti-blur mobile: Cuando está en reposo (idle), desactiva preserve-3d y capas compuestas 3D,
+ *   restituyendo renderizado nativo 2D subpixel para que los textos, SVGs e íconos no se vean
+ *   borrosos en celulares (ej: 414x896 DPR 3) ni con zooms de navegador.
+ * - Activa aceleración 3D por GPU únicamente durante el giro (700ms).
  */
 export default function Card3D({
   children,
@@ -51,63 +44,25 @@ export default function Card3D({
   cardClassName = '',
   faceLabels = [],
   showControls,
-  controlsPosition = 'bottom',
+  controlsPosition = 'top',
   initialFace = 0,
   perspective = '1400px',
   transitionDuration = 700,
+  equalHeight = false,
   onFaceChange,
 }) {
-  // 1. Estado de navegación y rotación 3D
   const [activeIndex, setActiveIndex] = useState(initialFace);
+  const [targetFaceIndex, setTargetFaceIndex] = useState(initialFace);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [rotationAngle, setRotationAngle] = useState(0);
 
-  // rotationAngle acumula giros de 180° continuos en múltiplos enteros
-  const [rotationAngle, setRotationAngle] = useState(
-    initialFace === 1 ? 180 : 0
-  );
-
-  // Asignación de caras a los slots A (frontal 0°) y B (posterior 180°)
-  const [slotAIndex, setSlotAIndex] = useState(0);
-  const [slotBIndex, setSlotBIndex] = useState(1);
-
-  // Referencias para medir y sincronizar altura dinámica
+  // Referencias para medición de altura y timers
   const flipperRef = useRef(null);
   const slotARef = useRef(null);
   const slotBRef = useRef(null);
-  const [minHeight, setMinHeight] = useState(null);
-
-  // Calcula si actualmente el Slot A o el Slot B está frente a la cámara
-  // (Múltiplo par de 180° = Slot A; múltiplo impar = Slot B)
-  const normalizedSteps = Math.round(rotationAngle / 180);
-  const isSlotAFront = Math.abs(normalizedSteps) % 2 === 0;
-
-  // Transición hacia una cara específica (definida antes para pasar a render prop y contexto)
-  const goToFace = useCallback(
-    (targetIndex, directionOverride) => {
-      if (targetIndex === activeIndex || targetIndex < 0) {
-        return;
-      }
-
-      // Determinar sentido del giro (adelante o atrás)
-      let isForward = targetIndex > activeIndex;
-      if (typeof directionOverride === 'boolean') {
-        isForward = directionOverride;
-      }
-
-      // Slot A está al frente -> cargamos la nueva cara en Slot B y giramos
-      // Slot B está al frente -> cargamos la nueva cara en Slot A y giramos
-      if (isSlotAFront) {
-        setSlotBIndex(targetIndex);
-        setRotationAngle((prev) => (isForward ? prev + 180 : prev - 180));
-      } else {
-        setSlotAIndex(targetIndex);
-        setRotationAngle((prev) => (isForward ? prev + 180 : prev - 180));
-      }
-
-      setActiveIndex(targetIndex);
-      if (onFaceChange) onFaceChange(targetIndex);
-    },
-    [activeIndex, isSlotAFront, onFaceChange]
-  );
+  const measureContainerRef = useRef(null);
+  const [faceHeights, setFaceHeights] = useState({});
+  const animTimeoutRef = useRef(null);
 
   // Resolver children (soporta render props reactivo con funciones y JSX directo)
   const resolvedChildren = useMemo(() => {
@@ -117,12 +72,13 @@ export default function Card3D({
         isFlipped: activeIndex !== 0,
         flipNext: () => {},
         flipPrev: () => {},
-        goToFace,
+        goToFace: () => {},
         flip: () => {},
+        isAnimating,
       });
     }
     return children;
-  }, [children, activeIndex, goToFace]);
+  }, [children, activeIndex, isAnimating]);
 
   const childArray = useMemo(() => {
     return React.Children.toArray(resolvedChildren).filter(Boolean);
@@ -130,7 +86,119 @@ export default function Card3D({
 
   const totalFaces = childArray.length || 1;
 
-  // Funciones de navegación rápida
+  // Medición reactiva de la altura individual de cada cara para transición animada
+  useEffect(() => {
+    const measureAllFaces = () => {
+      if (!measureContainerRef.current) return;
+      const faceNodes = measureContainerRef.current.children;
+      const heights = {};
+      for (let i = 0; i < faceNodes.length; i++) {
+        const h = faceNodes[i].scrollHeight || faceNodes[i].offsetHeight || 0;
+        if (h > 0) heights[i] = h;
+      }
+      setFaceHeights(heights);
+    };
+
+    measureAllFaces();
+    const t1 = setTimeout(measureAllFaces, 100);
+    const t2 = setTimeout(measureAllFaces, 400);
+    const t3 = setTimeout(measureAllFaces, 1200);
+    window.addEventListener('resize', measureAllFaces);
+
+    let ro;
+    if (typeof ResizeObserver !== 'undefined' && measureContainerRef.current) {
+      ro = new ResizeObserver(measureAllFaces);
+      ro.observe(measureContainerRef.current);
+      Array.from(measureContainerRef.current.children).forEach((child) => {
+        ro.observe(child);
+      });
+    }
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      window.removeEventListener('resize', measureAllFaces);
+      if (ro) ro.disconnect();
+    };
+  }, [childArray]);
+
+  // Limpiar timer al desmontar
+  useEffect(() => {
+    return () => {
+      if (animTimeoutRef.current) {
+        clearTimeout(animTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Transición hacia una cara específica
+  const goToFace = useCallback(
+    (targetIndex, directionOverride) => {
+      if (
+        targetIndex === activeIndex ||
+        targetIndex < 0 ||
+        targetIndex >= totalFaces ||
+        isAnimating
+      ) {
+        return;
+      }
+
+      // Sentido de giro
+      let isForward = targetIndex > activeIndex;
+      if (targetIndex === 0 && activeIndex === totalFaces - 1) isForward = true;
+      else if (targetIndex === totalFaces - 1 && activeIndex === 0) isForward = false;
+      if (typeof directionOverride === 'boolean') isForward = directionOverride;
+
+      // 1. Obtener la altura exacta actual y la altura destino
+      const startH = flipperRef.current ? flipperRef.current.offsetHeight : 0;
+      let targetH = faceHeights[targetIndex];
+      if (measureContainerRef.current && measureContainerRef.current.children[targetIndex]) {
+        const measured = measureContainerRef.current.children[targetIndex].scrollHeight;
+        if (measured > 0) targetH = measured;
+      }
+      if (!targetH || targetH <= 0) targetH = startH;
+
+      // 2. Fijar inmediatamente la altura de inicio en píxeles para que la transición CSS pueda interpolar
+      if (flipperRef.current && startH > 0) {
+        flipperRef.current.style.height = `${startH}px`;
+      }
+
+      setTargetFaceIndex(targetIndex);
+      setIsAnimating(true);
+
+      // 3. En el siguiente frame, disparar el giro Y la animación fluida de altura hacia targetH
+      const targetAngle = isForward ? 180 : -180;
+      requestAnimationFrame(() => {
+        setRotationAngle(targetAngle);
+        if (flipperRef.current && targetH > 0) {
+          flipperRef.current.style.height = `${targetH}px`;
+        }
+      });
+
+      // 4. Al completar los 700ms, asentar el estado en reposo 2D nativo y liberar height a 'auto'
+      if (animTimeoutRef.current) clearTimeout(animTimeoutRef.current);
+      animTimeoutRef.current = setTimeout(() => {
+        setActiveIndex(targetIndex);
+        setRotationAngle(0);
+        setIsAnimating(false);
+        if (flipperRef.current) {
+          flipperRef.current.style.height = '';
+        }
+        if (onFaceChange) onFaceChange(targetIndex);
+      }, transitionDuration);
+    },
+    [
+      activeIndex,
+      totalFaces,
+      isAnimating,
+      transitionDuration,
+      onFaceChange,
+      faceHeights,
+    ]
+  );
+
+  // Navegación
   const flipNext = useCallback(() => {
     const nextIdx = (activeIndex + 1) % totalFaces;
     goToFace(nextIdx, true);
@@ -147,31 +215,11 @@ export default function Card3D({
 
   const isFlipped = activeIndex !== 0;
 
-  // Si showControls no fue especificado, mostrarlo por defecto si hay 3 o más caras
+  // Barra de navegación por defecto si hay 3 o más caras o si se especifica
   const shouldShowControls =
     typeof showControls === 'boolean' ? showControls : totalFaces >= 3;
 
-  // Medición de altura para evitar saltos durante la transición 3D
-  useEffect(() => {
-    const measureHeights = () => {
-      const hA = slotARef.current ? slotARef.current.scrollHeight : 0;
-      const hB = slotBRef.current ? slotBRef.current.scrollHeight : 0;
-      const maxH = Math.max(hA, hB);
-      if (maxH > 0) {
-        setMinHeight(maxH);
-      }
-    };
-
-    measureHeights();
-    const timer = setTimeout(measureHeights, 100);
-    window.addEventListener('resize', measureHeights);
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('resize', measureHeights);
-    };
-  }, [childArray, activeIndex]);
-
-  // Valor del Contexto disponible para cualquier componente hijo
+  // Valor del Contexto disponible para hijos
   const contextValue = useMemo(
     () => ({
       activeIndex,
@@ -181,18 +229,19 @@ export default function Card3D({
       flipPrev,
       goToFace,
       flip,
+      isAnimating,
     }),
-    [activeIndex, isFlipped, totalFaces, flipNext, flipPrev, goToFace, flip]
+    [activeIndex, isFlipped, totalFaces, flipNext, flipPrev, goToFace, flip, isAnimating]
   );
 
-  // Renderizador de la barra de controles de navegación integrada
+  // Renderizador de controles
   const renderControls = () => {
     if (!shouldShowControls || totalFaces <= 1) return null;
 
     return (
-      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-surface-dark-indigo/80 border border-dark-subtle/80 backdrop-blur-md shadow-lg my-3 w-full">
-        {/* Selector de caras por píldoras/chips */}
-        <div className="flex items-center gap-1.5 overflow-x-auto py-1">
+      <div className="flex flex-col items-center justify-center gap-3 px-4 py-3 rounded-xl bg-surface-dark-indigo/90 border border-dark-subtle backdrop-blur-md shadow-xl mb-4 mt-0 w-full">
+        {/* Píldoras de las Caras (Centradas con alto contraste y texto resaltado) */}
+        <div className="flex flex-wrap items-center justify-center gap-2 w-full py-0.5">
           {childArray.map((_, idx) => {
             const label = faceLabels[idx] || `Cara ${idx + 1}`;
             const isActive = activeIndex === idx;
@@ -201,112 +250,137 @@ export default function Card3D({
                 key={idx}
                 type="button"
                 onClick={() => goToFace(idx)}
-                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-label-tech transition-all cursor-pointer ${
+                disabled={isAnimating}
+                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold tracking-wide transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-gradient-to-r from-cyan-bright/25 to-primary/20 text-cyan-bright border border-cyan-bright/60 shadow-[0_0_12px_rgba(25,227,255,0.3)] font-bold'
-                    : 'text-text-dark-muted hover:text-text-dark-primary hover:bg-surface-container-high/40 border border-transparent'
-                }`}
+                    ? 'bg-gradient-to-r from-cyan-bright/30 via-primary/30 to-brand-magenta/25 text-white border border-cyan-bright shadow-[0_0_16px_rgba(25,227,255,0.45)] ring-1 ring-cyan-bright/50'
+                    : 'text-slate-200 hover:text-white bg-surface-container-high/60 hover:bg-surface-container-highest border border-white/10 hover:border-white/20'
+                } ${isAnimating ? 'opacity-70 cursor-wait' : ''}`}
               >
                 <span
-                  className={`w-1.5 h-1.5 rounded-full ${
-                    isActive ? 'bg-cyan-bright animate-pulse' : 'bg-text-dark-muted/40'
+                  className={`w-2 h-2 rounded-full ${
+                    isActive
+                      ? 'bg-cyan-bright shadow-[0_0_8px_#19e3ff] animate-pulse'
+                      : 'bg-slate-400'
                   }`}
                 />
-                <span>{label}</span>
+                <span className="font-semibold">{label}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Botones de Anterior y Siguiente */}
-        <div className="flex items-center gap-2 ml-auto">
+        {/* Flechas y contador CENTRADOS */}
+        <div className="flex items-center justify-center gap-3 pt-0.5">
           <button
             type="button"
             onClick={flipPrev}
+            disabled={isAnimating}
             aria-label="Cara anterior"
-            className="p-1.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-highest border border-dark-subtle text-text-dark-primary hover:text-cyan-bright transition-colors cursor-pointer"
+            className="p-1.5 sm:px-3 sm:py-1.5 rounded-lg bg-surface-container-high/80 hover:bg-surface-container-highest border border-dark-subtle text-text-dark-primary hover:text-cyan-bright hover:border-cyan-bright/50 transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center shadow-sm"
             title="Cara anterior"
           >
-            <span className="material-symbols-outlined text-[18px]">chevron_left</span>
+            <span className="material-symbols-outlined text-[20px]">chevron_left</span>
           </button>
 
-          <span className="font-label-tech-sm text-xs text-text-dark-muted px-1">
-            {activeIndex + 1} / {totalFaces}
+          <span className="font-mono text-xs sm:text-sm font-bold px-3.5 py-1 rounded-lg bg-surface-container-high border border-dark-subtle text-text-dark-primary shadow-sm flex items-center">
+            <span className="text-cyan-bright font-extrabold">{activeIndex + 1}</span>
+            <span className="text-text-dark-muted mx-1.5">/</span>
+            <span className="text-text-dark-primary">{totalFaces}</span>
           </span>
 
           <button
             type="button"
             onClick={flipNext}
+            disabled={isAnimating}
             aria-label="Cara siguiente"
-            className="p-1.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-highest border border-dark-subtle text-text-dark-primary hover:text-cyan-bright transition-colors cursor-pointer"
+            className="p-1.5 sm:px-3 sm:py-1.5 rounded-lg bg-surface-container-high/80 hover:bg-surface-container-highest border border-dark-subtle text-text-dark-primary hover:text-cyan-bright hover:border-cyan-bright/50 transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center shadow-sm"
             title="Cara siguiente"
           >
-            <span className="material-symbols-outlined text-[18px]">chevron_right</span>
+            <span className="material-symbols-outlined text-[20px]">chevron_right</span>
           </button>
         </div>
       </div>
     );
   };
 
-  // Contenido de los slots A y B
-  const contentA = childArray[slotAIndex] || null;
-  const contentB = childArray[slotBIndex] || null;
+  // Contenido de la cara activa y de la cara objetivo
+  const currentFaceContent = childArray[activeIndex] || null;
+  const incomingFaceContent = childArray[targetFaceIndex] || null;
 
   return (
     <Card3DContext.Provider value={contextValue}>
-      <div className={`3d-card-wrapper ${className}`}>
+      <div className={`3d-card-wrapper isolate ${className}`}>
+        {/* Contenedor invisible para medir la altura de cada cara con el ancho real del componente */}
+        <div
+          ref={measureContainerRef}
+          className="w-full pointer-events-none absolute -left-[99999px] top-0 invisible"
+          style={{ visibility: 'hidden', zIndex: -100 }}
+          aria-hidden="true"
+        >
+          {childArray.map((child, idx) => (
+            <div key={idx} className="w-full">
+              {child}
+            </div>
+          ))}
+        </div>
+
         {controlsPosition === 'top' && renderControls()}
 
-        {/* Contenedor con perspectiva 3D */}
+        {/* Contenedor de perspectiva: solo aplica perspectiva 3D cuando está animando */}
         <div
-          className="w-full card-perspective"
-          style={{ perspective }}
+          className="w-full"
+          style={{
+            perspective: isAnimating ? perspective : undefined,
+            WebkitPerspective: isAnimating ? perspective : undefined,
+          }}
         >
-          {/* Flipper rotatorio con preserve-3d */}
+          {/* Flipper rotatorio con transición suave y animada de altura */}
           <div
             ref={flipperRef}
-            className={`relative w-full card-preserve-3d ${cardClassName}`}
+            className={`w-full relative ${cardClassName}`}
             style={{
-              transform: `rotateY(${rotationAngle}deg)`,
-              transformStyle: 'preserve-3d',
-              WebkitTransformStyle: 'preserve-3d',
-              transition: `transform ${transitionDuration}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-              minHeight: minHeight ? `${minHeight}px` : undefined,
+              transform: isAnimating ? `rotateY(${rotationAngle}deg)` : 'none',
+              transformStyle: isAnimating ? 'preserve-3d' : 'flat',
+              WebkitTransformStyle: isAnimating ? 'preserve-3d' : 'flat',
+              transition: isAnimating
+                ? `transform ${transitionDuration}ms cubic-bezier(0.4, 0.0, 0.2, 1), height ${transitionDuration}ms cubic-bezier(0.4, 0.0, 0.2, 1)`
+                : 'none',
             }}
           >
-            {/* SLOT A: Cara en orientación 0° */}
+            {/* SLOT A: En reposo es 2D nativo (transform: none) con máxima nitidez de texto y altura 100% natural.
+                       Durante el giro rota a 0° con backface-hidden. */}
             <div
               ref={slotARef}
-              className={`w-full card-backface-hidden ${
-                isSlotAFront
-                  ? 'relative z-10 pointer-events-auto'
-                  : 'absolute inset-0 w-full h-full z-0 pointer-events-none'
+              className={`w-full ${
+                isAnimating
+                  ? 'absolute inset-0 h-full card-backface-hidden overflow-hidden'
+                  : 'relative z-10 pointer-events-auto'
               }`}
               style={{
-                transform: 'rotateY(0deg)',
-                backfaceVisibility: 'hidden',
-                WebkitBackfaceVisibility: 'hidden',
+                transform: isAnimating ? 'rotateY(0deg) translateZ(1px)' : 'none',
+                backfaceVisibility: isAnimating ? 'hidden' : 'visible',
+                WebkitBackfaceVisibility: isAnimating ? 'hidden' : 'visible',
               }}
             >
-              {contentA}
+              {currentFaceContent}
             </div>
 
-            {/* SLOT B: Cara en orientación 180° */}
-            <div
-              ref={slotBRef}
-              className={`w-full card-backface-hidden ${
-                !isSlotAFront
-                  ? 'relative z-10 pointer-events-auto'
-                  : 'absolute inset-0 w-full h-full z-0 pointer-events-none'
-              }`}
-              style={{
-                transform: 'rotateY(180deg)',
-                backfaceVisibility: 'hidden',
-                WebkitBackfaceVisibility: 'hidden',
-              }}
-            >
-              {contentB}
-            </div>
+            {/* SLOT B: Oculto en reposo (display: none).
+                       Durante el giro se activa a 180° para revelar la cara entrante en 3D. */}
+            {isAnimating && (
+              <div
+                ref={slotBRef}
+                className="w-full absolute inset-0 h-full card-backface-hidden z-0 pointer-events-none overflow-hidden"
+                style={{
+                  transform: 'rotateY(180deg) translateZ(1px)',
+                  backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
+                }}
+              >
+                {incomingFaceContent}
+              </div>
+            )}
           </div>
         </div>
 
@@ -317,7 +391,7 @@ export default function Card3D({
 }
 
 /**
- * Trigger de conveniencia opcional para activar giros desde cualquier lugar del markup
+ * Trigger de conveniencia para botones internos
  */
 Card3D.Trigger = function Card3DTrigger({
   children,
@@ -325,10 +399,11 @@ Card3D.Trigger = function Card3DTrigger({
   className = '',
   ...props
 }) {
-  const { flipNext, flipPrev, goToFace } = useCard3D();
+  const { flipNext, flipPrev, goToFace, isAnimating } = useCard3D();
 
   const handleClick = (e) => {
     if (props.onClick) props.onClick(e);
+    if (isAnimating) return;
     if (to === 'next') flipNext();
     else if (to === 'prev') flipPrev();
     else if (typeof to === 'number') goToFace(to);
@@ -338,6 +413,7 @@ Card3D.Trigger = function Card3DTrigger({
     <button
       type="button"
       onClick={handleClick}
+      disabled={isAnimating}
       className={className}
       {...props}
     >
@@ -346,5 +422,4 @@ Card3D.Trigger = function Card3DTrigger({
   );
 };
 
-// Exportaciones nombradas adicionales para máxima compatibilidad
 export { Card3D, Card3D as ThreeDCard };

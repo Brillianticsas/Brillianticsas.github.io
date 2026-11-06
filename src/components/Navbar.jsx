@@ -78,11 +78,11 @@ const Navbar = () => {
             Servicios
           </Link>
           <Link
-            to="/Arquitectura"
-            aria-current={isActivePath('/Arquitectura') ? 'page' : undefined}
-            className={desktopLinkClass('/Arquitectura')}
+            to="/Ecosistema"
+            aria-current={isActivePath('/Ecosistema') ? 'page' : undefined}
+            className={desktopLinkClass('/Ecosistema')}
           >
-            Arquitectura
+            Ecosistema
           </Link>
           <Link
             to="/Experiencia"
@@ -154,12 +154,12 @@ const Navbar = () => {
             Servicios
           </Link>
           <Link
-            to="/Arquitectura"
-            onClick={() => handleNavClick('/Arquitectura')}
-            aria-current={isActivePath('/Arquitectura') ? 'page' : undefined}
-            className={mobileLinkClass('/Arquitectura')}
+            to="/Ecosistema"
+            onClick={() => handleNavClick('/Ecosistema')}
+            aria-current={isActivePath('/Ecosistema') ? 'page' : undefined}
+            className={mobileLinkClass('/Ecosistema')}
           >
-            Arquitectura
+            Ecosistema
           </Link>
           <Link
             to="/Experiencia"

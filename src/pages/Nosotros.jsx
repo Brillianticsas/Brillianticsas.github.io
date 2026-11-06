@@ -33,7 +33,7 @@ const Nosotros = () => {
           </section>
 
           {/* 2. PRESENTACIÓN CORPORATIVA: 3D FLASHCARD INTERACTIVA */}
-          <section className="w-full mb-space-3xl">
+          <section className="w-full mb-12 sm:mb-16">
             <Card3D
               className="max-w-4xl mx-auto w-full"
               faceLabels={['Perfil Directivo', 'Stack Tecnológico']}
@@ -350,30 +350,30 @@ const Nosotros = () => {
 
 
           {/* 6. CIERRE DE TRANSICIÓN SPA: CONTACTO WHATSAPP */}
-          <section className="w-full flex flex-col items-center justify-center pt-8 pb-4">
+          <section className="w-full flex flex-col items-center justify-center pt-6 pb-6">
             <a
               href="https://wa.me/573228273454"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[460px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
+              className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[480px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(37,211,102,0.2)] hover:border-emerald-500/50 hover:-translate-y-1"
             >
               <div className="flex items-center gap-space-md mb-space-sm">
-                <div className="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-accent-success group-hover:bg-accent-success group-hover:text-surface-dark-base transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white group-hover:border-[#25D366] group-hover:shadow-[0_0_20px_rgba(37,211,102,0.45)] flex items-center justify-center transition-all duration-300">
                   <span className="material-symbols-outlined text-[26px]">chat</span>
                 </div>
                 <div className="text-left">
-                  <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block">
-                    Contacto Directo
+                  <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block font-bold">
+                    ¿Listo para transformar tu operación?
                   </span>
-                  <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block">
-                    Iniciar Conversación por WhatsApp
+                  <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block group-hover:text-[#25D366] transition-colors">
+                    Hablemos de tu Proyecto por WhatsApp
                   </span>
                 </div>
               </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[340px] mb-space-md">
-                Conecte de inmediato con nuestro equipo de ingeniería y dirección para estructurar su proyecto.
+              <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[380px] mb-space-md leading-relaxed">
+                Conéctate directamente con nuestro equipo de ingeniería y dirección para estructurar una solución de alto impacto para tu empresa.
               </p>
-              <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-accent-success animate-bounce">
+              <div className="w-8 h-8 rounded-full bg-emerald-500/10 group-hover:bg-[#25D366] text-[#25D366] group-hover:text-white flex items-center justify-center transition-all duration-300 group-hover:translate-x-1 shadow-sm">
                 <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
               </div>
             </a>

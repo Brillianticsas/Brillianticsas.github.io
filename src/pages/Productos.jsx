@@ -174,26 +174,26 @@ const Productos = () => {
           <section className="flex justify-center pt-8 pb-4">
             <Link
               to="/Servicios"
-              className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[460px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
+              className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[480px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
             >
               <div className="flex items-center gap-space-md mb-space-sm">
                 <div className="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
                   <span className="material-symbols-outlined text-[26px]">terminal</span>
                 </div>
                 <div className="text-left">
-                  <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block">
-                    Siguiente Sección
+                  <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block font-bold">
+                    ¿Buscas ingeniería a tu medida?
                   </span>
-                  <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block">
-                    Continuar a Servicios
+                  <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block group-hover:text-primary transition-colors">
+                    Conoce Nuestros Servicios Especializados
                   </span>
                 </div>
               </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[340px] mb-space-md">
-                Unidades de ingeniería, outsourcing especializado, cloud DevOps y soporte de misión crítica.
+              <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[380px] mb-space-md leading-relaxed">
+                Arquitectura Cloud/DevOps, desarrollo de software e inteligencia comercial diseñados para potenciar tus capacidades tecnológicas.
               </p>
-              <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-primary animate-bounce">
-                <span className="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+              <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-primary transition-all group-hover:translate-x-1">
+                <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
               </div>
             </Link>
           </section>

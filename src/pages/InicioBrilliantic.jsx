@@ -269,26 +269,26 @@ const InicioBrilliantic = () => {
             {/* Tarjeta Interactiva de Continuidad */}
             <Link
               to="/Productos"
-              className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[460px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
+              className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[480px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
             >
               <div className="flex items-center gap-space-md mb-space-sm">
                 <div className="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
                   <span className="material-symbols-outlined text-[26px]">grid_view</span>
                 </div>
                 <div className="text-left">
-                  <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block">
-                    Siguiente Sección
+                  <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block font-bold">
+                    ¿Quieres saber lo que ofrecemos?
                   </span>
-                  <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block">
-                    Continuar a Productos
+                  <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block group-hover:text-primary transition-colors">
+                    Descubre Nuestras Soluciones
                   </span>
                 </div>
               </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[340px] mb-space-md">
-                Plataformas de misión crítica, procesamiento transaccional e infraestructura modular.
+              <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[380px] mb-space-md leading-relaxed">
+                Plataformas inteligentes y software especializado diseñados para acelerar tus ventas, optimizar procesos y escalar tu operación.
               </p>
-              <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-primary animate-bounce">
-                <span className="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+              <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-primary transition-all group-hover:translate-x-1">
+                <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
               </div>
             </Link>
           </section>

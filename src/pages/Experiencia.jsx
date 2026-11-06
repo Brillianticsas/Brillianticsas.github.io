@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppChatButton from '../components/WhatsAppChatButton';
+import Card3D from '../components/3DCard';
 
 const Experiencia = () => {
   return (
@@ -184,18 +185,35 @@ const Experiencia = () => {
               </div>
             </div>
 
-            {/* Bento Grid Container */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-              {/* Columna 1: Sector Salud */}
-              <div className="flex flex-col rounded-xl overflow-hidden border border-border-dark-subtle bg-surface-container shadow-xl transition-all duration-300 hover:border-primary/50">
-                {/* Header Azul Noche */}
-                <div className="bg-[#07182c] border-b border-border-dark-subtle px-6 py-5 text-center flex items-center justify-center min-h-[88px]">
-                  <h3 className="font-headline-sm text-headline-sm text-text-dark-primary font-bold leading-snug">
-                    Sector Salud (Clínicas, IPS y<br />Centros Diagnósticos)
-                  </h3>
+            {/* Casos de Éxito: Tarjeta 3D Interactiva con 3 Caras */}
+            <Card3D
+              className="max-w-3xl mx-auto w-full"
+              faceLabels={['Sector Salud', 'Sector Financiero', 'Sector Hidrocarburos']}
+              showControls={true}
+            >
+              {/* Cara 1: Sector Salud */}
+              <div className="flex flex-col rounded-xl overflow-hidden border border-border-dark-subtle bg-surface-container shadow-2xl transition-all duration-300 hover:border-primary/50 w-full">
+                {/* Header Azul Noche con Indicador Interactivo */}
+                <div className="bg-[#07182c] border-b border-border-dark-subtle px-6 py-5 flex items-center justify-between min-h-[88px]">
+                  <div className="text-left">
+                    <span className="text-[11px] font-mono tracking-wider text-cyan-bright uppercase font-bold block mb-1">
+                      Caso 1 de 3 • Salud &amp; Automatización
+                    </span>
+                    <h3 className="font-headline-sm text-headline-sm text-text-dark-primary font-bold leading-snug">
+                      Sector Salud (Clínicas, IPS y Centros Diagnósticos)
+                    </h3>
+                  </div>
+                  <Card3D.Trigger
+                    to={1}
+                    className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-cyan-bright hover:text-white bg-cyan-bright/10 hover:bg-cyan-bright/20 border border-cyan-bright/30 transition-all cursor-pointer flex-shrink-0"
+                    title="Girar al siguiente caso"
+                  >
+                    <span>Siguiente</span>
+                    <span>→</span>
+                  </Card3D.Trigger>
                 </div>
                 {/* Body: Desafío y Solución */}
-                <div className="flex-1 p-6 space-y-6 bg-surface-container flex flex-col justify-start">
+                <div className="flex-1 p-6 sm:p-8 space-y-6 bg-surface-container flex flex-col justify-start">
                   <div className="border-b border-border-dark-subtle pb-5">
                     <p className="font-body-md text-body-md text-text-dark-muted leading-relaxed">
                       <strong className="text-text-dark-primary font-bold">Desafío:</strong> Fuga de hasta el 52% de pacientes captados en pauta digital por demoras en recepción de WhatsApp y transcripción manual de órdenes médicas.
@@ -208,23 +226,51 @@ const Experiencia = () => {
                   </div>
                 </div>
                 {/* Franja Verde: Resultado Medible */}
-                <div className="bg-[#007038] text-white p-6 mt-auto">
-                  <p className="font-body-md text-body-md leading-snug text-white">
+                <div className="bg-[#007038] text-white p-6 mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <p className="font-body-md text-body-md leading-snug text-white flex-1">
                     <strong className="font-bold">Resultado Medible:</strong> Respuesta en &lt; 10s (24/7), reducción de inasistencia (No-Show) a &lt; 10% y 100% de trazabilidad publicitaria.
                   </p>
+                  <Card3D.Trigger
+                    to={1}
+                    className="inline-flex sm:hidden items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/20 hover:bg-white/30 border border-white/30 transition-all cursor-pointer"
+                  >
+                    <span>Ver Financiero</span>
+                    <span>→</span>
+                  </Card3D.Trigger>
                 </div>
               </div>
 
-              {/* Columna 2: Sector Financiero */}
-              <div className="flex flex-col rounded-xl overflow-hidden border border-border-dark-subtle bg-surface-container shadow-xl transition-all duration-300 hover:border-primary/50">
-                {/* Header Azul Noche */}
-                <div className="bg-[#07182c] border-b border-border-dark-subtle px-6 py-5 text-center flex items-center justify-center min-h-[88px]">
-                  <h3 className="font-headline-sm text-headline-sm text-text-dark-primary font-bold leading-snug">
-                    Sector Financiero y Redes<br />Transaccionales Nacionales
-                  </h3>
+              {/* Cara 2: Sector Financiero */}
+              <div className="flex flex-col rounded-xl overflow-hidden border border-border-dark-subtle bg-surface-container shadow-2xl transition-all duration-300 hover:border-primary/50 w-full">
+                {/* Header Azul Noche con Indicador Interactivo */}
+                <div className="bg-[#07182c] border-b border-border-dark-subtle px-6 py-5 flex items-center justify-between min-h-[88px]">
+                  <div className="text-left">
+                    <span className="text-[11px] font-mono tracking-wider text-primary font-bold uppercase block mb-1">
+                      Caso 2 de 3 • Redes Transaccionales SPOC
+                    </span>
+                    <h3 className="font-headline-sm text-headline-sm text-text-dark-primary font-bold leading-snug">
+                      Sector Financiero y Redes Transaccionales Nacionales
+                    </h3>
+                  </div>
+                  <div className="hidden sm:flex items-center gap-2 flex-shrink-0">
+                    <Card3D.Trigger
+                      to={0}
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-text-dark-muted hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all cursor-pointer"
+                      title="Volver a Salud"
+                    >
+                      <span>← Salud</span>
+                    </Card3D.Trigger>
+                    <Card3D.Trigger
+                      to={2}
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-cyan-bright hover:text-white bg-cyan-bright/10 hover:bg-cyan-bright/20 border border-cyan-bright/30 transition-all cursor-pointer"
+                      title="Girar a Hidrocarburos"
+                    >
+                      <span>Hidrocarburos →</span>
+                    </Card3D.Trigger>
+                  </div>
                 </div>
                 {/* Body: Desafío y Solución */}
-                <div className="flex-1 p-6 space-y-6 bg-surface-container flex flex-col justify-start">
+                <div className="flex-1 p-6 sm:p-8 space-y-6 bg-surface-container flex flex-col justify-start">
                   <div className="border-b border-border-dark-subtle pb-5">
                     <p className="font-body-md text-body-md text-text-dark-muted leading-relaxed">
                       <strong className="text-text-dark-primary font-bold">Desafío:</strong> Alta complejidad administrativa e intermitencia operativa en enlaces de datos distribuidos en zonas urbanas y rurales apartadas del país.
@@ -237,23 +283,58 @@ const Experiencia = () => {
                   </div>
                 </div>
                 {/* Franja Verde: Resultado Medible */}
-                <div className="bg-[#007038] text-white p-6 mt-auto">
-                  <p className="font-body-md text-body-md leading-snug text-white">
+                <div className="bg-[#007038] text-white p-6 mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <p className="font-body-md text-body-md leading-snug text-white flex-1">
                     <strong className="font-bold">Resultado Medible:</strong> Continuidad transaccional en 32 sedes de 16 departamentos, unificación en 1 sola factura y cumplimiento estricto de SLA corporativos.
                   </p>
+                  <div className="flex sm:hidden items-center gap-2">
+                    <Card3D.Trigger
+                      to={0}
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/20 hover:bg-white/30 border border-white/30 transition-all cursor-pointer"
+                    >
+                      <span>← Salud</span>
+                    </Card3D.Trigger>
+                    <Card3D.Trigger
+                      to={2}
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/20 hover:bg-white/30 border border-white/30 transition-all cursor-pointer"
+                    >
+                      <span>Hidrocarburos →</span>
+                    </Card3D.Trigger>
+                  </div>
                 </div>
               </div>
 
-              {/* Columna 3: Sector Hidrocarburos */}
-              <div className="flex flex-col rounded-xl overflow-hidden border border-border-dark-subtle bg-surface-container shadow-xl transition-all duration-300 hover:border-primary/50">
-                {/* Header Azul Noche */}
-                <div className="bg-[#07182c] border-b border-border-dark-subtle px-6 py-5 text-center flex items-center justify-center min-h-[88px]">
-                  <h3 className="font-headline-sm text-headline-sm text-text-dark-primary font-bold leading-snug">
-                    Sector Hidrocarburos, Energía<br />e Infraestructura Crítica
-                  </h3>
+              {/* Cara 3: Sector Hidrocarburos */}
+              <div className="flex flex-col rounded-xl overflow-hidden border border-border-dark-subtle bg-surface-container shadow-2xl transition-all duration-300 hover:border-primary/50 w-full">
+                {/* Header Azul Noche con Indicador Interactivo */}
+                <div className="bg-[#07182c] border-b border-border-dark-subtle px-6 py-5 flex items-center justify-between min-h-[88px]">
+                  <div className="text-left">
+                    <span className="text-[11px] font-mono tracking-wider text-tertiary-container font-bold uppercase block mb-1">
+                      Caso 3 de 3 • Infraestructura Crítica
+                    </span>
+                    <h3 className="font-headline-sm text-headline-sm text-text-dark-primary font-bold leading-snug">
+                      Sector Hidrocarburos, Energía e Infraestructura Crítica
+                    </h3>
+                  </div>
+                  <div className="hidden sm:flex items-center gap-2 flex-shrink-0">
+                    <Card3D.Trigger
+                      to={1}
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-text-dark-muted hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all cursor-pointer"
+                      title="Volver a Financiero"
+                    >
+                      <span>← Financiero</span>
+                    </Card3D.Trigger>
+                    <Card3D.Trigger
+                      to={0}
+                      className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-cyan-bright hover:text-white bg-cyan-bright/10 hover:bg-cyan-bright/20 border border-cyan-bright/30 transition-all cursor-pointer"
+                      title="Volver a Salud"
+                    >
+                      <span>↺ Salud</span>
+                    </Card3D.Trigger>
+                  </div>
                 </div>
                 {/* Body: Desafío y Solución */}
-                <div className="flex-1 p-6 space-y-6 bg-surface-container flex flex-col justify-start">
+                <div className="flex-1 p-6 sm:p-8 space-y-6 bg-surface-container flex flex-col justify-start">
                   <div className="border-b border-border-dark-subtle pb-5">
                     <p className="font-body-md text-body-md text-text-dark-muted leading-relaxed">
                       <strong className="text-text-dark-primary font-bold">Desafío:</strong> Adecuación tecnológica de sede corporativa y enlaces industriales bajo rigurosas normativas técnicas, de seguridad y presupuesto.
@@ -266,13 +347,27 @@ const Experiencia = () => {
                   </div>
                 </div>
                 {/* Franja Verde: Resultado Medible */}
-                <div className="bg-[#007038] text-white p-6 mt-auto">
-                  <p className="font-body-md text-body-md leading-snug text-white">
+                <div className="bg-[#007038] text-white p-6 mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <p className="font-body-md text-body-md leading-snug text-white flex-1">
                     <strong className="font-bold">Resultado Medible:</strong> Entrega certificada a satisfacción, optimización financiera del CAPEX y disponibilidad continua de red.
                   </p>
+                  <div className="flex sm:hidden items-center gap-2">
+                    <Card3D.Trigger
+                      to={1}
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/20 hover:bg-white/30 border border-white/30 transition-all cursor-pointer"
+                    >
+                      <span>← Financiero</span>
+                    </Card3D.Trigger>
+                    <Card3D.Trigger
+                      to={0}
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/20 hover:bg-white/30 border border-white/30 transition-all cursor-pointer"
+                    >
+                      <span>↺ Salud</span>
+                    </Card3D.Trigger>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Card3D>
           </section>
 
           {/* 05.03 EXPERIENCIA POR SECTORES (CHIPS & BADGES DE COBERTURA) */}
@@ -290,106 +385,106 @@ const Experiencia = () => {
               </div>
 
               {/* 8 Classification Chips/Cards */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4">
                 {/* Chip 1 */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
-                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-primary border border-border-dark-subtle">
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-surface-dark-base text-primary border border-border-dark-subtle flex-shrink-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-xl">account_balance</span>
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 01</div>
-                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-label-tech-sm text-[10px] sm:text-xs text-text-dark-muted uppercase font-bold tracking-wider mb-0.5">SECTOR 01</div>
+                    <div className="text-xs sm:text-sm md:text-base font-semibold text-text-dark-primary leading-snug break-words">
                       Financiero &amp; Bancario
                     </div>
                   </div>
                 </div>
 
                 {/* Chip 2 */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-cyan-bright/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
-                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-cyan-bright border border-border-dark-subtle">
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-cyan-bright/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-surface-dark-base text-cyan-bright border border-border-dark-subtle flex-shrink-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-xl">vital_signs</span>
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 02</div>
-                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-label-tech-sm text-[10px] sm:text-xs text-text-dark-muted uppercase font-bold tracking-wider mb-0.5">SECTOR 02</div>
+                    <div className="text-xs sm:text-sm md:text-base font-semibold text-text-dark-primary leading-snug break-words">
                       Salud &amp; EPS
                     </div>
                   </div>
                 </div>
 
                 {/* Chip 3 */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-tertiary-container/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
-                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-tertiary-container border border-border-dark-subtle">
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-tertiary-container/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-surface-dark-base text-tertiary-container border border-border-dark-subtle flex-shrink-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-xl">local_shipping</span>
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 03</div>
-                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-label-tech-sm text-[10px] sm:text-xs text-text-dark-muted uppercase font-bold tracking-wider mb-0.5">SECTOR 03</div>
+                    <div className="text-xs sm:text-sm md:text-base font-semibold text-text-dark-primary leading-snug break-words">
                       Logística &amp; Carga
                     </div>
                   </div>
                 </div>
 
                 {/* Chip 4 */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-accent-success/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
-                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-accent-success border border-border-dark-subtle">
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-accent-success/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-surface-dark-base text-accent-success border border-border-dark-subtle flex-shrink-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-xl">bolt</span>
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 04</div>
-                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-label-tech-sm text-[10px] sm:text-xs text-text-dark-muted uppercase font-bold tracking-wider mb-0.5">SECTOR 04</div>
+                    <div className="text-xs sm:text-sm md:text-base font-semibold text-text-dark-primary leading-snug break-words">
                       Energía &amp; Servicios
                     </div>
                   </div>
                 </div>
 
                 {/* Chip 5 */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
-                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-primary border border-border-dark-subtle">
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-surface-dark-base text-primary border border-border-dark-subtle flex-shrink-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-xl">storefront</span>
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 05</div>
-                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-label-tech-sm text-[10px] sm:text-xs text-text-dark-muted uppercase font-bold tracking-wider mb-0.5">SECTOR 05</div>
+                    <div className="text-xs sm:text-sm md:text-base font-semibold text-text-dark-primary leading-snug break-words">
                       Retail &amp; Comercio
                     </div>
                   </div>
                 </div>
 
                 {/* Chip 6 */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-cyan-bright/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
-                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-cyan-bright border border-border-dark-subtle">
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-cyan-bright/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-surface-dark-base text-cyan-bright border border-border-dark-subtle flex-shrink-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-xl">domain</span>
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 06</div>
-                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-label-tech-sm text-[10px] sm:text-xs text-text-dark-muted uppercase font-bold tracking-wider mb-0.5">SECTOR 06</div>
+                    <div className="text-xs sm:text-sm md:text-base font-semibold text-text-dark-primary leading-snug break-words">
                       Gobierno &amp; Público
                     </div>
                   </div>
                 </div>
 
                 {/* Chip 7 */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-tertiary-container/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
-                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-tertiary-container border border-border-dark-subtle">
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-tertiary-container/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-surface-dark-base text-tertiary-container border border-border-dark-subtle flex-shrink-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-xl">school</span>
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 07</div>
-                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-label-tech-sm text-[10px] sm:text-xs text-text-dark-muted uppercase font-bold tracking-wider mb-0.5">SECTOR 07</div>
+                    <div className="text-xs sm:text-sm md:text-base font-semibold text-text-dark-primary leading-snug break-words">
                       Educación Superior
                     </div>
                   </div>
                 </div>
 
                 {/* Chip 8 */}
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-accent-success/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
-                  <div className="p-2.5 rounded-lg bg-surface-dark-base text-accent-success border border-border-dark-subtle">
+                <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-support border border-border-dark-subtle hover:border-accent-success/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+                  <div className="p-2 sm:p-2.5 rounded-lg bg-surface-dark-base text-accent-success border border-border-dark-subtle flex-shrink-0 flex items-center justify-center">
                     <span className="material-symbols-outlined text-xl">cloud_sync</span>
                   </div>
-                  <div className="min-w-0">
-                    <div className="font-label-tech-sm text-label-tech-sm text-text-dark-muted">SECTOR 08</div>
-                    <div className="font-body-md text-body-md text-text-dark-primary font-medium truncate">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-label-tech-sm text-[10px] sm:text-xs text-text-dark-muted uppercase font-bold tracking-wider mb-0.5">SECTOR 08</div>
+                    <div className="text-xs sm:text-sm md:text-base font-semibold text-text-dark-primary leading-snug break-words">
                       Telecomunicaciones
                     </div>
                   </div>
@@ -402,26 +497,26 @@ const Experiencia = () => {
           <section className="w-full flex flex-col items-center justify-center pt-8 pb-4 border-t border-border-dark-subtle/50">
             <Link
               to="/Nosotros"
-              className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[460px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
+              className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[480px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
             >
               <div className="flex items-center gap-space-md mb-space-sm">
                 <div className="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
                   <span className="material-symbols-outlined text-[26px]">groups</span>
                 </div>
                 <div className="text-left">
-                  <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block">
-                    Siguiente Sección
+                  <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block font-bold">
+                    ¿Quiénes respaldan cada proyecto?
                   </span>
-                  <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block">
-                    Continuar a Nosotros &amp; Equipo
+                  <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block group-hover:text-primary transition-colors">
+                    Conoce al Equipo de Dirección
                   </span>
                 </div>
               </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[340px] mb-space-md">
-                Gobernanza institucional, liderazgo certificado y respaldo normativo y legal.
+              <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[380px] mb-space-md leading-relaxed">
+                Rigor gerencial, certificaciones internacionales y liderazgo con más de 20 años de experiencia al servicio de tu empresa.
               </p>
-              <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-primary animate-bounce">
-                <span className="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+              <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-primary transition-all group-hover:translate-x-1">
+                <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
               </div>
             </Link>
           </section>

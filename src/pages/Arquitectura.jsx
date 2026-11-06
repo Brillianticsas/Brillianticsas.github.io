@@ -287,13 +287,13 @@ const Arquitectura = () => {
             <div className="mt-8 pt-4 border-t border-[#232A3B] flex flex-col sm:flex-row items-center justify-between gap-3">
               <div className="flex items-center gap-2 text-[#94A3B8] font-mono text-xs">
                 <span className="w-2 h-2 rounded-full bg-brand-green"></span>
-                <span>VISTA 1 DE 2 &bull; COBERTURA NACIONAL Y MATRIZ SPOC</span>
+                <span>COBERTURA NACIONAL Y MATRIZ SPOC</span>
               </div>
               <Card3D.Trigger
                 to={1}
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#121622] hover:bg-[#1a2030] border border-brand-cyan/40 text-brand-cyan hover:text-white font-mono text-xs font-semibold transition-all cursor-pointer group shadow-sm"
               >
-                <span>Ver Cara 2: Operaciones &amp; Niveles</span>
+                <span>Operaciones &amp; Niveles</span>
                 <span className="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">
                   flip
                 </span>
@@ -315,7 +315,7 @@ const Arquitectura = () => {
                 </span>
                 <div className="text-left">
                   <span className="font-mono text-xs text-[#8B5CF6] uppercase tracking-wider block font-bold">
-                    ⚡ VISTA 2 // VALOR AGREGADO &amp; GOBERNANZA
+                    ⚡ VALOR AGREGADO &amp; GOBERNANZA
                   </span>
                   <span className="text-[#94A3B8] text-xs hidden sm:inline">
                     5 pilares estratégicos de la integración tecnológica
@@ -460,26 +460,26 @@ const Arquitectura = () => {
         <div className="w-full flex items-center justify-center pt-8 pb-4">
           <Link
             to="/Experiencia"
-            className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[460px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
+            className="group relative flex flex-col items-center justify-center p-space-xl rounded-2xl bg-surface-container hover:bg-surface-container-high max-w-[480px] w-full transition-all duration-300 shadow-lg hover:shadow-[0_12px_32px_rgba(25,227,255,0.15)] hover:-translate-y-1"
           >
             <div className="flex items-center gap-space-md mb-space-sm">
               <div className="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
                 <span className="material-symbols-outlined text-[26px]">workspace_premium</span>
               </div>
               <div className="text-left">
-                <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block">
-                  Siguiente Sección
+                <span className="font-label-tech-sm text-label-tech-sm text-cyan-bright uppercase tracking-wider block font-bold">
+                  ¿Buscas resultados comprobados?
                 </span>
-                <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block">
-                  Continuar a Experiencia
+                <span className="font-action-label text-action-label text-on-surface text-headline-sm font-semibold block group-hover:text-primary transition-colors">
+                  Descubre Nuestros Casos de Éxito
                 </span>
               </div>
             </div>
-            <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[340px] mb-space-md">
-              Evidencia empírica, casos de éxito multisectorial y ecosistema de clientes corporativos.
+            <p className="font-body-sm text-body-sm text-on-surface-variant text-center max-w-[380px] mb-space-md leading-relaxed">
+              Casos reales de impacto medible en salud, banca e infraestructura crítica que respaldan nuestro modelo de trabajo.
             </p>
-            <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-primary animate-bounce">
-              <span className="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+            <div className="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface group-hover:text-primary transition-all group-hover:translate-x-1">
+              <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
             </div>
           </Link>
         </div>

@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppChatButton from "./components/WhatsAppChatButton";
+import ScrollToTop from "./components/ScrollToTop";
 import AppRoutes from "./AppRoutes";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
 
   return (
     <>
+      <ScrollToTop />
       {!isStandalonePage && <Navbar />}
       <AppRoutes />
       {!isStandalonePage && <Footer />}

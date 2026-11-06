@@ -170,14 +170,17 @@ html.light .bg-\[\#121622\],
 html.light .bg-\[\#0E1322\],
 html.light .bg-\[\#171D2F\],
 html.light .bg-surface-dark-indigo,
-html.light .bg-surface-dark-indigo\/80 {
+html.light .bg-surface-dark-indigo\/80,
+html.light .bg-surface-dark-indigo\/90 {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
 }
 
 /* Tarjetas con blur en Servicios.jsx */
 html.light article.bg-\[\#0f131d\]\/90,
-html.light .bg-\[\#0f131d\]\/90 {
+html.light .bg-\[\#0f131d\]\/90,
+html.light .bg-\[\#0f131d\]\/60,
+html.light .bg-\[\#0f131d\] {
   background-color: rgba(255, 255, 255, 0.95) !important;
   border-color: #e2e8f0 !important;
 }
@@ -186,6 +189,53 @@ html.light .bg-\[\#0f131d\]\/90 {
 html.light .bg-\[\#07182c\] {
   background-color: #f1f5f9 !important;
   border-color: #e2e8f0 !important;
+}
+
+/* Franja Verde: Resultado Medible en Experiencia.jsx */
+html.light .bg-\[\#007038\] {
+  background-color: #ecfdf5 !important;
+  border-top: 1px solid #a7f3d0 !important;
+}
+
+html.light .bg-\[\#007038\] p,
+html.light .bg-\[\#007038\] span,
+html.light .bg-\[\#007038\] div {
+  color: #064e3b !important;
+}
+
+html.light .bg-\[\#007038\] strong {
+  color: #047857 !important;
+}
+
+html.light .bg-\[\#007038\] button {
+  background-color: rgba(6, 78, 59, 0.08) !important;
+  border: 1px solid rgba(6, 78, 59, 0.25) !important;
+  color: #064e3b !important;
+}
+
+html.light .bg-\[\#007038\] button:hover {
+  background-color: rgba(6, 78, 59, 0.16) !important;
+}
+
+/* WhatsApp CTA Button en Nosotros.jsx */
+html.light .group:hover .group-hover\:bg-\[\#25D366\],
+html.dark .group:hover .group-hover\:bg-\[\#25D366\] {
+  background-color: #25D366 !important;
+}
+
+html.light .group:hover .group-hover\:text-white,
+html.dark .group:hover .group-hover\:text-white {
+  color: #ffffff !important;
+}
+
+/* En modo oscuro, asegurar 100% texto blanco brillante y nítido */
+html.dark .bg-\[\#007038\] {
+  background-color: #007038 !important;
+}
+html.dark .bg-\[\#007038\] p,
+html.dark .bg-\[\#007038\] span,
+html.dark .bg-\[\#007038\] strong {
+  color: #ffffff !important;
 }
 
 /* 3. Superficies Elevadas, Píldoras, Chips y Métricas */
@@ -278,6 +328,10 @@ html.light .text-\[\#94a3b8\],
 html.light .text-\[\#64748b\],
 html.light p:not([class*="text-gradient"]):not([class*="bg-gradient"]):not([class*="text-transparent"]) {
   color: #475569 !important;
+}
+
+html.light .text-cyan-bright:not([class*="text-gradient"]):not([class*="bg-gradient"]):not([class*="text-transparent"]) {
+  color: #0284c7 !important;
 }
 
 /* Preservar texto transparente para gradientes de marca */
@@ -420,6 +474,9 @@ html.light polygon[fill="#0a0e18"] {
 .card-backface-hidden {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .card-rotate-y-180 {

@@ -18,8 +18,8 @@ const AppRoutes = () => {
       <Route path="/Productos" element={<Productos />} />
       <Route path="/Servicios" element={<Servicios />} />
       <Route path="/Services" element={<Servicios />} />
-      <Route path="/Arquitectura" element={<Arquitectura />} />
-      <Route path="/Architecture" element={<Arquitectura />} />
+      <Route path="/Ecosistema" element={<Arquitectura />} />
+      <Route path="/Ecosystem" element={<Arquitectura />} />
       <Route path="/Experiencia" element={<Experiencia />} />
       <Route path="/Experience" element={<Experiencia />} />
       <Route path="/Nosotros" element={<Nosotros />} />

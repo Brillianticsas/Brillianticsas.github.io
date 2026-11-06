@@ -51,8 +51,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/Arquitectura" className="text-on-surface-variant hover:text-primary transition-colors">
-                  Arquitectura
+                <Link to="/Ecosistema" className="text-on-surface-variant hover:text-primary transition-colors">
+                  Ecosistema
                 </Link>
               </li>
             </ul>
